@@ -1,0 +1,73 @@
+/* -----------------------------------------------------
+ * Notifications
+ * ----------------------------------------------------- */
+
+window.notification-popups box.notifications {
+    padding: 14px;
+}
+
+.notification-icon {
+    min-width: 68px;
+    min-height: 68px;
+    margin-right: 1em;
+}
+
+.notification-icon image {
+    font-size: 58px;
+    /* to center the icon */
+    margin: 5px;
+    color: $onSurface;
+}
+
+.notification-icon box {
+    min-width: 68px;
+    min-height: 68px;
+    border-radius: 7px;
+}
+
+.notification {
+    min-width: 350px;
+    border-radius: 20px;
+    padding: 1em;
+    margin-bottom: 2px;
+    background-color: $surfaceContainerLow;
+}
+
+.notification.critical {
+    border: 2px solid $error;
+}
+
+.notification-title {
+    color: $foreground;
+    font-size: 1.4em;
+}
+
+.notification-body {
+    color: $foreground;
+}
+
+.notification-actions .notification-action-button {
+    margin: 0 0.4em;
+    margin-top: 0.8em;
+}
+
+.notification-action-button {
+    background-color: $primary;
+    color: $onPrimary;
+}
+
+.notification-actions .notification-action-button:first-child {
+    margin-left: 0;
+}
+
+.notification-actions .notification-action-button:last-child {
+    margin-right: 0;
+}
+
+.notification-time {
+    color: $primary;
+}
+
+.notification-close .icon {
+    font-weight: 300;
+}

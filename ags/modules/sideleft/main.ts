@@ -1,5 +1,6 @@
 import popupwindow from "../misc/popupwindow.ts";
 import Gtk from "gi://Gtk?version=3.0";
+import Widget from "resource:///com/github/Aylur/ags/widget.js";
 import { MaterialIcon } from "icons.ts";
 import { WeatherBox } from "./weather.ts";
 import { Media } from "./players.ts";
@@ -150,11 +151,10 @@ function SideLeft() {
 
 export const sideleft = popupwindow({
     name: WINDOW_NAME,
-
     class_name: "sideleft",
     visible: false,
     keymode: "exclusive",
     child: SideLeft(),
-    anchor: ["top", "left", "bottom"],
-    css: "min-width: 443px;"
+    anchor: ["top", "left", "bottom"]
+    // css: "min-width: 443px;"
 });

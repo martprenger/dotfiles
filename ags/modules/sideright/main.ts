@@ -5,11 +5,10 @@ export const WINDOW_NAME = "sidebar";
 
 export const sideright = popupwindow({
     name: WINDOW_NAME,
-
-    class_name: "sidebar",
+    class_name: "rightside",
     visible: false,
     keymode: "exclusive",
     child: SideBar(),
-    anchor: ["top", "right", "bottom"],
-    css: "min-width: 443px;"
+    anchor: ["top", "right", "bottom"]
+    // css: "min-width: 443px;"
 });

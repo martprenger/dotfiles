@@ -3,7 +3,7 @@ import os
 from os import path
 import shutil
 
-settings = path.expanduser("~/dotfiles/.settings")
+settings = path.expanduser("~/.settings")
 settings_json = f"{settings}/settings.json"
 apps_json = f"{settings}/apps.json"
 

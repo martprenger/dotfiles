@@ -43,11 +43,12 @@ function getCurrentDateAndTime() {
     const year = _date.getFullYear();
     const month = String(_date.getMonth() + 1).padStart(2, "0");
     const day = String(_date.getDate()).padStart(2, "0");
+    const dayOfWeek = _date.toLocaleDateString("en-US", { weekday: "long" });
 
     const hours = String(_date.getHours()).padStart(2, "0");
     const minutes = String(_date.getMinutes()).padStart(2, "0");
 
-    const formattedDate = `${year}-${month}-${day}`;
+    const formattedDate = `${dayOfWeek}, ${month}/${day}`;
     const formattedTime = `${hours}:${minutes}`;
 
     if (time.value != formattedTime) time.setValue(formattedTime);
@@ -99,7 +100,7 @@ function getIconNameFromClass(windowClass: string) {
 
 const dispatch = (ws: string) => hyprland.messageAsync(`dispatch workspace ${ws}`).catch(print);
 
-function Workspaces() {
+function Workspaces(monitor = 0) {
     let workspace_buttons = new Map<Number, any>();
     const workspace_buttons_array: VariableType<Button<any, any>[] | any> = Variable([]);
 
@@ -113,7 +114,11 @@ function Workspaces() {
     }
 
     function initializeWorkspaceButtons() {
-        for (let i = 1; i <= 10; i++) {
+        const barMonitor = JSON.parse(Utils.exec(`${App.configDir}/scripts/getWorkspaces.sh monitors`)).find(
+            (m) => m.id === monitor
+        );
+        const workspaceMultiplyer = Math.floor((barMonitor.activeWorkspace.id - 1) / 10);
+        for (let i = 1 + 10 * workspaceMultiplyer; i <= 10 + 10 * workspaceMultiplyer; i++) {
             workspace_buttons.set(i, createWorkspaceButton(i));
         }
         workspace_buttons_array.setValue(Array.from(workspace_buttons.values()));
@@ -158,11 +163,15 @@ function Clock() {
     return Widget.Button({
         class_name: "clock",
         child: Widget.Box({
-            orientation: Gtk.Orientation.VERTICAL,
+            orientation: Gtk.Orientation.HORIZONTAL,
             children: [
                 Widget.Label({
                     class_name: "time",
                     label: time.bind()
+                }),
+                Widget.Label({
+                    class_name: "seperator",
+                    label: " • "
                 }),
                 Widget.Label({
                     class_name: "date",
@@ -424,8 +433,8 @@ function TaskBar() {
                         client.initialTitle === "Settings"
                             ? "emblem-system-symbolic"
                             : client.initialTitle === "Emoji Picker"
-                            ? "face-smile-symbolic"
-                            : undefined;
+                              ? "face-smile-symbolic"
+                              : undefined;
                 } else {
                     icon = getIconNameFromClass(client.class);
                 }
@@ -495,14 +504,14 @@ const Dot = () =>
         css: "font-weight: 900;"
     });
 
-function Left() {
+function Left(monitor = 0) {
     // @ts-expect-error
     return Widget.Box({
         // margin_left: 15,
         class_name: "modules-left",
         hpack: "start",
         spacing: 8,
-        children: [AppLauncher(), OpenSideLeft(), MediaPlayer(), TaskBar()]
+        children: [OpenSideLeft(), Workspaces(monitor)]
     });
 }
 
@@ -511,17 +520,18 @@ function Center() {
         class_name: "modules-center",
         hpack: "center",
         spacing: 8,
-        children: [Workspaces()]
+        children: [Clock()]
     });
 }
 
 function Right() {
+    // @ts-expect-error
     return Widget.Box({
         // margin_right: 15,
         class_name: "modules-right",
         hpack: "end",
         spacing: 8,
-        children: [KeyboardLayout(), BatteryLabel(), SysTray(), Applets(), Clock(), OpenSideBar()]
+        children: [BatteryLabel(), TaskBar(), SysTray(), Applets(), OpenSideBar()]
     });
 }
 
@@ -533,7 +543,7 @@ export const Bar = async (monitor = 0) => {
         anchor: ["top", "left", "right"],
         exclusivity: "exclusive",
         child: Widget.CenterBox({
-            start_widget: Left(),
+            start_widget: Left(monitor),
             center_widget: Center(),
             end_widget: Right()
         })

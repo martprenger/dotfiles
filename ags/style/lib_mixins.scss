@@ -40,8 +40,7 @@ $rounding_large: 1.705rem;
 
 @mixin mainfont {
     // Other clean sans-serif
-    font-family: "Rubik", "Geist", "AR One Sans", "Reddit Sans", "Inter",
-        "Roboto", "Ubuntu", "Noto Sans", sans-serif;
+    font-family: "Rubik", "Geist", "AR One Sans", "Reddit Sans", "Inter", "Roboto", "Ubuntu", "Noto Sans", sans-serif;
     // font-weight: 500;
 }
 
@@ -53,14 +52,13 @@ $rounding_large: 1.705rem;
 
 @mixin icon-nerd {
     // Nerd Fonts
-    font-family: "SpaceMono NF", "SpaceMono Nerd Font", "JetBrains Mono NF",
-        "JetBrains Mono Nerd Font", monospace;
+    font-family: "SpaceMono NF", "SpaceMono Nerd Font", "JetBrains Mono NF", "JetBrains Mono Nerd Font", monospace;
 }
 
 @mixin techfont {
     // Monospace for sys info n stuff. Doesn't have to be a nerd font, but it's cool.
-    font-family: "JetBrains Mono NF", "JetBrains Mono Nerd Font",
-        "JetBrains Mono NL", "SpaceMono NF", "SpaceMono Nerd Font", monospace;
+    font-family: "JetBrains Mono NF", "JetBrains Mono Nerd Font", "JetBrains Mono NL", "SpaceMono NF",
+        "SpaceMono Nerd Font", monospace;
 }
 
 @mixin readingfont {

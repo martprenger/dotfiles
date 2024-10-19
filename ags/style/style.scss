@@ -120,8 +120,8 @@ separator {
     font-weight: bold;
     font-style: normal;
     font-size: 16px;
-    color: $onSurface;
-    background: $surfaceContainer;
+    color: $onBackground;
+    background: $background;
     padding-left: 4px;
     padding-right: 4px;
 }
@@ -143,17 +143,17 @@ separator {
 }
 
 .workspaces button label {
-    color: $onSurface;
+    color: $onBackground;
     font-weight: bold;
 }
 
 .workspaces button:hover {
-    color: $onSurface;
-    background-color: mix($onSurface, $surface, 0.85);
+    color: $onBackground;
+    background-color: $layer0Hover;
 }
 
 .workspaces button:not(.exists) label {
-    color: $onSurfaceVariant;
+    color: $onLayer0Inactive;
     opacity: 0.6;
 }
 
@@ -162,7 +162,7 @@ separator {
 }
 
 .workspaces button.active label {
-    color: $onSecondaryContainer;
+    color: $onLayer0Active;
 }
 
 /* -----------------------------------------------------
@@ -170,19 +170,19 @@ separator {
  * ----------------------------------------------------- */
 
 .clock {
-    background-color: $surfaceContainer;
+    background-color: $background;
     border-radius: 16px;
     padding: 2px 10px 0px 10px;
 }
 
 .time {
-    color: $onSurface;
+    color: $onBackground;
     font-size: 14px;
     font-feature-settings: "tnum";
 }
 
 .date {
-    color: $onSurface;
+    color: $onBackground;
     font-size: 14px;
     font-feature-settings: "tnum";
 }
@@ -192,7 +192,7 @@ separator {
  * ----------------------------------------------------- */
 
 .tray {
-    background-color: $surfaceContainer;
+    background-color: $background;
     border-radius: 16px;
     padding: 2px 10px 0px 10px;
 }
@@ -203,7 +203,7 @@ separator {
 }
 
 .tray image {
-    color: $onSurface;
+    color: $onBackground;
 }
 
 /* -----------------------------------------------------
@@ -215,8 +215,8 @@ separator {
 }
 
 .keyboard {
-    background-color: $surfaceContainer;
-    color: $onSurface;
+    background-color: $background;
+    color: $onBackground;
     padding: 0px 10px 0px 10px;
     border-radius: 100px;
 }
@@ -226,19 +226,19 @@ separator {
 }
 
 .battery {
-    background-color: $surfaceContainer;
+    background-color: $background;
     border-radius: 100px;
     padding: 2px 10px 2px 10px;
 }
 
 .battery label {
-    color: $onSurface;
+    color: $onBackground;
     font-size: 16px;
     font-weight: 300;
 }
 
 .battery .icon {
-    color: $onSurface;
+    color: $onBackground;
 }
 
 .battery.critical {
@@ -251,19 +251,19 @@ separator {
 }
 
 .bar_applets {
-    background-color: $surfaceContainer;
+    background-color: $background;
     border-radius: 100px;
     padding: 2px 10px 2px 10px;
     margin: 0px;
 }
 
 .bar_applets .icon {
-    color: $onSurface;
+    color: $onBackground;
     font-weight: 600;
 }
 
 .bar_applets button {
-    color: $onSurface;
+    color: $onBackground;
     margin: 0px;
     padding: 0px;
 }
@@ -308,8 +308,8 @@ separator {
 
 /* filled tonal */
 .filled_tonal_button {
-    background-color: $surfaceContainer;
-    color: $onSurface;
+    background-color: $background;
+    color: $onBackground;
     border-radius: 100px;
     min-width: 35px;
     padding: 0px;
@@ -319,18 +319,18 @@ separator {
 .filled_tonal_button .icon,
 .filled_tonal_button .awesome_icon,
 .filled_tonal_button image {
-    color: $onSecondaryContainer;
+    color: $onBackground;
     font-weight: 400;
     margin: 0px;
 }
 
 .filled_tonal_button:hover {
-    background-color: mix($secondaryContainer, $onSecondaryContainer, 0.05);
+    background-color: $layer0Hover;
     box-shadow: 00px 3px 3px -2px rgba(0, 0, 0, 0.2);
 }
 
 .filled_tonal_button:active {
-    background-image: radial-gradient(circle, mix($secondaryContainer, $onSecondaryContainer, 0.1) 10%, transparent 0%);
+    background-image: radial-gradient(circle, mix($layer0Hover, $onLayer0, 0.1) 10%, transparent 0%);
     /* background-color: mix($secondaryContainer, $onSecondaryContainer, 0.1); */
     box-shadow: none;
 }

@@ -182,7 +182,9 @@ separator {
     color: @outline;
 }
 
-button, combobox, entry {
+button,
+combobox,
+entry {
     border-radius: 100px;
     margin-left: 2px;
     margin-right: 2px;
@@ -194,9 +196,8 @@ button, combobox, entry {
     transition: all 0.2s ease-in-out;
 }
 
-
 switch {
-	border: 2px solid;
+    border: 2px solid;
     border-radius: 100px;
     border-color: @outline;
     background-color: @surfaceContainerHighest;
@@ -208,7 +209,7 @@ switch slider {
 }
 
 switch:disabled {
-	background-color: mix(@surfaceContainerHighest, transparent, 0.38);
+    background-color: mix(@surfaceContainerHighest, transparent, 0.38);
     border-color: mix(@onSurface, transparent, 0.38);
 }
 
@@ -225,7 +226,7 @@ switch:hover slider {
 }
 
 switch:checked {
-	background-color: @primary;
+    background-color: @primary;
     border-color: transparent;
 }
 
@@ -235,7 +236,7 @@ switch:checked slider {
 }
 
 switch:checked:disabled {
-	background-color: mix(@onSurface, transparent, 0.38);
+    background-color: mix(@onSurface, transparent, 0.38);
     border-color: transparent;
 }
 
@@ -244,7 +245,7 @@ switch:checked:disabled slider {
 }
 
 switch:checked:hover {
-	background-color: @primary;
+    background-color: @primary;
 }
 
 switch:checked:hover slider {

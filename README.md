@@ -44,19 +44,19 @@ python ~/dotfiles/hypr/scripts/wallpaper.py -R
 ## Screenshots
 
 - Sidebar
-  
+
 [![Screenshot](screenshots/sidebar.png "Sidebar")](screenshots/sidebar.png)[![Screenshot](screenshots/sidebar-system.png "Sidebar system info")](screenshots/sidebar-system.png)
 
 - Settings
-  
+
 [![Screenshot](screenshots/settings.png "Settings")](screenshots/settings.png)
 
 - Player
-  
+
 [![Screenshot](screenshots/player.png "Player")](screenshots/player.png)
 
 - Apps
-  
+
 [![Screenshot](screenshots/apps-menu.png "Apps")](screenshots/apps-menu.png)
 
 - Lock Screen (hyprlock)
@@ -64,7 +64,7 @@ python ~/dotfiles/hypr/scripts/wallpaper.py -R
 [![Screenshot](screenshots/hyprlock.png "Hyprlock")](screenshots/hyprlock.png)
 
 - Gtk theme:
-  
+
 [![Screenshot](screenshots/gtk-theme.png "Dark gtk theme")](screenshots/gtk-theme.png)
 [![Screenshot](screenshots/light-theme.png "Light gtk theme")](screenshots/light-theme.png)
 

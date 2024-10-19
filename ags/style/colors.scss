@@ -2,7 +2,7 @@ $rootTransparency: 0.22; // Transparency = 1 - opacity
 $transparency: 0.75;
 
 // Transparent versions
-/* @if $transparent == True {
+/* @if $transparent == True { */
 $background: transparentize($background, $rootTransparency);
 $surface: transparentize($surface, $transparency);
 $surfaceDim: transparentize($surfaceDim, $transparency);
@@ -15,7 +15,7 @@ $surfaceContainerHighest: transparentize($surfaceContainerHighest, $transparency
 $surfaceVariant: transparentize($surfaceVariant, $transparency);
 $inverseSurface: transparentize($inverseSurface, $transparency);
 $surfaceTint: transparentize($surfaceTint, $transparency);
-}  */
+/* }  */
 
 // Others
 $subtext: $outline;

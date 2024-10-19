@@ -132,8 +132,11 @@ function Workspaces(monitor = 0) {
     }
 
     function activeWorkspace() {
+        const barMonitor = JSON.parse(Utils.exec(`${App.configDir}/scripts/getWorkspaces.sh monitors`)).find(
+            (m) => m.id === monitor
+        );
         workspace_buttons.forEach((workspace, key) => {
-            workspace.toggleClassName("active", workspace.attribute.id == hyprland.active.workspace.id);
+            workspace.toggleClassName("active", workspace.attribute.id == barMonitor.activeWorkspace.id);
         });
     }
 
@@ -397,7 +400,7 @@ function OpenSideBar() {
     const button = Widget.Button({
         class_name: "filled_tonal_button",
         on_primary_click_release: () => {
-            App.toggleWindow("sidebar");
+            App.toggleWindow("sideright");
         },
         on_secondary_click_release: () => {
             OpenSettings();

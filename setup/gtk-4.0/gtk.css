@@ -182,7 +182,9 @@ separator {
     padding: 0px;
 }
 
-button, combobox, entry {
+button,
+combobox,
+entry {
     border-radius: 100px;
     margin-left: 2px;
     margin-right: 2px;
@@ -202,7 +204,8 @@ button:not(.flat).image-button {
     margin-bottom: 2px;
 }
 
-button:not(.flat).image-button label, button:not(.flat).image-button .icon, 
+button:not(.flat).image-button label,
+button:not(.flat).image-button .icon,
 button:not(.flat).image-button image {
     color: @onSecondaryContainer;
 }
@@ -227,7 +230,7 @@ scale slider {
 }
 
 switch {
-	border: 2px solid;
+    border: 2px solid;
     border-radius: 100px;
     border-color: @outline;
     background-color: @surfaceContainerHighest;
@@ -239,7 +242,7 @@ switch slider {
 }
 
 switch:disabled {
-	background-color: @surfaceContainerHighest;
+    background-color: @surfaceContainerHighest;
     border-color: @onSurface;
 }
 
@@ -264,7 +267,7 @@ switch:active slider {
 }
 
 switch:checked {
-	background-color: @primary;
+    background-color: @primary;
     border-color: @primary;
 }
 
@@ -273,7 +276,7 @@ switch:checked slider {
 }
 
 switch:checked:disabled {
-	background-color: @onSurface;
+    background-color: @onSurface;
     border-color: @onSurface;
 }
 
@@ -282,7 +285,7 @@ switch:checked:disabled slider {
 }
 
 switch:checked:hover {
-	background-color: @primary;
+    background-color: @primary;
     border-color: @primary;
 }
 
@@ -291,7 +294,7 @@ switch:checked:hover slider {
 }
 
 switch:checked:active {
-	background-color: @primary;
+    background-color: @primary;
     border-color: @primary;
 }
 

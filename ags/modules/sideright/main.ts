@@ -1,11 +1,11 @@
 import popupwindow from "../misc/popupwindow.js";
 import { SideBar } from "./sidebar.ts";
 
-export const WINDOW_NAME = "sidebar";
+export const WINDOW_NAME = "sideright";
 
 export const sideright = popupwindow({
     name: WINDOW_NAME,
-    class_name: "rightside",
+    class_name: "sideright",
     visible: false,
     keymode: "exclusive",
     child: SideBar(),

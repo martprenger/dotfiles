@@ -18,6 +18,15 @@ export function toggleAppsWindow() {
         shown.setValue("apps");
     }
 }
+
+export function toggleGeminiWindow() {
+    if (shown.value == "gemini" && sideleft.visible) App.closeWindow(WINDOW_NAME);
+    else {
+        App.openWindow(WINDOW_NAME);
+        shown.setValue("gemini");
+    }
+}
+
 export function toggleMediaWindow() {
     if (shown.value == "media" && sideleft.visible) App.closeWindow(WINDOW_NAME);
     else {

@@ -6,6 +6,7 @@ const { execAsync, exec } = Utils;
 import { searchItem } from "./searchitem.js";
 import { execAndClose, couldBeMath, launchCustomCommand } from "./miscfunctions.js";
 import GeminiService from "../../services/gemini.js";
+import { toggleGeminiWindow } from "../sideleft/main.ts";
 
 import userOptions from "../.configuration/user_options.js";
 
@@ -192,6 +193,7 @@ export const AiButton = ({ text }) =>
         onActivate: () => {
             GeminiService.send(text);
             App.closeWindow("overview");
-            App.openWindow("sideleft");
+            toggleGeminiWindow();
+            // App.openWindow("sideleft");
         }
     });

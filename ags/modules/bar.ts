@@ -114,9 +114,7 @@ function Workspaces(monitor = 0) {
     }
 
     function initializeWorkspaceButtons() {
-        const barMonitor = JSON.parse(Utils.exec(`${App.configDir}/scripts/getWorkspaces.sh monitors`)).find(
-            (m) => m.id === monitor
-        );
+        const barMonitor = hyprland.getMonitor(monitor);
         const workspaceMultiplyer = Math.floor((barMonitor.activeWorkspace.id - 1) / 10);
         for (let i = 1 + 10 * workspaceMultiplyer; i <= 10 + 10 * workspaceMultiplyer; i++) {
             workspace_buttons.set(i, createWorkspaceButton(i));

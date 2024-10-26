@@ -241,7 +241,8 @@ export function NotificationPopups(
         const replace = original?.attribute.id;
         let notification;
         if (!replace) {
-            notification = revealer(n, false, dismiss);
+            notifications;
+            notification = revealer(n, true, dismiss);
             notification.attribute.count = 1;
             list.pack_end(notification, false, false, 0);
         } else if (original) {

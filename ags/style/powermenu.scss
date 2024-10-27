@@ -1,0 +1,92 @@
+window#powermenu,
+window#verification {
+    background-color: transparent;
+}
+
+window#verification .verification {
+    @include large-rounding;
+    @include elevation-border;
+    @include elevation2;
+    padding: 0.341rem;
+    background-color: $background;
+    color: $onBackground;
+    min-width: 300px;
+    min-height: 100px;
+
+    .text-box {
+        .title {
+            font-size: 1.6em;
+        }
+
+        .desc {
+            color: $onBackground;
+            font-size: 1.1em;
+        }
+    }
+
+    .buttons {
+        button {
+            @include normal-rounding;
+            // @include elevation-border;
+            margin: 0.341rem;
+            background-color: $surfaceContainerLow;
+            font-size: 1.5em;
+            image {
+                min-width: 1.7em;
+                min-height: 1.7em;
+                font-size: 4em;
+            }
+
+            &:hover {
+                background-color: $surfaceVariant;
+                color: $onSurfaceVariant;
+            }
+
+            &:focus {
+                background-color: $surfaceVariant;
+                color: $onSurfaceVariant;
+            }
+
+            &:active {
+                background-color: $surfaceVariant;
+                color: $onSurfaceVariant;
+            }
+        }
+    }
+}
+
+window#powermenu .powermenu {
+    @include large-rounding;
+    @include elevation-border;
+    @include elevation2;
+    padding: 0.341rem;
+    background-color: $background;
+    color: $onBackground;
+
+    button {
+        @include normal-rounding;
+        // @include elevation-border;
+        margin: 0.341rem;
+        background-color: $surfaceContainerLow;
+        image {
+            min-width: 1.7em;
+            min-height: 1.7em;
+            font-size: 4em;
+        }
+
+        &:hover {
+            background-color: $surfaceVariant;
+            color: $onSurfaceVariant;
+        }
+
+        &:focus {
+            background-color: $surfaceVariant;
+            color: $onSurfaceVariant;
+        }
+
+        &:active {
+            background-color: $surfaceVariant;
+            color: $onSurfaceVariant;
+        }
+    }
+}

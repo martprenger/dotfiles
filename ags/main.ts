@@ -15,6 +15,8 @@ import { popups } from "modules/popups.ts";
 import { start_battery_warning_service } from "services/battery_warning.ts";
 import { audio_popup } from "./modules/audio.ts";
 import { calendar } from "modules/calendar.ts";
+import { Powermenu } from "modules/powermenu/PowerMenu.ts";
+import Verification from "modules/powermenu/Verification.ts";
 import { Popupcloser } from "modules/misc/popupwindow.ts";
 import { overview } from "modules/overview/main.ts";
 
@@ -37,6 +39,8 @@ const Windows = () => [
     forMonitors(Notifications),
     forMonitors(Popupcloser),
     overview,
+    Powermenu,
+    Verification(),
     cliphist,
     sideright,
     cheatsheet,

@@ -130,9 +130,7 @@ function Workspaces(monitor = 0) {
     }
 
     function activeWorkspace() {
-        const barMonitor = JSON.parse(Utils.exec(`${App.configDir}/scripts/getWorkspaces.sh monitors`)).find(
-            (m) => m.id === monitor
-        );
+        const barMonitor = hyprland.getMonitor(monitor);
         workspace_buttons.forEach((workspace, key) => {
             workspace.toggleClassName("active", workspace.attribute.id == barMonitor.activeWorkspace.id);
         });
@@ -532,7 +530,7 @@ function Right() {
         class_name: "modules-right",
         hpack: "end",
         spacing: 8,
-        children: [BatteryLabel(), TaskBar(), SysTray(), Applets(), OpenSideBar()]
+        children: [TaskBar(), SysTray(), BatteryLabel(), Applets(), OpenSideBar()]
     });
 }
 

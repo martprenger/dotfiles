@@ -24,33 +24,29 @@ window#verification .verification {
         }
     }
 
-    .buttons {
-        button {
-            @include normal-rounding;
-            // @include elevation-border;
-            margin: 0.341rem;
-            background-color: $surfaceContainerLow;
-            font-size: 1.5em;
-            image {
-                min-width: 1.7em;
-                min-height: 1.7em;
-                font-size: 4em;
-            }
+    button {
+        @include normal-rounding;
+        // @include elevation-border;
+        margin: 0.341rem;
+        image {
+            min-width: 1.7em;
+            min-height: 1.7em;
+            font-size: 4em;
+        }
 
-            &:hover {
-                background-color: $surfaceVariant;
-                color: $onSurfaceVariant;
-            }
+        &:hover {
+            background-color: $surfaceVariant;
+            color: $primary;
+        }
 
-            &:focus {
-                background-color: $surfaceVariant;
-                color: $onSurfaceVariant;
-            }
+        &:focus {
+            background-color: $surfaceVariant;
+            color: $primary;
+        }
 
-            &:active {
-                background-color: $surfaceVariant;
-                color: $onSurfaceVariant;
-            }
+        &:active {
+            background-color: $surfaceVariant;
+            color: $primary;
         }
     }
 }
@@ -67,7 +63,6 @@ window#powermenu .powermenu {
         @include normal-rounding;
         // @include elevation-border;
         margin: 0.341rem;
-        background-color: $surfaceContainerLow;
         image {
             min-width: 1.7em;
             min-height: 1.7em;
@@ -76,17 +71,17 @@ window#powermenu .powermenu {
 
         &:hover {
             background-color: $surfaceVariant;
-            color: $onSurfaceVariant;
+            color: $primary;
         }
 
         &:focus {
             background-color: $surfaceVariant;
-            color: $onSurfaceVariant;
+            color: $primary;
         }
 
         &:active {
             background-color: $surfaceVariant;
-            color: $onSurfaceVariant;
+            color: $primary;
         }
     }
 }

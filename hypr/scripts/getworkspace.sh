@@ -14,9 +14,7 @@ active_monitor_id=$(echo "$hyprctl_output" | jq '.[] | select(.focused == true) 
 
 # Assign values based on the screen name
 case "$active_monitor_id" in
-    1) value=0 ;;
-    0) value=1 ;;
-    2) value=2 ;;
+    0) value=0 ;;
     *) value=999 ;; # Default value for unknown screen names
 esac
 

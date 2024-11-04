@@ -1,4 +1,29 @@
 @import "../../../.cache/material/colors.scss";
+@mixin rounded-full {
+    border-radius: 9999px;
+}
+
+// Add horizontal space between all direct child elements.
+@mixin space-between-x($space) {
+    > * + * {
+        margin-left: $space;
+    }
+}
+
+// Add vertical space between all direct child elements.
+@mixin space-between-y($space) {
+    > * + * {
+        margin-top: $space;
+    }
+}
+
+@function hover-color($color) {
+    @if is-dark($color) {
+        @return scale-color($color, $lightness: 5%);
+    }
+
+    @return scale-color($color, $lightness: -5%);
+}
 
 @import "./colors.scss";
 @import "./lib_mixins.scss";
@@ -10,6 +35,7 @@
 @import "./sideleft.scss";
 @import "./cheatsheet.scss";
 @import "./powermenu.scss";
+@import "./center.scss";
 
 window.bar {
     /* background-color: @surface; */

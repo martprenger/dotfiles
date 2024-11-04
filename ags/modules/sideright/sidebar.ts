@@ -43,7 +43,7 @@ const Settings = () =>
 
 export function SideBar() {
     return Widget.Box({
-        css: "min-width: 400px;",
+        css: "min-width: 320px;",
         orientation: Gtk.Orientation.VERTICAL,
         class_name: "sideright_main_box",
         hexpand: true,

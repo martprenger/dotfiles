@@ -1,0 +1,56 @@
+.center_popupwindow {
+    background: transparent;
+}
+.center {
+    border-radius: 12px;
+    margin: 6px;
+    background: $background;
+
+    .notifications-column {
+        min-width: 30em;
+        min-height: 30em;
+        margin: 0.682em;
+
+        .header {
+            margin-bottom: 0.682em;
+            > label {
+                margin-left: 0.341em;
+            }
+
+            button {
+                @include normal-rounding;
+                // @include elevation-border;
+                margin: 0.341rem;
+
+                &:hover {
+                    background-color: $surfaceVariant;
+                }
+
+                &:focus {
+                    background-color: $surfaceVariant;
+                }
+
+                &:active {
+                    background-color: $surfaceVariant;
+                }
+            }
+        }
+
+        .notification-list {
+        }
+
+        .notification {
+            //add tis
+        }
+
+        .placeholder {
+            image {
+                font-size: 7em;
+            }
+
+            label {
+                font-size: 1.2em;
+            }
+        }
+    }
+}

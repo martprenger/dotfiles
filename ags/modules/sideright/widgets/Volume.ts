@@ -108,6 +108,7 @@ const SinkItem = (stream: Stream) =>
 const SettingsButton = () =>
     Widget.Button({
         on_clicked: () => {
+            App.closeWindow("sideright"); // Close the sidebar
             if (dependencies("pavucontrol")) sh("pavucontrol");
         },
         hexpand: true,

@@ -16,7 +16,7 @@ import Icon from "types/widgets/icon.js";
 import { FileEnumerator, FileInfo } from "types/@girs/gio-2.0/gio-2.0.cjs";
 import { MaterialIcon } from "icons.js";
 import config from "services/configuration.ts";
-import { toggleAppsWindow, toggleMediaWindow } from "./sideleft/main.js";
+import { toggleAppsWindow, toggleMediaWindow, toggleWeatherWindow, toggleGeminiWindow } from "./sideleft/main.js";
 import { Variable as VariableType } from "types/variable";
 
 import Gtk from "gi://Gtk?version=3.0";
@@ -179,7 +179,7 @@ function Clock() {
             ]
         }),
         on_clicked: (self) => {
-            App.toggleWindow("calendar");
+            App.toggleWindow("center");
         }
     });
 }
@@ -226,16 +226,15 @@ function getClosestBatteryLevel(level: number, charging: boolean = false) {
 
 function BatteryLabel() {
     return Widget.Box({
-        class_name: "battery",
         visible: false,
         children: [
             MaterialIcon(getClosestBatteryLevel(battery.percent, battery.charging), "16px"),
             Widget.Label({
-                label: battery.bind("percent").as((p) => `${p > 0 ? p : 0}%`),
+                label: battery.bind("percent").as((p) => `Battery: ${p > 0 ? Math.round(p) : 0}%`),
                 visible: config.bind("config").as((config) => config.show_battery_percent)
             })
         ],
-        tooltip_text: battery.bind("percent").as((p) => `Battery: ${p > 0 ? p : 0}%`),
+        tooltip_text: battery.bind("percent").as((p) => `Battery: ${p > 0 ? Math.round(p) : 0}%`),
         setup: (self) => {
             self.hook(battery, () => {
                 self.children[0].label = getClosestBatteryLevel(battery.percent, battery.charging);
@@ -468,7 +467,7 @@ function volumeIndicator() {
         on_scroll_down: () => (audio.speaker.volume -= 0.01),
         class_name: "volume_box",
         child: Widget.Button({
-            on_primary_click_release: () => App.toggleWindow("audio"),
+            on_primary_click_release: () => App.toggleWindow("sideright"),
             on_middle_click_release: () => Utils.execAsync("pavucontrol").catch(print),
             on_secondary_click_release: () => (audio.speaker.is_muted = !audio.speaker.is_muted),
             child: MaterialIcon("volume_off", "16px").hook(audio.speaker, (self) => {
@@ -492,7 +491,7 @@ const Applets = () =>
     Widget.Box({
         class_name: "bar_applets",
         spacing: 5,
-        children: [volumeIndicator(), Bluetooth(), Wifi()]
+        children: [BatteryLabel(), volumeIndicator(), Bluetooth(), Wifi()]
     });
 
 const Dot = () =>
@@ -530,7 +529,7 @@ function Right() {
         class_name: "modules-right",
         hpack: "end",
         spacing: 8,
-        children: [TaskBar(), SysTray(), BatteryLabel(), Applets(), OpenSideBar()]
+        children: [TaskBar(), SysTray(), Applets(), OpenSideBar()]
     });
 }
 

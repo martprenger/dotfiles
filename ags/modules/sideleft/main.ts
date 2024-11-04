@@ -35,8 +35,18 @@ export function toggleMediaWindow() {
     }
 }
 
+export function toggleWeatherWindow() {
+    if (shown.value == "weather" && sideleft.visible) App.closeWindow(WINDOW_NAME);
+    else {
+        App.openWindow(WINDOW_NAME);
+        shown.setValue("weather");
+    }
+}
+
 globalThis.toggleMediaWindow = toggleMediaWindow;
 globalThis.toggleAppsWindow = toggleAppsWindow;
+globalThis.toggleWeatherWindow = toggleWeatherWindow;
+globalThis.toggleGeminiWindow = toggleWeatherWindow;
 
 type ButtonType = {
     page: string;

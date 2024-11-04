@@ -14,7 +14,7 @@ import Window from "types/widgets/window";
 import { popups } from "modules/popups.ts";
 import { start_battery_warning_service } from "services/battery_warning.ts";
 import { audio_popup } from "./modules/audio.ts";
-import { calendar } from "modules/calendar.ts";
+import { center } from "modules/center/main.ts";
 import { Powermenu } from "modules/powermenu/PowerMenu.ts";
 import Verification from "modules/powermenu/Verification.ts";
 import { Popupcloser } from "modules/misc/popupwindow.ts";
@@ -45,9 +45,9 @@ const Windows = () => [
     sideright,
     cheatsheet,
     sideleft,
+    center,
     forMonitors(popups),
-    audio_popup,
-    calendar
+    audio_popup
 ];
 
 App.config({

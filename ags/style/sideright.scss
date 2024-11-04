@@ -3,28 +3,154 @@
  * ----------------------------------------------------- */
 
 .sideright_main_box {
-    background-color: $background;
+    @include space-between-y(1.5em);
+    padding: 1em;
+    min-width: 24em;
+    background: $background;
     border-radius: 12px;
-    padding: 12px;
     margin: 6px;
-}
 
-/* -----------------------------------------------------
- * Header
- * ----------------------------------------------------- */
+    label {
+        font-weight: bold;
+        font-size: 14px;
+    }
 
-.header-battery {
-    background: $surfaceVariant;
-    border-radius: 18px;
-    padding: 8px;
-    padding-left: 12px;
-    padding-right: 12px;
-}
+    .button-row {
+        @include space-between-x(0.75em);
+    }
 
-.header {
-    button {
-        background: $surfaceVariant;
-        border-radius: 18px;
-        margin-left: 4px;
+    .button {
+        @include rounded-full;
+        background-color: $surfaceContainerHighest;
+        &:hover {
+            background-color: hover-color($surfaceContainerHigh);
+        }
+
+        &:active {
+            background-color: $primary;
+
+            * {
+                color: $background;
+            }
+        }
+    }
+
+    .header {
+        margin-bottom: 0.625em;
+    }
+
+    .header-battery {
+        @include rounded-full;
+        background-color: $surfaceContainerHighest;
+        padding: 0.625em;
+    }
+
+    slider {
+        background-color: $onBackground;
+        min-height: 5px;
+        min-width: 5px;
+        margin: -0.5em;
+    }
+
+    trough {
+        background-color: $secondaryContainer;
+        min-height: 10px;
+        margin-right: 4px;
+    }
+
+    highlight {
+        border-radius: 100px 0px 0px 100px;
+        background-color: $primary;
+    }
+
+    .toggle-button {
+        @include rounded-full;
+        font-weight: bold;
+        margin: 0.5em;
+        background: $surfaceContainerHighest;
+
+        image {
+            font-size: 1.3em;
+        }
+
+        label {
+            margin-left: 0.3em;
+        }
+
+        button {
+            &:first-child {
+                padding: 1.2em;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+
+            &:last-child {
+                padding: 0.5em;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+            }
+        }
+
+        &.active {
+            background-color: $primary;
+
+            label,
+            image {
+                color: $onPrimary;
+            }
+        }
+    }
+
+    .simple-toggle {
+        @include rounded-full;
+        font-weight: bold;
+        padding: 1.2em;
+        margin: 0.5em;
+        background: $surfaceContainerHighest;
+
+        label {
+            margin-left: 0.3em;
+        }
+
+        image {
+            font-size: 1.3em;
+        }
+
+        &.active {
+            background-color: $primary;
+
+            label,
+            image {
+                color: $onPrimary;
+            }
+        }
+    }
+
+    .menu {
+        .icon {
+            margin: 0 0.5em;
+            margin-left: 0.2em;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        separator {
+            margin: 0.5em;
+            background-color: $outline;
+        }
+
+        button {
+            padding: 0.5em;
+
+            image:first-child {
+                margin-right: 0.5em;
+            }
+        }
+    }
+
+    .sliders-box .menu {
+        margin: 0.5px 0px;
     }
 }

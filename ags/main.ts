@@ -19,6 +19,7 @@ import { Powermenu } from "modules/powermenu/PowerMenu.ts";
 import Verification from "modules/powermenu/Verification.ts";
 import { Popupcloser } from "modules/misc/popupwindow.ts";
 import { overview } from "modules/overview/main.ts";
+import { styleTester } from "modules/styleTester.ts";
 
 import Gtk from "gi://Gtk?version=3.0";
 const GLib = imports.gi.GLib;
@@ -47,7 +48,8 @@ const Windows = () => [
     sideleft,
     center,
     forMonitors(popups),
-    audio_popup
+    audio_popup,
+    styleTester
 ];
 
 App.config({

@@ -6,6 +6,61 @@
     margin: 6px;
     background: $background;
 
+    .date-column {
+        min-width: 20em;
+        calendar {
+            background-color: transparent;
+            border: 0 solid transparent;
+            padding-top: 0.5em;
+
+            > * {
+                padding: 0.3em;
+            }
+
+            &:selected {
+                border-radius: 0.5em;
+                background-color: $primary;
+                color: $background;
+            }
+
+            &:active {
+                background-color: $primary;
+                color: $background;
+            }
+        }
+
+        .events {
+            /* background-color: css("alpha(currentColor, 0.04)"); */
+            padding: 0.3em;
+            border-radius: 0.6em;
+
+            /* & > * {
+            @extend .verticalSpacer;
+        } */
+
+            & > *:first-child {
+                margin-top: 0em;
+            }
+
+            .event {
+                /* border-color: css("currentColor"); */
+                border-left-width: 0.2em;
+                border-left-style: solid;
+                padding-left: 0.5em;
+                /* background-color: css("alpha(currentColor, 0.05)"); */
+                border-radius: 0.5em;
+
+                label {
+                    /* color: css("@theme_fg_color"); */
+                }
+
+                .summary {
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+
     .notifications-column {
         min-width: 30em;
         min-height: 30em;

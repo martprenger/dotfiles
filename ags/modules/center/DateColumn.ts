@@ -82,9 +82,9 @@ export default () =>
         class_name: "date-column vertical",
         children: [
             Widget.Box({
-                class_name: "calendar",
                 children: [
                     Widget.Calendar({
+                        class_name: "calendar",
                         hexpand: true,
                         hpack: "center"
                     })

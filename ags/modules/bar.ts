@@ -408,7 +408,7 @@ function OpenSideBar() {
 
 const focus = ({ address }) => Utils.execAsync(`hyprctl dispatch focuswindow address:${address}`).catch(print);
 
-function TaskBar() {
+function TaskBar(monitor = 0) {
     if (!config.config.show_taskbar) {
         return undefined;
     }
@@ -419,8 +419,7 @@ function TaskBar() {
         globalWidgets = globalWidgets.filter((widget) => currentClientIds.includes(widget.attribute.pid));
 
         clients.forEach((client) => {
-            if (client.class === "Alacritty") return;
-
+            if (client.monitor != monitor) return;
             let widget = globalWidgets.find((w) => w.attribute.pid === client.pid);
             if (widget) {
                 widget.tooltip_markup = client.title;
@@ -522,14 +521,14 @@ function Center() {
     });
 }
 
-function Right() {
+function Right(monitor = 0) {
     // @ts-expect-error
     return Widget.Box({
         // margin_right: 15,
         class_name: "modules-right",
         hpack: "end",
         spacing: 8,
-        children: [TaskBar(), SysTray(), Applets(), OpenSideBar()]
+        children: [TaskBar(monitor), SysTray(), Applets(), OpenSideBar()]
     });
 }
 
@@ -543,7 +542,7 @@ export const Bar = async (monitor = 0) => {
         child: Widget.CenterBox({
             start_widget: Left(monitor),
             center_widget: Center(),
-            end_widget: Right()
+            end_widget: Right(monitor)
         })
     });
 };

@@ -37,7 +37,9 @@ class CalendarServer extends Service {
 
         const promises = this._sources.flatMap((source) => {
             if (source.has_extension("Calendar")) {
-                return [ECal.ClientSourceType.EVENTS, ECal.ClientSourceType.TASKS, ECal.ClientSourceType.MEMOS].map(
+                // return [ECal.ClientSourceType.EVENTS, ECal.ClientSourceType.TASKS, ECal.ClientSourceType.MEMOS].map(
+                // removed tasks and memos
+                return [ECal.ClientSourceType.EVENTS].map(
                     (type) =>
                         new Promise((resolve, _) => {
                             ECal.Client.connect(source, type, 20, null, (_, res) => {

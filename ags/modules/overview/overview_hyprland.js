@@ -89,7 +89,6 @@ export default (overviewMonitor = 0) => {
 
         if (c.length == 0) c = initialClass;
         const iconName = substitute(c);
-        console.log(iconName);
         const appIcon = iconExists(iconName)
             ? Widget.Icon({
                   icon: iconName,

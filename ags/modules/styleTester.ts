@@ -1,81 +1,27 @@
-import { PI_4 } from "types/@girs/glib-2.0/glib-2.0.d.cts";
 import popupwindow from "./misc/popupwindow.ts";
 
 const WINDOW_NAME: string = "styleTester";
 
 const colors = [
-    "primary_paletteKeyColor",
-    "secondary_paletteKeyColor",
-    "tertiary_paletteKeyColor",
-    "neutral_paletteKeyColor",
-    "neutral_variant_paletteKeyColor",
-    "background",
-    "onBackground",
-    "foreground",
-    "surface",
-    "surfaceDim",
-    "surfaceBright",
-    "surfaceContainerLowest",
-    "surfaceContainerLow",
-    "surfaceContainer",
-    "surfaceContainerHigh",
-    "surfaceContainerHighest",
-    "onSurface",
-    "surfaceVariant",
-    "onSurfaceVariant",
-    "inverseSurface",
-    "inverseOnSurface",
-    "outline",
-    "outlineVariant",
-    "shadow",
-    "scrim",
-    "surfaceTint",
-    "primary",
-    "onPrimary",
-    "primaryContainer",
-    "onPrimaryContainer",
-    "inversePrimary",
-    "secondary",
-    "onSecondary",
-    "secondaryContainer",
-    "onSecondaryContainer",
-    "tertiary",
-    "onTertiary",
-    "tertiaryContainer",
-    "onTertiaryContainer",
-    "error",
-    "onError",
-    "errorContainer",
-    "onErrorContainer",
-    "primaryFixed",
-    "primaryFixedDim",
-    "onPrimaryFixed",
-    "onPrimaryFixedVariant",
-    "secondaryFixed",
-    "secondaryFixedDim",
-    "onSecondaryFixed",
-    "onSecondaryFixedVariant",
-    "tertiaryFixed",
-    "tertiaryFixedDim",
-    "onTertiaryFixed",
-    "onTertiaryFixedVariant"
+    ["background", "surface", "surfaceDim", "surfaceBright"],
+    ["surfaceContainerLowest", "surfaceContainerLow", "surfaceContainer"],
+    ["surfaceContainerHigh", "surfaceContainerHighest"],
+    ["surfaceVariant", "inverseSurface", "surfaceTint"],
+    ["layer0", "layer0Hover", "layer0Active"],
+    ["layer1", "layer1Hover", "layer1Active"],
+    ["layer2", "layer2Hover", "layer2Active"],
+    ["layer3", "layer3Hover", "layer3Active"]
 ];
 
-// Split colors into chunks of 20
-const chunkedColors = [];
-for (let i = 0; i < colors.length; i += 4) {
-    chunkedColors.push(colors.slice(i, i + 4));
-}
-
 // Create columns
-const columns = chunkedColors.map((colorChunk) =>
+const columns = colors.map((colorChunk) =>
     Widget.Box({
         css: `min-width: 200px;`,
         class_name: "column",
         vertical: false,
         children: colorChunk.map((color) =>
             Widget.Box({
-                class_name: `color_${color}`,
+                class_name: `color_${color} color_box`,
                 child: Widget.Label({ label: color })
             })
         )

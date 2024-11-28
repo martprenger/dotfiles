@@ -1,0 +1,31 @@
+.material-button {
+    border-radius: 24px;
+    padding: 8px 22px;
+    &:focus {
+        box-shadow: 0 0 0 1px $inverseSurface;
+    }
+    &.filled {
+        background: $primary;
+        color: $onPrimary;
+        &:hover,
+        &:focus {
+            background: $primary;
+        }
+        &:active {
+            background: $onPrimaryContainer;
+        }
+    }
+
+    &.outlined {
+        background: none;
+        color: $onSurface;
+        border: 1px solid $outline;
+        &:hover,
+        &:focus {
+            background: $inverseSurface;
+        }
+        &:active {
+            background: $inverseSurface;
+        }
+    }
+}

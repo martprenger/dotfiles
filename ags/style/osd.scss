@@ -1,0 +1,28 @@
+.OSD,
+.osd {
+    background: transparent;
+    icon {
+        font-size: 16px;
+        margin-left: 16px;
+    }
+}
+
+.indicator .progress {
+    padding: 0px;
+
+    border-radius: 100px;
+    margin-bottom: 20px;
+    background-color: $background;
+
+    .fill {
+        transition: background-color 3s ease-in-out;
+        border-radius: 100px;
+        background-color: $primary;
+        color: $onPrimary;
+        transition: min-width 0.1s;
+        &.muted {
+            background-color: $surfaceContainerHighest;
+            color: $onSurface;
+        }
+    }
+}

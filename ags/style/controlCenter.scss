@@ -1,8 +1,9 @@
 .control-center__container {
-    border-radius: 40px;
+    border-radius: 30px;
     min-width: 450px;
     min-height: 650px;
-    background: $surface;
+    background: $background;
+    color: $onBackground;
 }
 
 .control-center__page {
@@ -28,18 +29,18 @@
 }
 
 .control-center__page_header_button {
-    background: $inverseSurface;
+    background: $surface;
     color: $onSurface;
     min-width: 38px;
     min-height: 38px;
     border-radius: 100px;
     &:hover {
-        background-color: $inverseSurface;
+        background-color: $surface;
     }
 }
 
 .control-center__page_item-header {
-    background: $inverseSurface;
+    background: $surface;
     &.active {
         background: $primaryContainer;
         color: $onPrimaryContainer;
@@ -55,7 +56,7 @@
     }
 }
 .control-center__page_item {
-    background: $inverseSurface;
+    background: $surface;
     &:first-child {
         border-top-left-radius: 18px;
         border-top-right-radius: 18px;
@@ -73,18 +74,16 @@
         margin-left: 16px;
     }
     &:hover {
-        background-color: $inverseSurface;
+        background-color: $surface;
     }
 }
 
 .control-center__button {
-    background-color: $inverseSurface;
+    background-color: $surfaceContainerHighest;
     color: $onSurface;
     padding: 0 24px 0 30px;
     border-radius: 100px;
-    > * {
-        border-radius: 30px;
-    }
+
     min-height: 64px;
     transition:
         background 0.2s ease-in-out,
@@ -94,15 +93,15 @@
         background: $primary;
         color: $onPrimary;
         &:hover {
-            background: $primary, $inverseSurface;
+            background: $primary;
         }
         &:active {
-            background: $onPrimaryContainer, $inverseSurface;
+            background: $onPrimaryContainer;
         }
     }
 
     &:hover {
-        background-color: $inverseSurface;
+        background-color: $surfaceContainerHigh;
     }
     font-size: 14px;
     font-weight: 600;
@@ -114,17 +113,21 @@
             background: $errorContainer;
             color: $onErrorContainer;
             &:hover {
-                background: $errorContainer, $inverseSurface;
+                background: $errorContainer;
             }
             &:active {
-                background: $errorContainer, $inverseSurface;
+                background: $errorContainer;
             }
         }
+    }
+
+    > * {
+        border-radius: 30px;
     }
 }
 
 .control-center__dropdown-menu {
-    background: $inverseSurface;
+    background: $surface;
     border-radius: 32px;
     padding: 24px;
 }
@@ -166,7 +169,7 @@
             background-color 0.3s ease-in-out,
             color 0.3s ease-in-out;
         border-radius: 100px;
-        background-color: $inverseSurface;
+        background-color: $surface;
         min-height: 44px;
 
         highlight {
@@ -196,7 +199,7 @@
 .muted {
     .control-center__volume-slider {
         highlight {
-            background-color: $inverseSurface;
+            background-color: $surface;
         }
     }
     .control-center__slider-icon {
@@ -214,25 +217,37 @@
 .control-center__powermenu-button {
     min-width: 42px;
     min-height: 42px;
-    background: $inverseSurface;
+    background: $surfaceContainerHighest;
     color: $onSurface;
     border-radius: 100px;
     transition: 0.15s all ease-in-out;
 }
 
-.control-center__settings-button {
-    &:hover {
-        background: $tertiary;
-        color: $onTertiary;
-    }
+.control-center__header {
+    margin-bottom: 6px;
 }
-.control-center__powermenu-button {
+
+.control-center__settings-button {
+    background: $surfaceContainerHighest;
+    color: $onSurface;
     &:hover {
         background: $secondary;
         color: $onSecondary;
     }
 }
 
-.control-center__footer {
-    margin: 10px 8px;
+.control-center__powermenu-button {
+    background: $surfaceContainerHighest;
+    color: $onSurface;
+    &:hover {
+        background: $secondary;
+        color: $onSecondary;
+    }
+}
+
+.control-center__battery {
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 100px;
+    background: $surfaceContainerHighest;
 }

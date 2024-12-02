@@ -2,3 +2,15 @@
 @import "./common.scss";
 @import "./components.scss";
 @import "./bar.scss";
+@import "./controlCenter.scss";
+@import "./player.scss";
+@import "./notification.scss";
+@import "./notificationsPopup.scss";
+@import "./notificationsWindow.scss";
+@import "./scrim.scss";
+@import "./osd.scss";
+@import "./popupMenu.scss";
+
+body {
+    font-family: "Hack Nerd Font", sans-serif;
+}

@@ -1,5 +1,6 @@
+import { bind } from "astal";
 import { App, Astal, Gtk, Gdk } from "astal/gtk3";
-import Workspaces from "./items/Workspaces";
+import { isDraggingWorkspace, Workspaces } from "./items/Workspaces";
 import { spacing } from "../../lib/variables";
 import Clock from "./items/Clock";
 import Battery from "./items/Battery";
@@ -10,10 +11,10 @@ import KeyboardLayout from "./items/KeyboardLayout";
 import Weather from "./items/Weather";
 import RecordingIndicator from "./items/RecordingIndicator";
 
-const Start = ({ gdkmonitor }: { gdkmonitor: Gdk.Monitor }) => {
+const Start = ({ monitor }: { monitor: Gdk.Monitor }) => {
   return (
     <box halign={Gtk.Align.START} spacing={spacing}>
-      <Workspaces gdkmonitor={gdkmonitor} />
+      <Workspaces gdkmonitor={monitor} />
     </box>
   );
 };
@@ -24,9 +25,6 @@ const Center = () => {
       <box halign={Gtk.Align.CENTER} spacing={spacing}>
         <Clock />
       </box>
-      <box halign={Gtk.Align.END} spacing={spacing}>
-        <Weather />
-      </box>
     </box>
   );
 };
@@ -35,12 +33,13 @@ const End = () => {
   return (
     <box halign={Gtk.Align.END} spacing={spacing}>
       <RecordingIndicator />
-      <Battery />
+      <Weather />
       <box className="bar__rounded-box" spacing={spacing / 2}>
         <Notifications />
         <Tray />
         <SystemIndicators />
       </box>
+      <Battery />
     </box>
   );
 };
@@ -59,9 +58,12 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
         Astal.WindowAnchor.RIGHT
       }
       application={App}
+      keymode={bind(isDraggingWorkspace).as((dragging) =>
+        dragging ? Astal.Keymode.ON_DEMAND : Astal.Keymode.NONE,
+      )}
     >
       <centerbox className="bar" valign={Gtk.Align.CENTER}>
-        <Start gdkmonitor={gdkmonitor} />
+        <Start monitor={gdkmonitor} />
         <Center />
         <End />
       </centerbox>

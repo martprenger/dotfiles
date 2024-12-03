@@ -6,6 +6,8 @@ import Notifications from "./widget/Notifications";
 import NotificationsPopup from "./widget/Notifications/NotificationsPopup";
 import Scrim from "./widget/Scrims/Scrim";
 import OSD from "./widget/OSD";
+import Powermenu from "./widget/Powermenu";
+import Verification from "./widget/Powermenu/Verification";
 import {
   monitorColorsChange,
   monitorDashboard,
@@ -21,6 +23,8 @@ function main() {
   Notifications();
   Scrim({ scrimType: "opaque", className: "scrim" });
   Scrim({ scrimType: "transparent", className: "transparent-scrim" });
+  Verification();
+  Powermenu();
 
   for (const gdkmonitor of App.get_monitors()) {
     bars.set(gdkmonitor, Bar(gdkmonitor));

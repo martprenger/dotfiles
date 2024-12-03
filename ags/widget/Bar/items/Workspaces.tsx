@@ -27,44 +27,52 @@ export const WorkspaceButton = ({
       hyprland.dispatch("workspace", workspace.id.toString());
     }
   }
-  // TODO: add dragging visuals (lower opacity when dragging, perhaps figure out how the dnd tooltip works)
-  return (
-    <button
-      className={active.as((activeId) =>
-        activeId == workspace.id
-          ? existing.get().includes(workspace.id)
-            ? "workspace-button active exists"
-            : "workspace-button active"
-          : existing.get().includes(workspace.id)
-            ? "workspace-button exists"
-            : "workspace-button",
-      )}
-      onClickRelease={clickHandler}
-      name={`workspace-${workspace.id}`}
-      setup={(self) => {
-        self.drag_source_set(
-          DRAG_DATA.modifier,
-          DRAG_DATA.entries,
-          DRAG_DATA.action,
-        );
-      }}
-      onDragDataGet={(
-        _self,
-        _ctx: Gdk.DragContext,
-        data: Gtk.SelectionData,
-      ) => {
-        data.set(DRAG_DATA.atom, 8, new Uint8Array([workspace.id]));
-      }}
-      onDragBegin={() => {
-        isDraggingWorkspace.set(true);
-      }}
-      onDragEnd={() => {
-        isDraggingWorkspace.set(false);
-      }}
-    >
-      <label label={workspace.id.toString()} valign={Gtk.Align.CENTER} />
-    </button>
-  );
+
+  const classname = Variable.derive([active, existing],
+    (active, existing) => {
+      const classList = ["workspace-button"];
+      if (active == workspace.id) {
+        classList.push("active");
+      }
+      if (existing.includes(workspace.id)) {
+        classList.push("exists");
+      }
+
+      return classList.join(" ");
+    }
+  )();
+
+
+    // TODO: add dragging visuals (lower opacity when dragging, perhaps figure out how the dnd tooltip works)
+    return(
+      <button
+        className={classname}
+        onClickRelease={clickHandler}
+        name={`workspace-${workspace.id}`}
+        setup={(self) => {
+          self.drag_source_set(
+            DRAG_DATA.modifier,
+            DRAG_DATA.entries,
+            DRAG_DATA.action,
+          );
+        }}
+        onDragDataGet={(
+          _self,
+          _ctx: Gdk.DragContext,
+          data: Gtk.SelectionData,
+        ) => {
+          data.set(DRAG_DATA.atom, 8, new Uint8Array([workspace.id]));
+        }}
+        onDragBegin={() => {
+          isDraggingWorkspace.set(true);
+        }}
+        onDragEnd={() => {
+          isDraggingWorkspace.set(false);
+        }}
+      >
+        <label label={workspace.id.toString()} valign={Gtk.Align.CENTER} />
+      </button>,
+    );
 };
 
 export const Workspaces = ({ gdkmonitor }: { gdkmonitor: Gdk.Monitor }) => {
@@ -184,11 +192,11 @@ export const Workspaces = ({ gdkmonitor }: { gdkmonitor: Gdk.Monitor }) => {
     existingWorkspaces.set(
       hyprland.workspaces.map((workspace) => workspace.id),
     );
-    const tempW = existingWorkspaces.get();
-    console.log("test");
-    for (var i = 0; i < tempW.length; i++) {
-      console.log(tempW[i]);
-    }
+    // const tempW = existingWorkspaces.get();
+    // console.log("test");
+    // for (var i = 0; i < tempW.length; i++) {
+    //   console.log(tempW[i]);
+    // }
   }
 
   buttons.hook(hyprland, "event", (_h, event: string, args: string) => {

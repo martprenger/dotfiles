@@ -8,23 +8,31 @@ import Scrim from "./widget/Scrims/Scrim";
 import OSD from "./widget/OSD";
 import Powermenu from "./widget/Powermenu";
 import Verification from "./widget/Powermenu/Verification";
+import AppLauncher from "./widget/AppLauncher";
 import {
   monitorColorsChange,
   monitorDashboard,
   toggleWindow,
 } from "./lib/utils";
+import SinkMenu from "./widget/Popups/menus/Sink";
+import MixerMenu from "./widget/Popups/menus/Mixer";
+import Dashboard from "./widget/Dashboard";
 
 function main() {
   const bars = new Map<Gdk.Monitor, Gtk.Widget>();
   const notificationsPopups = new Map<Gdk.Monitor, Gtk.Widget>();
   const osds = new Map<Gdk.Monitor, Gtk.Widget>();
 
-  ControlCenter();
   Notifications();
+  ControlCenter();
+  AppLauncher();
   Scrim({ scrimType: "opaque", className: "scrim" });
   Scrim({ scrimType: "transparent", className: "transparent-scrim" });
+  SinkMenu();
+  MixerMenu();
   Verification();
   Powermenu();
+  Dashboard();
 
   for (const gdkmonitor of App.get_monitors()) {
     bars.set(gdkmonitor, Bar(gdkmonitor));

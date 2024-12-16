@@ -1,10 +1,12 @@
+@use "../../../.cache/material/colors" as material-colors;
+
 .PopupMenu {
     background: none;
 }
 
 .popup-menu {
     min-height: 400px;
-    background: $background;
+    background: material-colors.$background;
     border-radius: 40px;
     padding: 0 20px;
     &.sink {
@@ -35,7 +37,7 @@
 .popup-menu__item {
     background: none;
     padding: 18px;
-    color: $onBackground;
+    color: material-colors.$onBackground;
     border-radius: 100px;
     transition: background 0.1s ease;
     label {
@@ -46,7 +48,7 @@
         margin-right: 16px;
     }
     &:hover {
-        background-color: $surfaceContainerHighest;
+        background-color: material-colors.$surfaceContainerHighest;
     }
     &:last-child {
         margin-bottom: 20px;
@@ -75,13 +77,13 @@
     trough {
         margin-top: 6px;
         border-radius: 100px;
-        background-color: $surfaceContainerHighest;
+        background-color: material-colors.$surfaceContainerHighest;
         min-height: 14px;
 
         highlight,
         progress {
             border-radius: 100px;
-            background-color: $primary;
+            background-color: material-colors.$primary;
             border-radius: 100px;
         }
 
@@ -96,14 +98,14 @@
 }
 
 .mixer__value {
-    background: $surfaceContainerHighest;
+    background: material-colors.$surfaceContainerHighest;
     border-radius: 100px;
     min-width: 56px;
 }
 
 .bluetooth__percentage {
-    background: $primaryContainer;
-    color: $onPrimaryContainer;
+    background: material-colors.$primaryContainer;
+    color: material-colors.$onPrimaryContainer;
     border-radius: 100px;
     padding: 0px 12px;
     margin-left: 12px;

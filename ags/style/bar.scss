@@ -1,3 +1,5 @@
+@use "../../../.cache/material/colors" as material-colors;
+
 @use "sass:color";
 
 .bar {
@@ -9,8 +11,8 @@
         padding-left: 16px;
         padding-right: 16px;
         border-radius: 24px;
-        background: $background;
-        color: $onBackground;
+        background: material-colors.$background;
+        color: material-colors.$onBackground;
         border: none;
         outline: none;
 
@@ -18,25 +20,25 @@
 
         &.bar__button {
             &:hover {
-                background: $inverseSurface;
+                background: material-colors.$inverseSurface;
             }
             &:active {
-                background: $inverseSurface;
+                background: material-colors.$inverseSurface;
             }
             &.active {
-                background: $primary;
-                color: $onPrimary;
+                background: material-colors.$primary;
+                color: material-colors.$onPrimary;
             }
             &.bar__recording-indicator {
                 padding: 0;
                 /* min-height: 42px;
                 min-width: 42px; */
-                background: $errorContainer;
-                color: $onErrorContainer;
+                background: material-colors.$errorContainer;
+                color: material-colors.$onErrorContainer;
 
                 &:hover {
-                    color: $errorContainer;
-                    background: $onErrorContainer;
+                    color: material-colors.$errorContainer;
+                    background: material-colors.$onErrorContainer;
                 }
                 &.spacing {
                     label {
@@ -66,21 +68,21 @@
 
         transition: all 0s;
 
-        color: mix($background, $onBackground);
+        color: color.mix(material-colors.$background, material-colors.$onBackground);
 
         &:hover {
-            background-color: color.adjust($primary, $alpha: -0.4);
-            color: $onPrimary;
+            background-color: color.adjust(material-colors.$primary, $alpha: -0.4);
+            color: material-colors.$onPrimary;
         }
 
         &.exists {
-            color: $onBackground;
+            color: material-colors.$onBackground;
         }
 
         &.active,
         &:active {
-            background-color: $primaryContainer;
-            color: $onPrimaryContainer;
+            background-color: material-colors.$primaryContainer;
+            color: material-colors.$onPrimaryContainer;
         }
 
         &:last-child {
@@ -90,12 +92,12 @@
 
     .bar__item.transparent {
         background: transparent;
-        color: $onSurface;
+        color: material-colors.$onSurface;
     }
 
     .bar__item.primary_container {
-        background: $primaryContainer;
-        color: $onPrimaryContainer;
+        background: material-colors.$primaryContainer;
+        color: material-colors.$onPrimaryContainer;
     }
 
     .bar__active-app {
@@ -134,8 +136,8 @@
         border-radius: 9px;
         min-width: 18px;
         min-height: 18px;
-        background: $inverseSurface;
-        color: $surface;
+        background: material-colors.$inverseSurface;
+        color: material-colors.$surface;
     }
 
     .bar__tray {
@@ -149,7 +151,7 @@
         min-height: 22px;
         background: none;
         &:hover {
-            background-color: color.adjust($primary, $alpha: -0.4);
+            background-color: color.adjust(material-colors.$primary, $alpha: -0.4);
         }
         icon {
             font-size: 18px;

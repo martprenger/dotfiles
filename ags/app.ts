@@ -32,7 +32,7 @@ function main() {
   MixerMenu();
   Verification();
   Powermenu();
-  Dashboard();
+  // Dashboard();
 
   for (const gdkmonitor of App.get_monitors()) {
     bars.set(gdkmonitor, Bar(gdkmonitor));

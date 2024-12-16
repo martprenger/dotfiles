@@ -1,7 +1,9 @@
+@use "../../../.cache/material/colors" as material-colors;
+
 .notification {
     padding: 14px 16px 14px 20px;
-    color: $onBackground;
-    background-color: $background;
+    color: material-colors.$onBackground;
+    background-color: material-colors.$background;
     border-radius: 26px;
 }
 
@@ -10,7 +12,7 @@
     min-width: 30px;
     margin-right: 14px;
     border-radius: 100px;
-    background: $surfaceContainerHighest;
+    background: material-colors.$surfaceContainerHighest;
 }
 
 .notification__icon.telegram {
@@ -30,7 +32,7 @@
 .notification__app-name,
 .notification__dot,
 .notification__time {
-    color: $onSurface;
+    color: material-colors.$onSurface;
     font-size: 12px;
     font-weight: 400;
 }
@@ -48,10 +50,10 @@
 .notification__action {
     background: none;
     transition: color 0.1s ease-in-out;
-    color: $primary;
+    color: material-colors.$primary;
     border-radius: 100px;
     &:hover {
-        color: $onPrimaryContainer;
+        color: material-colors.$onPrimaryContainer;
         transition: color 0.1s ease-in-out;
     }
     &:first-child {
@@ -67,14 +69,14 @@
     min-width: 22px;
     min-height: 22px;
     border-radius: 100px;
-    background-color: $surfaceContainerHighest;
-    color: $onSurface;
+    background-color: material-colors.$surfaceContainerHighest;
+    color: material-colors.$onSurface;
     font-size: 16px;
     transition:
         background-color 0.2s ease-in-out,
         color 0.2s ease-in-out;
     &:hover {
-        background: $primaryFixed;
-        color: $onPrimaryFixed;
+        background: material-colors.$primaryFixed;
+        color: material-colors.$onPrimaryFixed;
     }
 }

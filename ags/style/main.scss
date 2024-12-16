@@ -1,18 +1,18 @@
-@import "./colors.scss";
-@import "./common.scss";
-@import "./components.scss";
-@import "./bar.scss";
-@import "./controlCenter.scss";
-@import "./player.scss";
-@import "./notification.scss";
-@import "./notificationsPopup.scss";
-@import "./notificationsWindow.scss";
-@import "./scrim.scss";
-@import "./osd.scss";
-@import "./popupMenu.scss";
-@import "./powermenu.scss";
-@import "./appLauncher.scss";
-@import "./dashboard.scss";
+@use "colors.scss";
+@use "common.scss";
+@use "components.scss";
+@use "bar.scss";
+@use "controlCenter.scss";
+@use "player.scss";
+@use "notification.scss";
+@use "notificationsPopup.scss";
+@use "notificationsWindow.scss";
+@use "scrim.scss";
+@use "osd.scss";
+@use "popupMenu.scss";
+@use "powermenu.scss";
+@use "appLauncher.scss";
+@use "dashboard.scss";
 
 body {
     font-family: "Hack Nerd Font", sans-serif;

@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "../../../.cache/material/colors" as material-colors;
+
 * {
     font-size: 14px;
     outline: none;
@@ -17,8 +20,8 @@ icon {
 slider {
     border: none;
     outline: none;
-    background: $inverseSurface;
-    color: $inverseOnSurface;
+    background: material-colors.$inverseSurface;
+    color: material-colors.$inverseOnSurface;
 }
 
 separator {
@@ -47,7 +50,7 @@ window.popup {
     menu {
         margin-top: 12px;
         border-radius: 26px;
-        background-color: $surface;
+        background-color: material-colors.$surface;
         padding: 10px;
 
         // separator {
@@ -57,13 +60,13 @@ window.popup {
         menuitem {
             min-width: 140px;
             padding: 12px 6px;
-            background: $surface;
-            color: $onSurface;
+            background: material-colors.$surface;
+            color: material-colors.$onSurface;
             border-radius: 100px;
             transition: background 0.1s ease;
             &:hover {
-                background: $inverseSurface;
-                color: $inverseOnSurface;
+                background: material-colors.$inverseSurface;
+                color: material-colors.$inverseOnSurface;
             }
             &:first-child {
                 margin-top: 0;
@@ -76,31 +79,31 @@ window.popup {
 }
 
 switch {
-    border: 2px solid $outline;
+    border: 2px solid material-colors.$outline;
     border-radius: 100px;
-    background-color: $surfaceContainerHighest;
+    background-color: material-colors.$surfaceContainerHighest;
 }
 
 switch slider {
     box-shadow: none;
     border-radius: 100px;
-    background-color: $outline;
+    background-color: material-colors.$outline;
 }
 
 switch:hover slider,
 switch:active slider {
-    background-color: $onSurfaceVariant;
+    background-color: material-colors.$onSurfaceVariant;
 }
 
 switch:active {
-    background-color: mix($surfaceContainerHighest, $onSurface, 0.08 * 1%);
+    background-color: color.mix(material-colors.$surfaceContainerHighest, material-colors.$onSurface, 0.08 * 1%);
 }
 
 switch:checked {
-    background-color: $primary;
-    border: 2px solid $primary;
+    background-color: material-colors.$primary;
+    border: 2px solid material-colors.$primary;
 }
 
 switch:checked slider {
-    background-color: $onPrimary;
+    background-color: material-colors.$onPrimary;
 }

@@ -1,7 +1,9 @@
+@use "../../../.cache/material/colors" as colors2;
+
 .transparent-scrim {
     background: transparent;
 }
 
 .scrim {
-    background: $background;
+    background: colors2.$background;
 }

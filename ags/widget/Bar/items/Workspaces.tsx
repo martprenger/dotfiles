@@ -1,6 +1,7 @@
 import { bind, Binding, Variable } from "astal";
 import { Astal, Gdk, Gtk, Widget } from "astal/gtk3";
 import AstalHyprland from "gi://AstalHyprland";
+import { getMonitorName } from "../../../lib/utils";
 
 const hyprland = AstalHyprland.get_default();
 
@@ -78,9 +79,10 @@ export const WorkspaceButton = ({
 export const Workspaces = ({ gdkmonitor }: { gdkmonitor: Gdk.Monitor }) => {
   // TODO: check for the reshuffling bug if it happens again
   // TODO(gtk4): Use Gdk.Monitor.connector instead
+
   const hyprlandMonitor = hyprland
     .get_monitors()
-    .find((mon) => mon.model == gdkmonitor.model);
+    .find((mon) => mon.name == getMonitorName(gdkmonitor));
   if (!hyprlandMonitor) {
     throw new Error("Couldn't find matching Hyprland monitor");
   }

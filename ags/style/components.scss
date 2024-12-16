@@ -1,31 +1,33 @@
+@use "../../../.cache/material/colors" as material-colors;
+
 .material-button {
     border-radius: 24px;
     padding: 8px 22px;
     &:focus {
-        box-shadow: 0 0 0 1px $inverseSurface;
+        box-shadow: 0 0 0 1px material-colors.$inverseSurface;
     }
     &.filled {
-        background: $primary;
-        color: $onPrimary;
+        background: material-colors.$primary;
+        color: material-colors.$onPrimary;
         &:hover,
         &:focus {
-            background: $primary;
+            background: material-colors.$primary;
         }
         &:active {
-            background: $onPrimaryContainer;
+            background: material-colors.$onPrimaryContainer;
         }
     }
 
     &.outlined {
         background: none;
-        color: $onSurface;
-        border: 1px solid $outline;
+        color: material-colors.$onSurface;
+        border: 1px solid material-colors.$outline;
         &:hover,
         &:focus {
-            background: $inverseSurface;
+            background: material-colors.$inverseSurface;
         }
         &:active {
-            background: $inverseSurface;
+            background: material-colors.$inverseSurface;
         }
     }
 }

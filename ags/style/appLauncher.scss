@@ -1,10 +1,12 @@
+@use "../../../.cache/material/colors" as material-colors;
+
 @use "sass:color";
 
 .app-launcher {
     min-width: 450px;
     border-radius: 32px;
     padding: 0px;
-    background: $background;
+    background: material-colors.$background;
     min-height: 700px;
 }
 
@@ -15,7 +17,7 @@
     margin-top: 5px;
     padding: 12px 22px;
     border-radius: 0px;
-    border-bottom: 2px solid $surfaceContainerHighest;
+    border-bottom: 2px solid material-colors.$surfaceContainerHighest;
     box-shadow: none;
 
     icon {
@@ -40,11 +42,11 @@
 
         &.title {
             font-weight: 500;
-            color: $onSurface;
+            color: material-colors.$onSurface;
         }
 
         &.description {
-            color: color.adjust($onSurface, $alpha: -0.3);
+            color: color.adjust(material-colors.$onSurface, $alpha: -0.3);
         }
     }
 
@@ -54,30 +56,30 @@
     }
 
     &:hover {
-        background: $surfaceContainerHighest;
+        background: material-colors.$surfaceContainerHighest;
         .title {
-            color: $onSurface;
+            color: material-colors.$onSurface;
         }
     }
 
     &:focus {
-        background: $primary;
+        background: material-colors.$primary;
         .title {
-            color: $onPrimary;
+            color: material-colors.$onPrimary;
         }
         .description {
-            color: $onPrimary;
+            color: material-colors.$onPrimary;
         }
     }
 
     &:active {
         background: yellow;
-        background-color: color.adjust($primary, $alpha: -0.2);
+        background-color: color.adjust(material-colors.$primary, $alpha: -0.2);
         border-radius: 100px;
-        box-shadow: inset 0 0 0 1px $primary;
+        box-shadow: inset 0 0 0 1px material-colors.$primary;
 
         .title {
-            color: $onPrimary;
+            color: material-colors.$onPrimary;
         }
     }
 }

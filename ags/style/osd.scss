@@ -1,3 +1,5 @@
+@use "../../../.cache/material/colors" as material-colors;
+
 .OSD,
 .osd {
     background: transparent;
@@ -12,17 +14,17 @@
 
     border-radius: 100px;
     margin-bottom: 20px;
-    background-color: $background;
+    background-color: material-colors.$background;
 
     .fill {
         transition: background-color 3s ease-in-out;
         border-radius: 100px;
-        background-color: $primary;
-        color: $onPrimary;
+        background-color: material-colors.$primary;
+        color: material-colors.$onPrimary;
         transition: min-width 0.1s;
         &.muted {
-            background-color: $surfaceContainerHighest;
-            color: $onSurface;
+            background-color: material-colors.$surfaceContainerHighest;
+            color: material-colors.$onSurface;
         }
     }
 }

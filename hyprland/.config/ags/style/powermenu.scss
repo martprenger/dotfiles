@@ -1,0 +1,53 @@
+@use "../../../../../.cache/material/colors" as material-colors;
+
+.powermenu {
+    padding: 24px;
+    border-radius: 30px;
+    background: material-colors.$background;
+}
+
+.powermenu__button {
+    padding: 0;
+    background: material-colors.$surfaceContainerHighest;
+    color: material-colors.$onSurface;
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: 100px;
+    &:hover,
+    &:focus {
+        color: material-colors.$onPrimary;
+        background: material-colors.$primary;
+    }
+    &:focus {
+        box-shadow: 0 0 0 1px material-colors.$surfaceContainerHighest;
+    }
+    &:active {
+        background: material-colors.$onPrimaryContainer;
+    }
+}
+
+.verification {
+    min-width: 300px;
+    padding: 24px;
+    border-radius: 30px;
+    background: material-colors.$surfaceContainerHighest;
+}
+
+.verification__title {
+    font-size: 20px;
+    font-weight: 500;
+}
+.verification__description {
+    font-size: 16px;
+    font-weight: 400;
+}
+/* .verification__button {
+	background: $inverse_surface_transparent;
+	border-radius: 100px;
+	padding: 8px 22px;
+	&:hover,
+	&:focus {
+		background: $secondary;
+		color: $on_secondary;
+	}
+} */

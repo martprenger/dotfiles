@@ -1,0 +1,111 @@
+@use "sass:color";
+@use "../../../../../.cache/material/colors.scss";
+$theme: "dark";
+
+$rootTransparency: 0.22; // Transparency = 1 - opacity
+$transparency: 0.4;
+
+colors.$background: color.adjust(colors.$background, $alpha: -$rootTransparency);
+colors.$surface: color.adjust(colors.$surface, $alpha: -$transparency);
+colors.$surfaceDim: color.adjust(colors.$surfaceDim, $alpha: -$transparency);
+colors.$surfaceBright: color.adjust(colors.$surfaceBright, $alpha: -$transparency);
+colors.$surfaceContainerLowest: color.adjust(
+    colors.$surfaceContainerLowest,
+    $alpha: -$transparency
+);
+colors.$surfaceContainerLow: color.adjust(
+    colors.$surfaceContainerLow,
+    $alpha: -$transparency
+);
+colors.$surfaceContainer: color.adjust(colors.$surfaceContainer, $alpha: -$transparency);
+colors.$surfaceContainerHigh: color.adjust(
+    colors.$surfaceContainerHigh,
+    $alpha: -$transparency
+);
+colors.$surfaceContainerHighest: color.adjust(
+    colors.$surfaceContainerHighest,
+    $alpha: -$transparency
+);
+colors.$surfaceVariant: color.adjust(colors.$surfaceVariant, $alpha: -$transparency);
+colors.$inverseSurface: color.adjust(colors.$inverseSurface, $alpha: -$transparency);
+colors.$surfaceTint: color.adjust(colors.$surfaceTint, $alpha: -$transparency);
+
+// Others
+$subtext: colors.$outline;
+$actiontext: color.mix(colors.$onBackground, colors.$background, 85%);
+$black: black;
+$white: white;
+
+/// Color mappings for more chaotic, dynamic colors like the average rice ///
+// General
+$layer0: colors.$background;
+$onLayer0: colors.$onBackground;
+$layer0Hover: color.mix($layer0, $onLayer0, 85%);
+$layer0Active: colors.$surfaceContainerHigh;
+$onLayer0Active: colors.$onSurface;
+$onLayer0Inactive: color.mix($onLayer0, $layer0, 70%);
+$layer1: colors.$surfaceContainerLow;
+$onLayer1: colors.$onSurface;
+$onLayer1Inactive: color.mix($onLayer1, $layer1, 45%);
+$onLayer1: colors.$onSurfaceVariant;
+$layer2: color.mix(colors.$surfaceContainer, colors.$surfaceContainerHigh, 55%);
+$onLayer2: colors.$onSurface;
+$layer3: colors.$surfaceContainerHigh;
+$onLayer3: colors.$onSurface;
+$layer1Hover: color.mix($layer1, $onLayer1, 85%);
+$layer1Active: color.mix($layer1, $onLayer1, 70%);
+$layer2Hover: color.mix($layer2, $onLayer2, 90%);
+$layer2Active: color.mix($layer2, $onLayer2, 80%);
+$layer3Hover: color.mix($layer3, $onLayer3, 90%);
+$layer3Active: color.mix($layer3, $onLayer3, 80%);
+// Elements
+$windowtitleOnLayer0Inactive: $onLayer0Inactive;
+$windowtitleOnLayer0: $onLayer0;
+$barspacerightOnLayer0: $onLayer0;
+$timeOnLayer1: $onLayer1;
+$dateOnLayer1: $onLayer1;
+$ramOnLayer1: $onLayer1;
+$ramLayer2: colors.$secondaryContainer;
+$ramOnLayer2: colors.$onSecondaryContainer;
+$swapOnLayer1: $onLayer1;
+$swapLayer2: colors.$secondaryContainer;
+$swapOnLayer2: colors.$onSecondaryContainer;
+$cpuOnLayer1: $onLayer1;
+$cpuLayer2: colors.$secondaryContainer;
+$cpuOnLayer2: colors.$onSecondaryContainer;
+$musicOnLayer1: $onLayer1;
+$musicLayer2: colors.$secondaryContainer;
+$musicOnLayer2: colors.$onSecondaryContainer;
+$utilsLayer2: $layer2;
+$utilsOnLayer2: $onLayer2;
+$battOnLayer1: $onLayer1;
+$battLayer2: colors.$secondaryContainer;
+$battOnLayer2: colors.$onSecondaryContainer;
+$workspaceOnLayer1Inactive: $onLayer1Inactive;
+$workspaceLayer3: colors.$primary;
+$workspaceOnLayer3: colors.$onPrimary;
+$workspaceOnLayer2: colors.$onSecondaryContainer;
+$trayOnLayer0: $onLayer0;
+$cheatsheetTitle: colors.$onSecondaryContainer;
+$cheatsheetColors: (
+    colors.$onSecondaryContainer,
+    colors.$onSecondaryContainer,
+    colors.$onSecondaryContainer,
+    colors.$onSecondaryContainer,
+    colors.$onSecondaryContainer,
+    colors.$onSecondaryContainer,
+    colors.$onSecondaryContainer,
+    colors.$onSecondaryContainer
+);
+
+$sessionColors: (
+    $onLayer1,
+    $onLayer1,
+    $onLayer1,
+    $onLayer1,
+    $onLayer1,
+    $onLayer1,
+    $onLayer1
+);
+$brightnessOnLayer0: $onLayer0;
+$volumeOnLayer0: $onLayer0;

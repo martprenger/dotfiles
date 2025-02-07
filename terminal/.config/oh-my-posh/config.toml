@@ -10,7 +10,7 @@ type = "prompt"
   foreground = "#ffffff"
   leading_diamond = "╭─"
   style = "diamond"
-  template = "{{ if .SSHSession }} {{ end }}{{ .UserName }} {{ .UserName }} "
+  template = "{{ if .SSHSession }} {{ end }} {{ .UserName }} "
   type = "session"
 
   [[blocks.segments]]
@@ -42,8 +42,8 @@ type = "prompt"
   "{{ if gt .Behind 0 }}#C792EA{{ end }}"
 ]
   foreground = "#011627"
-  powerline_symbol = ""
-  style = "powerline"
+  style = "diamond"
+  trailing_diamond = ""
   template = " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350>  {{ .Staging.String }}</>{{ end }} "
   type = "git"
 

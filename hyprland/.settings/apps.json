@@ -1,0 +1,6 @@
+{
+    "browser": "zen-browser",
+    "editor": "zeditor",
+    "filemanager": "nautilus",
+    "terminal": "alacritty"
+}

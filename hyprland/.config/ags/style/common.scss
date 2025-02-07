@@ -1,0 +1,109 @@
+@use "sass:color";
+@use "../../../../../.cache/material/colors" as material-colors;
+
+* {
+    font-size: 14px;
+    outline: none;
+    border: none;
+    text-shadow: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    -gtk-icon-shadow: none;
+}
+
+icon {
+    box-shadow: none;
+    text-shadow: none;
+}
+
+slider {
+    border: none;
+    outline: none;
+    background: material-colors.$inverseSurface;
+    color: material-colors.$inverseOnSurface;
+}
+
+separator {
+    background: none;
+}
+
+window {
+    background: none;
+}
+
+button {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+label {
+    box-shadow: none;
+}
+
+window.popup {
+    > * {
+        border: none;
+        box-shadow: none;
+    }
+
+    menu {
+        margin-top: 12px;
+        border-radius: 26px;
+        background-color: material-colors.$surface;
+        padding: 10px;
+
+        // separator {
+        //     background-color: $border_color;
+        // }
+
+        menuitem {
+            min-width: 140px;
+            padding: 12px 6px;
+            background: material-colors.$surface;
+            color: material-colors.$onSurface;
+            border-radius: 100px;
+            transition: background 0.1s ease;
+            &:hover {
+                background: material-colors.$inverseSurface;
+                color: material-colors.$inverseOnSurface;
+            }
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+switch {
+    border: 2px solid material-colors.$outline;
+    border-radius: 100px;
+    background-color: material-colors.$surfaceContainerHighest;
+}
+
+switch slider {
+    box-shadow: none;
+    border-radius: 100px;
+    background-color: material-colors.$outline;
+}
+
+switch:hover slider,
+switch:active slider {
+    background-color: material-colors.$onSurfaceVariant;
+}
+
+switch:active {
+    background-color: color.mix(material-colors.$surfaceContainerHighest, material-colors.$onSurface, 0.08 * 1%);
+}
+
+switch:checked {
+    background-color: material-colors.$primary;
+    border: 2px solid material-colors.$primary;
+}
+
+switch:checked slider {
+    background-color: material-colors.$onPrimary;
+}

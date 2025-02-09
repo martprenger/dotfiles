@@ -26,6 +26,6 @@ opacity = 0.5
 
 [general]
 import = [
-    "~/.cache/material/alacritty.toml"
+    "~/.config/alacritty/tokyo-night.toml"
 ]
 

@@ -1,0 +1,19 @@
+@use "./Colors.scss" as *;
+
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-4-16/gtk/theme/Default/_colors-public.scss
+
+window.Bar {
+    > box {
+        background: $primary;
+        color: $foreground;
+        font-weight: bold;
+    }
+
+    button {
+        min-height: 0;
+        min-width: 0;
+        border-radius: 8px;
+        margin: 4px;
+        padding: 4px 8px;
+    }
+}

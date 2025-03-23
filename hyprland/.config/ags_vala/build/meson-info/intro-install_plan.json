@@ -1,0 +1,10 @@
+{
+  "targets": {
+    "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/simple-bar": {
+      "destination": "{prefix}/bin/simple-bar",
+      "tag": "runtime",
+      "subproject": null,
+      "install_rpath": null
+    }
+  }
+}

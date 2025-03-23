@@ -1,0 +1,72 @@
+:root {
+  --primary-paletteKeyColor: #697f3d;
+  --secondary-paletteKeyColor: #727a5f;
+  --tertiary-paletteKeyColor: #527f79;
+  --neutral-paletteKeyColor: #76786e;
+  --neutral-variant-paletteKeyColor: #75786b;
+  --background: #12140d;
+  --onBackground: #e3e3d7;
+  --foreground: #e3e3d7;
+  --surface: #12140d;
+  --surfaceDim: #12140d;
+  --surfaceBright: #383a32;
+  --surfaceContainerLowest: #0d0f08;
+  --surfaceContainerLow: #1a1c15;
+  --surfaceContainer: #1e2019;
+  --surfaceContainerHigh: #292b23;
+  --surfaceContainerHighest: #34362e;
+  --onSurface: #e3e3d7;
+  --surfaceVariant: #45483c;
+  --onSurfaceVariant: #c6c8b9;
+  --inverseSurface: #e3e3d7;
+  --inverseOnSurface: #2f3129;
+  --outline: #909284;
+  --outlineVariant: #45483c;
+  --shadow: #000000;
+  --scrim: #000000;
+  --surfaceTint: #b7d085;
+  --primary: #b7d085;
+  --onPrimary: #253600;
+  --primaryContainer: #3a4d10;
+  --onPrimaryContainer: #d3ec9e;
+  --inversePrimary: #516527;
+  --secondary: #c2caaa;
+  --onSecondary: #2c331d;
+  --secondaryContainer: #424a31;
+  --onSecondaryContainer: #dee6c5;
+  --tertiary: #a0d0c8;
+  --onTertiary: #013732;
+  --tertiaryContainer: #6b9992;
+  --onTertiaryContainer: #000000;
+  --error: #ffb4ab;
+  --onError: #690005;
+  --errorContainer: #93000a;
+  --onErrorContainer: #ffdad6;
+  --primaryFixed: #d3ec9e;
+  --primaryFixedDim: #b7d085;
+  --onPrimaryFixed: #141f00;
+  --onPrimaryFixedVariant: #3a4d10;
+  --secondaryFixed: #dee6c5;
+  --secondaryFixedDim: #c2caaa;
+  --onSecondaryFixed: #171e09;
+  --onSecondaryFixedVariant: #424a31;
+  --tertiaryFixed: #bcece4;
+  --tertiaryFixedDim: #a0d0c8;
+  --onTertiaryFixed: #00201d;
+  --onTertiaryFixedVariant: #204e49;
+}
+
+window.Bar > box {
+  background: var(--primary);
+  color: var(--foreground);
+  font-weight: bold;
+}
+window.Bar button {
+  min-height: 0;
+  min-width: 0;
+  border-radius: 8px;
+  margin: 4px;
+  padding: 4px 8px;
+}
+
+/*# sourceMappingURL=main.css.map */

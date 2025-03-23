@@ -1,0 +1,13 @@
+# ninja log v6
+2	22	1742641272632938144	src/main.css	4cb2bf7a4fa619f9
+1	283	1742641272852944271	src	3066f9c784511c88
+283	291	1742641272902945664	src/data.h	2d0a463d0b4f4517
+283	292	1742641272902945664	src/data.c	83eaea790f2c7632
+293	509	1742641272906279090	src/simple-bar.p/meson-generated_.._data.c.o	724d84fc0f004b93
+293	926	1742641273419626729	src/simple-bar.p/vala/bar/Bar.c	2be7455043bef5d1
+293	926	1742641273419626729	src/simple-bar.p/vala/bar/items/Workspaces.c	2be7455043bef5d1
+293	926	1742641273419626729	src/simple-bar.p/vala/App.c	2be7455043bef5d1
+926	1522	1742641273536296647	src/simple-bar.p/meson-generated_vala_App.c.o	8a94d43a711c1bfc
+926	1791	1742641273536296647	src/simple-bar.p/meson-generated_vala_bar_items_Workspaces.c.o	62e7788b87a6da69
+926	1951	1742641273536296647	src/simple-bar.p/meson-generated_vala_bar_Bar.c.o	f0a55d711dd9310
+1952	2219	1742641274562991936	src/simple-bar	f2a0c5a9ae2ae59e

@@ -1,0 +1,338 @@
+[
+  {
+    "name": "blueprint",
+    "id": "25a6634@@blueprint@cus",
+    "type": "custom",
+    "defined_in": "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/meson.build",
+    "filename": [
+      "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/."
+    ],
+    "build_by_default": false,
+    "target_sources": [
+      {
+        "language": "unknown",
+        "compiler": [
+          "/usr/bin/blueprint-compiler",
+          "batch-compile",
+          "@OUTPUT@",
+          "@CURRENT_SOURCE_DIR@",
+          "@INPUT@"
+        ],
+        "parameters": [],
+        "sources": [
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/Bar.blp"
+        ],
+        "generated_sources": []
+      }
+    ],
+    "extra_files": [],
+    "subproject": null,
+    "dependencies": [],
+    "depends": [],
+    "installed": false
+  },
+  {
+    "name": "scss",
+    "id": "25a6634@@scss@cus",
+    "type": "custom",
+    "defined_in": "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/meson.build",
+    "filename": [
+      "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/main.css"
+    ],
+    "build_by_default": false,
+    "target_sources": [
+      {
+        "language": "unknown",
+        "compiler": [
+          "/usr/bin/sass",
+          "@INPUT@",
+          "@OUTPUT@"
+        ],
+        "parameters": [],
+        "sources": [
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/scss/main.scss"
+        ],
+        "generated_sources": []
+      }
+    ],
+    "extra_files": [],
+    "subproject": null,
+    "dependencies": [],
+    "depends": [],
+    "installed": false
+  },
+  {
+    "name": "data_c",
+    "id": "25a6634@@data_c@cus",
+    "type": "custom",
+    "defined_in": "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/meson.build",
+    "filename": [
+      "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/data.c"
+    ],
+    "build_by_default": true,
+    "target_sources": [
+      {
+        "language": "unknown",
+        "compiler": [
+          "/usr/bin/glib-compile-resources",
+          "@INPUT@",
+          "--sourcedir",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src",
+          "--sourcedir",
+          "src",
+          "--sourcedir",
+          "../src",
+          "--internal",
+          "--generate",
+          "--target",
+          "@OUTPUT@",
+          "--dependency-file",
+          "@DEPFILE@"
+        ],
+        "parameters": [],
+        "sources": [
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/gresource.xml"
+        ],
+        "generated_sources": []
+      }
+    ],
+    "extra_files": [],
+    "subproject": null,
+    "dependencies": [],
+    "depends": [],
+    "installed": false
+  },
+  {
+    "name": "data_h",
+    "id": "25a6634@@data_h@cus",
+    "type": "custom",
+    "defined_in": "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/meson.build",
+    "filename": [
+      "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/data.h"
+    ],
+    "build_by_default": true,
+    "target_sources": [
+      {
+        "language": "unknown",
+        "compiler": [
+          "/usr/bin/glib-compile-resources",
+          "@INPUT@",
+          "--sourcedir",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src",
+          "--sourcedir",
+          "src",
+          "--sourcedir",
+          "../src",
+          "--internal",
+          "--generate",
+          "--target",
+          "@OUTPUT@"
+        ],
+        "parameters": [],
+        "sources": [
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/gresource.xml"
+        ],
+        "generated_sources": []
+      }
+    ],
+    "extra_files": [],
+    "subproject": null,
+    "dependencies": [],
+    "depends": [],
+    "installed": false
+  },
+  {
+    "name": "simple-bar",
+    "id": "25a6634@@simple-bar@exe",
+    "type": "executable",
+    "defined_in": "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/meson.build",
+    "filename": [
+      "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/simple-bar"
+    ],
+    "build_by_default": true,
+    "target_sources": [
+      {
+        "language": "vala",
+        "compiler": [
+          "valac"
+        ],
+        "parameters": [
+          "-C",
+          "--debug",
+          "--pkg",
+          "astal-bluetooth-0.1",
+          "--pkg",
+          "astal-tray-0.1",
+          "--pkg",
+          "astal-power-profiles-0.1",
+          "--pkg",
+          "astal-mpris-0.1",
+          "--pkg",
+          "libnm",
+          "--pkg",
+          "astal-hyprland-0.1",
+          "--pkg",
+          "astal-network-0.1",
+          "--pkg",
+          "astal-wireplumber-0.1",
+          "--pkg",
+          "astal-battery-0.1",
+          "--pkg",
+          "astal-4-4.0",
+          "--pkg",
+          "glib-2.0",
+          "--pkg",
+          "astal-io-0.1",
+          "--pkg",
+          "gtk4-layer-shell-0",
+          "--color=always",
+          "--directory",
+          "src/simple-bar.p",
+          "--basedir",
+          "../src",
+          "--gresources=../src/gresource.xml",
+          "--gresourcesdir=/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src",
+          "--gresourcesdir=src/src",
+          "--gresourcesdir=src/../src"
+        ],
+        "sources": [
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/bar/Bar.vala",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/bar/items/Workspaces.vala",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/App.vala"
+        ],
+        "generated_sources": [],
+        "unity_sources": []
+      },
+      {
+        "language": "c",
+        "compiler": [
+          "cc"
+        ],
+        "parameters": [
+          "-I/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/simple-bar.p",
+          "-I/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src",
+          "-I/home/pyro/dotfiles/hyprland/.config/ags_vala/src",
+          "-I/usr/include/gtk4-layer-shell",
+          "-I/usr/include/gtk-4.0",
+          "-I/usr/include/pango-1.0",
+          "-I/usr/include/fribidi",
+          "-I/usr/include/harfbuzz",
+          "-I/usr/include/gdk-pixbuf-2.0",
+          "-I/usr/include/cairo",
+          "-I/usr/include/freetype2",
+          "-I/usr/include/libpng16",
+          "-I/usr/include/pixman-1",
+          "-I/usr/include/graphene-1.0",
+          "-I/usr/lib/graphene-1.0/include",
+          "-I/usr/include/glib-2.0",
+          "-I/usr/lib/glib-2.0/include",
+          "-I/usr/include/libmount",
+          "-I/usr/include/blkid",
+          "-I/usr/include/sysprof-6",
+          "-I/usr/include/astal-io",
+          "-I/usr/include/gio-unix-2.0",
+          "-I/usr/include/astal-4",
+          "-I/usr/include/astal-battery",
+          "-I/usr/include/json-glib-1.0",
+          "-I/usr/include/astal",
+          "-I/usr/include/wireplumber-0.5",
+          "-I/usr/include/pipewire-0.3",
+          "-I/usr/include/spa-0.2",
+          "-I/usr/include/astal-network",
+          "-I/usr/include/libnm",
+          "-I/usr/include/astal-hyprland",
+          "-I/usr/include/astal-mpris",
+          "-I/usr/include/astal-power-profiles",
+          "-I/usr/include/astal-tray",
+          "-I/usr/include/appmenu-glib-translator",
+          "-I/usr/include/astal-bluetooth",
+          "-fdiagnostics-color=always",
+          "-D_FILE_OFFSET_BITS=64",
+          "-Wall",
+          "-Winvalid-pch",
+          "-O0",
+          "-g",
+          "-pthread",
+          "-D_REENTRANT",
+          "-mfpmath=sse",
+          "-msse",
+          "-msse2",
+          "-mfpmath=sse",
+          "-msse",
+          "-msse2"
+        ],
+        "sources": [],
+        "generated_sources": [
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/data.c",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/simple-bar.p/vala/bar/Bar.c",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/simple-bar.p/vala/bar/items/Workspaces.c",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/simple-bar.p/vala/App.c"
+        ],
+        "unity_sources": []
+      },
+      {
+        "linker": [
+          "cc"
+        ],
+        "parameters": [
+          "-Wl,--as-needed",
+          "-Wl,--no-undefined",
+          "-Wl,--start-group",
+          "-Wl,--start-group",
+          "-lm",
+          "/usr/lib/libgtk4-layer-shell.so",
+          "/usr/lib/libastal-io.so",
+          "/usr/lib/libgio-2.0.so",
+          "/usr/lib/libgobject-2.0.so",
+          "/usr/lib/libglib-2.0.so",
+          "/usr/lib/libastal-4.so",
+          "/usr/lib/libgtk-4.so",
+          "/usr/lib/libpangocairo-1.0.so",
+          "/usr/lib/libpango-1.0.so",
+          "/usr/lib/libharfbuzz.so",
+          "/usr/lib/libgdk_pixbuf-2.0.so",
+          "/usr/lib/libcairo-gobject.so",
+          "/usr/lib/libcairo.so",
+          "/usr/lib/libvulkan.so",
+          "/usr/lib/libgraphene-1.0.so",
+          "/usr/lib/libastal-battery.so",
+          "/usr/lib/libjson-glib-1.0.so",
+          "/usr/lib/libastal-wireplumber.so",
+          "/usr/lib/libastal-network.so",
+          "/usr/lib/libnm.so",
+          "/usr/lib/libastal-hyprland.so",
+          "/usr/lib/libastal-mpris.so",
+          "/usr/lib/libastal-power-profiles.so",
+          "/usr/lib/libastal-tray.so",
+          "/usr/lib/libappmenu-glib-translator.so",
+          "/usr/lib/libastal-bluetooth.so",
+          "-Wl,--end-group",
+          "-Wl,--end-group"
+        ]
+      }
+    ],
+    "extra_files": [],
+    "subproject": null,
+    "dependencies": [
+      "gtk4-layer-shell-0",
+      "astal-io-0.1",
+      "glib-2.0",
+      "astal-4-4.0",
+      "astal-battery-0.1",
+      "astal-wireplumber-0.1",
+      "astal-network-0.1",
+      "astal-hyprland-0.1",
+      "libnm",
+      "astal-mpris-0.1",
+      "astal-power-profiles-0.1",
+      "astal-tray-0.1",
+      "astal-bluetooth-0.1"
+    ],
+    "depends": [],
+    "win_subsystem": "console",
+    "installed": true,
+    "install_filename": [
+      "/home/pyro/dotfiles/hyprland/.config/ags_vala/result/bin/simple-bar"
+    ]
+  }
+]

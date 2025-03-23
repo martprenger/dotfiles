@@ -1,0 +1,5 @@
+[options]
+prefix = /home/pyro/dotfiles/hyprland/.config/ags_vala/result
+
+[properties]
+

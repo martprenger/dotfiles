@@ -1,0 +1,418 @@
+[
+  {
+    "name": "gtk4-layer-shell-0",
+    "type": "pkgconfig",
+    "version": "1.0.4",
+    "compile_args": [
+      "-I/usr/include/gtk4-layer-shell",
+      "-I/usr/include/gtk-4.0",
+      "-I/usr/include/pango-1.0",
+      "-I/usr/include/fribidi",
+      "-I/usr/include/harfbuzz",
+      "-I/usr/include/gdk-pixbuf-2.0",
+      "-I/usr/include/cairo",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-I/usr/include/pixman-1",
+      "-I/usr/include/graphene-1.0",
+      "-I/usr/lib/graphene-1.0/include",
+      "-mfpmath=sse",
+      "-msse",
+      "-msse2",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libgtk4-layer-shell.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "astal-io-0.1",
+    "type": "pkgconfig",
+    "version": "0.1.0",
+    "compile_args": [
+      "-I/usr/include/astal-io",
+      "-I/usr/include/gio-unix-2.0",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libastal-io.so",
+      "/usr/lib/libgio-2.0.so",
+      "/usr/lib/libgobject-2.0.so",
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "glib-2.0",
+    "type": "pkgconfig",
+    "version": "2.82.4",
+    "compile_args": [
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "astal-4-4.0",
+    "type": "pkgconfig",
+    "version": "4.0.0",
+    "compile_args": [
+      "-I/usr/include/astal-4",
+      "-I/usr/include/astal-io",
+      "-I/usr/include/gio-unix-2.0",
+      "-I/usr/include/gtk4-layer-shell",
+      "-I/usr/include/gtk-4.0",
+      "-I/usr/include/pango-1.0",
+      "-I/usr/include/fribidi",
+      "-I/usr/include/harfbuzz",
+      "-I/usr/include/gdk-pixbuf-2.0",
+      "-I/usr/include/cairo",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-I/usr/include/pixman-1",
+      "-I/usr/include/graphene-1.0",
+      "-I/usr/lib/graphene-1.0/include",
+      "-mfpmath=sse",
+      "-msse",
+      "-msse2",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libastal-4.so",
+      "/usr/lib/libastal-io.so",
+      "/usr/lib/libgtk-4.so",
+      "/usr/lib/libpangocairo-1.0.so",
+      "/usr/lib/libpango-1.0.so",
+      "/usr/lib/libharfbuzz.so",
+      "/usr/lib/libgdk_pixbuf-2.0.so",
+      "/usr/lib/libcairo-gobject.so",
+      "/usr/lib/libcairo.so",
+      "/usr/lib/libvulkan.so",
+      "/usr/lib/libgraphene-1.0.so",
+      "/usr/lib/libgio-2.0.so",
+      "/usr/lib/libgobject-2.0.so",
+      "/usr/lib/libglib-2.0.so",
+      "/usr/lib/libgtk4-layer-shell.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "astal-battery-0.1",
+    "type": "pkgconfig",
+    "version": "0.1.0",
+    "compile_args": [
+      "-I/usr/include/astal-battery",
+      "-I/usr/include/json-glib-1.0",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libastal-battery.so",
+      "/usr/lib/libjson-glib-1.0.so",
+      "/usr/lib/libgio-2.0.so",
+      "/usr/lib/libgobject-2.0.so",
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "astal-wireplumber-0.1",
+    "type": "pkgconfig",
+    "version": "0.1.0",
+    "compile_args": [
+      "-I/usr/include/astal",
+      "-I/usr/include/wireplumber-0.5",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/sysprof-6",
+      "-pthread",
+      "-I/usr/include/pipewire-0.3",
+      "-I/usr/include/spa-0.2",
+      "-D_REENTRANT"
+    ],
+    "link_args": [
+      "/usr/lib/libastal-wireplumber.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "astal-network-0.1",
+    "type": "pkgconfig",
+    "version": "0.1.0",
+    "compile_args": [
+      "-I/usr/include/astal-network",
+      "-I/usr/include/libnm",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libastal-network.so",
+      "/usr/lib/libnm.so",
+      "/usr/lib/libgio-2.0.so",
+      "/usr/lib/libgobject-2.0.so",
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "astal-hyprland-0.1",
+    "type": "pkgconfig",
+    "version": "0.1.0",
+    "compile_args": [
+      "-I/usr/include/astal-hyprland",
+      "-I/usr/include/gio-unix-2.0",
+      "-I/usr/include/json-glib-1.0",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libastal-hyprland.so",
+      "/usr/lib/libjson-glib-1.0.so",
+      "/usr/lib/libgio-2.0.so",
+      "/usr/lib/libgobject-2.0.so",
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "libnm",
+    "type": "pkgconfig",
+    "version": "1.50.1",
+    "compile_args": [
+      "-I/usr/include/libnm",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libnm.so",
+      "/usr/lib/libgio-2.0.so",
+      "/usr/lib/libgobject-2.0.so",
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "astal-mpris-0.1",
+    "type": "pkgconfig",
+    "version": "0.1.0",
+    "compile_args": [
+      "-I/usr/include/astal-mpris",
+      "-I/usr/include/json-glib-1.0",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libastal-mpris.so",
+      "/usr/lib/libjson-glib-1.0.so",
+      "/usr/lib/libgio-2.0.so",
+      "/usr/lib/libgobject-2.0.so",
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "astal-power-profiles-0.1",
+    "type": "pkgconfig",
+    "version": "0.1.0",
+    "compile_args": [
+      "-I/usr/include/astal-power-profiles",
+      "-I/usr/include/json-glib-1.0",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libastal-power-profiles.so",
+      "/usr/lib/libjson-glib-1.0.so",
+      "/usr/lib/libgio-2.0.so",
+      "/usr/lib/libgobject-2.0.so",
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "astal-tray-0.1",
+    "type": "pkgconfig",
+    "version": "0.1.0",
+    "compile_args": [
+      "-I/usr/include/astal-tray",
+      "-I/usr/include/json-glib-1.0",
+      "-I/usr/include/appmenu-glib-translator",
+      "-I/usr/include/gio-unix-2.0",
+      "-I/usr/include/gdk-pixbuf-2.0",
+      "-I/usr/include/libpng16",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libastal-tray.so",
+      "/usr/lib/libjson-glib-1.0.so",
+      "/usr/lib/libappmenu-glib-translator.so",
+      "/usr/lib/libgio-2.0.so",
+      "/usr/lib/libgdk_pixbuf-2.0.so",
+      "/usr/lib/libgobject-2.0.so",
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "astal-bluetooth-0.1",
+    "type": "pkgconfig",
+    "version": "0.1.0",
+    "compile_args": [
+      "-I/usr/include/astal-bluetooth",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libastal-bluetooth.so",
+      "/usr/lib/libgio-2.0.so",
+      "/usr/lib/libgobject-2.0.so",
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "gio-2.0",
+    "type": "pkgconfig",
+    "version": "2.82.4",
+    "compile_args": [
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libgio-2.0.so",
+      "/usr/lib/libgobject-2.0.so",
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  }
+]

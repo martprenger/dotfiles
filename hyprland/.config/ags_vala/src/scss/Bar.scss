@@ -1,20 +1,24 @@
+@use "../../../../../../.cache/material/colors.scss" as *;
+
 window.Bar {
   font-size: 14px;
   background: transparent;
-}
-window.Bar > box {
-  color: #e3e3d7;
-  background: transparent;
-  font-weight: bold;
-}
-window.Bar button {
-  min-height: 0;
-  min-width: 0;
+
+  > box {
+    color: $foreground;
+    background: transparent;
+    font-weight: bold;
+  }
+
+  button {
+    min-height: 0;
+    min-width: 0;
+  }
 }
 
 .bar_item {
-  background: #12140d;
-  color: #e3e3d7;
+  background: $background;
+  color: $foreground;
   margin: 0.5em 0em 0em 0.5em;
   border-radius: 100em;
 }
@@ -42,7 +46,11 @@ window.Bar button {
 }
 
 .focused {
-  background: #b7d085;
+  background: $primary;
 }
 
-/*# sourceMappingURL=main.css.map */
+.empty {
+}
+
+.occupied {
+}

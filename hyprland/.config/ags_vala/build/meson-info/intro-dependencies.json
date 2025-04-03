@@ -2,7 +2,7 @@
   {
     "name": "gtk4-layer-shell-0",
     "type": "pkgconfig",
-    "version": "1.0.4",
+    "version": "1.1.0",
     "compile_args": [
       "-I/usr/include/gtk4-layer-shell",
       "-I/usr/include/gtk-4.0",
@@ -66,7 +66,7 @@
   {
     "name": "glib-2.0",
     "type": "pkgconfig",
-    "version": "2.82.4",
+    "version": "2.82.5",
     "compile_args": [
       "-I/usr/include/glib-2.0",
       "-I/usr/lib/glib-2.0/include",
@@ -74,6 +74,30 @@
       "-pthread"
     ],
     "link_args": [
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "gio-2.0",
+    "type": "pkgconfig",
+    "version": "2.82.5",
+    "compile_args": [
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libgio-2.0.so",
+      "/usr/lib/libgobject-2.0.so",
       "/usr/lib/libglib-2.0.so"
     ],
     "include_directories": [],
@@ -166,6 +190,35 @@
     "meson_variables": []
   },
   {
+    "name": "astal-hyprland-0.1",
+    "type": "pkgconfig",
+    "version": "0.1.0",
+    "compile_args": [
+      "-I/usr/include/astal-hyprland",
+      "-I/usr/include/gio-unix-2.0",
+      "-I/usr/include/json-glib-1.0",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libastal-hyprland.so",
+      "/usr/lib/libjson-glib-1.0.so",
+      "/usr/lib/libgio-2.0.so",
+      "/usr/lib/libgobject-2.0.so",
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
     "name": "astal-wireplumber-0.1",
     "type": "pkgconfig",
     "version": "0.1.0",
@@ -221,38 +274,9 @@
     "meson_variables": []
   },
   {
-    "name": "astal-hyprland-0.1",
-    "type": "pkgconfig",
-    "version": "0.1.0",
-    "compile_args": [
-      "-I/usr/include/astal-hyprland",
-      "-I/usr/include/gio-unix-2.0",
-      "-I/usr/include/json-glib-1.0",
-      "-I/usr/include/glib-2.0",
-      "-I/usr/lib/glib-2.0/include",
-      "-I/usr/include/libmount",
-      "-I/usr/include/blkid",
-      "-I/usr/include/sysprof-6",
-      "-pthread"
-    ],
-    "link_args": [
-      "/usr/lib/libastal-hyprland.so",
-      "/usr/lib/libjson-glib-1.0.so",
-      "/usr/lib/libgio-2.0.so",
-      "/usr/lib/libgobject-2.0.so",
-      "/usr/lib/libglib-2.0.so"
-    ],
-    "include_directories": [],
-    "sources": [],
-    "extra_files": [],
-    "dependencies": [],
-    "depends": [],
-    "meson_variables": []
-  },
-  {
     "name": "libnm",
     "type": "pkgconfig",
-    "version": "1.50.1",
+    "version": "1.52.0",
     "compile_args": [
       "-I/usr/include/libnm",
       "-I/usr/include/glib-2.0",
@@ -380,30 +404,6 @@
     ],
     "link_args": [
       "/usr/lib/libastal-bluetooth.so",
-      "/usr/lib/libgio-2.0.so",
-      "/usr/lib/libgobject-2.0.so",
-      "/usr/lib/libglib-2.0.so"
-    ],
-    "include_directories": [],
-    "sources": [],
-    "extra_files": [],
-    "dependencies": [],
-    "depends": [],
-    "meson_variables": []
-  },
-  {
-    "name": "gio-2.0",
-    "type": "pkgconfig",
-    "version": "2.82.4",
-    "compile_args": [
-      "-I/usr/include/glib-2.0",
-      "-I/usr/lib/glib-2.0/include",
-      "-I/usr/include/libmount",
-      "-I/usr/include/blkid",
-      "-I/usr/include/sysprof-6",
-      "-pthread"
-    ],
-    "link_args": [
       "/usr/lib/libgio-2.0.so",
       "/usr/lib/libgobject-2.0.so",
       "/usr/lib/libglib-2.0.so"

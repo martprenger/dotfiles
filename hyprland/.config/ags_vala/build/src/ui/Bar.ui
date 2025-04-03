@@ -12,10 +12,22 @@ corresponding .blp file and regenerate this file with blueprint-compiler.
         <property name="start-widget">
           <object class="GtkBox">
             <child>
-              <object class="AstalBin" id="workspaces"></object>
+              <object class="AstalBin" id="workspaces">
+                <style>
+                  <class name="bar_item"/>
+                  <class name="workspaces"/>
+                </style>
+              </object>
             </child>
+          </object>
+        </property>
+        <property name="center-widget">
+          <object class="GtkBox">
             <child>
               <object class="GtkMenuButton">
+                <style>
+                  <class name="bar_item"/>
+                </style>
                 <child>
                   <object class="GtkLabel">
                     <property name="label" bind-source="Bar" bind-property="clock" bind-flags="sync-create"/>
@@ -34,12 +46,11 @@ corresponding .blp file and regenerate this file with blueprint-compiler.
                 </property>
               </object>
             </child>
-          </object>
-        </property>
-        <property name="center-widget">
-          <object class="GtkBox">
             <child>
               <object class="GtkBox">
+                <style>
+                  <class name="bar_item"/>
+                </style>
                 <property name="visible" bind-source="Bar" bind-property="mpris-visible" bind-flags="sync-create"/>
                 <child>
                   <object class="GtkImage">

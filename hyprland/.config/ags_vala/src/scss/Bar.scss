@@ -1,4 +1,5 @@
 @use "../../../../../../.cache/material/colors.scss" as *;
+@use "sass:color";
 
 window.Bar {
   font-size: 14px;
@@ -31,6 +32,28 @@ window.Bar {
   border-radius: 100em;
   margin: 0.3em 0em 0.3em 0.3em;
   padding: 0em;
+
+  transition: all 0s;
+
+  &.focused {
+    background: $primaryContainer;
+    color: $onPrimaryContainer;
+  }
+
+  &.empty {
+    background: $background;
+    color: color.mix($background, $onBackground);
+  }
+
+  &.occupied {
+    background: $background;
+    color: $onBackground;
+  }
+
+  &:hover {
+    background-color: color.adjust($primary, $alpha: -0.4);
+    color: $onPrimary;
+  }
 }
 
 .workspaces button:last-child {
@@ -43,14 +66,4 @@ window.Bar {
   padding: 0em;
   min-height: 1.7em;
   min-width: 1.7em;
-}
-
-.focused {
-  background: $primary;
-}
-
-.empty {
-}
-
-.occupied {
 }

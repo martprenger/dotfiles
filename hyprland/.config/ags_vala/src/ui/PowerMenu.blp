@@ -1,0 +1,132 @@
+using Gtk 4.0;
+using Astal 4.0;
+
+template $PowerMenu: Astal.Window {
+  styles [
+    "window",
+  ]
+
+  title: "PowerMenu";
+  namespace: "PowerMenu";
+  anchor: top;
+  keymode: exclusive;
+
+  EventControllerKey {
+    key-released => $key_released();
+  }
+
+  Stack main_stack {
+    transition-type: slide_up_down;
+
+    StackPage {
+      name: "main";
+
+      child: Box {
+        hexpand: true;
+        spacing: 2;
+        halign: end;
+
+        Button {
+          name: "Shutdown";
+          styles [
+            "powerbutton",
+          ]
+          icon-name: "system-shutdown-symbolic";
+          tooltip-text: "Shutdown";
+          clicked => $show_shutdown_confirm();
+        }
+
+        Button {
+          name: "Reboot";
+          styles [
+            "powerbutton",
+          ]
+          icon-name: "system-reboot-symbolic";
+          tooltip-text: "Reboot";
+          clicked => $show_reboot_confirm();
+        }
+
+        Button {
+          name: "Lock";
+          styles [
+            "powerbutton",
+          ]
+          icon-name: "system-lock-screen-symbolic";
+          tooltip-text: "Lock";
+          clicked => $lock();
+        }
+
+        Button {
+          name: "Logout";
+          styles [
+            "powerbutton",
+          ]
+          icon-name: "system-log-out-symbolic";
+          tooltip-text: "Logout";
+          clicked => $show_logout_confirm();
+        }
+
+        Button {
+          name: "Suspend";
+          styles [
+            "powerbutton",
+          ]
+          visible: false;
+          icon-name: "radio-symbolic";
+          tooltip-text: "Suspend";
+          clicked => $suspend();
+        }
+
+        Button {
+          name: "Hibernate";
+          styles [
+            "powerbutton",
+          ]
+          visible: false;
+          icon-name: "weather-clear-night-symbolic";
+          tooltip-text: "Hibernate";
+          clicked => $hibernate();
+        }
+      };
+    }
+
+    StackPage {
+      name: "confirm";
+
+      child: CenterBox {
+        hexpand: true; // Make the CenterBox fill the horizontal space
+
+        // Widget for the start (left)
+        [start]
+        Label {
+          label: bind template.confirm_option;
+          halign: start; // Align the label itself to the start
+          styles [
+            "powerConfirmLabel",
+          ]
+        }
+
+        [end]
+        Box {
+          halign: end; // Align the button group to the end
+
+          Button {
+            icon-name: "window-close-symbolic";
+            clicked => $cancel_action();
+            styles [
+              "powerbutton",
+            ]
+          }
+
+          Button confirm_button {
+            icon-name: "object-select-symbolic";
+            clicked => $confirm_action();
+            styles [
+              "powerbutton",
+            ]
+          }
+        }
+      };
+    }
+  }
+}

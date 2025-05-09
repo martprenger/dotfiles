@@ -1,0 +1,11 @@
+@use "sass:color";
+@use "../../../../../../.cache/material/colors.scss" as *;
+$theme: "dark";
+
+$rootTransparency: 0.29; // Transparency = 1 - opacity
+$transparency: 0.8;
+
+$background: color.adjust($background, $alpha: -$rootTransparency);
+$surface: color.adjust($surface, $alpha: -$transparency);
+$surfaceDim: color.adjust($surfaceDim, $alpha: -$transparency);
+$surfaceBright: color.adjust($surfaceBright, $alpha: -$transparency);

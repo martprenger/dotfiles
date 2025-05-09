@@ -1,1 +1,36 @@
+@use "Color.scss";
 @use "Bar.scss";
+@use "Overview.scss";
+@use "PowerMenu.scss";
+
+@use "../../../../../../.cache/material/colors.scss" as *;
+@use "sass:color";
+@use "Settings.scss" as settings;
+
+.window {
+    background: $background;
+    border-radius: settings.$borderRadius;
+    padding: 0.5em;
+    font-size: 14px;
+    font-family: "JetBrainsMono NF";
+}
+
+button {
+    background: $surface;
+    color: $onSurface;
+    border-radius: settings.$borderRadius;
+
+    image {
+        color: $onSurface;
+    }
+
+    &:focus {
+        border-color: red;
+        border-width: 10px;
+    }
+
+    &:hover {
+        background-color: color.adjust($primary, $alpha: -0.4);
+        color: $onPrimary;
+    }
+}

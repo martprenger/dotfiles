@@ -1,0 +1,33 @@
+using Gtk 4.0;
+using AstalApps 0.1;
+
+template $AppButton: ListBoxRow {
+  selectable: true;
+  activatable: true;
+  activate => $activated();
+
+  styles [
+    "overview_list_row"
+  ]
+
+  child: Box {
+    Image {
+      icon-size: large;
+      icon-name: bind template.app as <AstalApps.Application>.icon-name;
+    }
+
+    Box {
+      orientation: vertical;
+
+      Label {
+        halign: start;
+        label: bind template.app as <AstalApps.Application>.name;
+        ellipsize: end;
+      }
+    }
+  };
+
+  GestureClick {
+    pressed => $clicked();
+  }
+}

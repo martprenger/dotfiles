@@ -3,16 +3,19 @@ bindir = get_option('prefix') / get_option('bindir')
 blp = find_program('blueprint-compiler', required: true)
 sass = find_program('sass', required: true)
 
+
 dependencies = [
   dependency('gtk4-layer-shell-0'),
   dependency('astal-io-0.1'),
   dependency('glib-2.0'),
   dependency('gio-2.0'),
+  dependency('gio-unix-2.0'),
   dependency('astal-4-4.0'),
   dependency('astal-battery-0.1'),
   dependency('astal-hyprland-0.1'),
   dependency('astal-wireplumber-0.1'),
   dependency('astal-network-0.1'),
+  dependency('astal-apps-0.1'),
   dependency('libnm'),
   dependency('astal-mpris-0.1'),
   dependency('astal-power-profiles-0.1'),
@@ -23,11 +26,17 @@ dependencies = [
 
 blueprint_sources = files(
   'ui/Bar.blp',
+  'ui/Overview.blp',
+  'ui/AppButton.blp',
+  'ui/PowerMenu.blp',
 )
 
 vala_sources = files(
   'vala/bar/Bar.vala',
   'vala/bar/items/Workspaces.vala',
+  'vala/overview/Overview.vala',
+  'vala/overview/AppButton.vala',
+  'vala/powermenu/PowerMenu.vala',
   'vala/utils/Scss.vala',
   'vala/App.vala',
 )
@@ -64,9 +73,12 @@ resource = import('gnome').compile_resources(
 
 executable(
   meson.project_name(),
+    project_resources,
   dependencies: dependencies,
   sources: [vala_sources, resource],
   link_args: ['-lm'], # Link math library
   install: true,
   install_dir: bindir,
 )
+
+subdir('cli')

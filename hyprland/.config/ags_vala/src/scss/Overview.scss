@@ -1,0 +1,17 @@
+@use "../../../../../../.cache/material/colors.scss" as *;
+@use "Settings" as settings;
+@use "sass:color";
+
+.overview_list {
+  background: transparent;
+}
+
+.overview_list_row {
+  padding: 0.4em;
+  margin: 0.1em;
+  border-radius: settings.$borderRadius;
+  &:hover,
+  &:focus  {
+    background: $surface
+  }
+}

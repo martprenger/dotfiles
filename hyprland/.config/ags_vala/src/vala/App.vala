@@ -16,18 +16,20 @@ public class App : Astal.Application {
     foreach (Gdk.Monitor monitor in this.monitors) {
       this.add_window(new Bar(monitor));
     }
+    this.add_window(new Overview());
+    this.add_window(new PowerMenu());
   }
 
 
 
   static int main(string[] argv) {
-    App.instance = new App() { instance_name = "simple-bar" };
+    App.instance = new App() { instance_name = "mui" };
     try {
       App.instance.acquire_socket();
       return App.instance.run(null);
     } catch (Error _) {
       try {
-        var response = AstalIO.send_request("simple-bar", string.joinv(" ", argv[1:]));
+        var response = AstalIO.send_request("mui", string.joinv(" ", argv[1:]));
         print(@"$response\n");
         return 0;
       } catch (Error err) {

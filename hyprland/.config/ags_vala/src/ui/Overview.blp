@@ -1,0 +1,73 @@
+using Gtk 4.0;
+using Astal 4.0;
+
+template $Overview: Astal.Window {
+  styles [
+    "window",
+    ]
+
+  title: "Overview";
+  namespace: "Overview";
+  anchor: top;
+  keymode: exclusive;
+
+
+  EventControllerKey {
+    key-released => $key_released();
+    key-pressed => $key_pressed();
+  }
+
+  Box {
+    orientation: vertical;
+    width-request: 300;
+    overflow: hidden;
+
+    Entry entry {
+      height-request: 50;
+      primary-icon-name: "system-search-symbolic";
+      changed => $update_list();
+      activate => $launch_first_runner_button();
+      placeholder-text: "Search...";
+    }
+
+
+
+    ScrolledWindow {
+      focusable: false;
+      max-content-height: 300;
+      propagate-natural-height: true;
+      overlay-scrolling: true;
+
+      Box {
+        focusable: false;
+        orientation: vertical;
+
+        Astal.Bin math_bin {
+          focusable: true;
+          visible: false;
+
+          styles [
+            "overview_list_row"
+          ]
+
+          Label math_label {
+            justify: left;
+            halign: start;
+            valign: center;
+          }
+        }
+
+        ListBox app_list {
+          EventControllerKey {
+            key-released => $key_released();
+            key-pressed => $key_pressed();
+          }
+
+          styles [
+            "overview_list"
+          ]
+        }
+      }
+    }
+  }
+}

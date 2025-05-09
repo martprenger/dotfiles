@@ -12,8 +12,8 @@
         "c"
       ],
       "default_suffix": "c",
-      "version": "14.2.1",
-      "full_version": "cc (GCC) 14.2.1 20250207",
+      "version": "15.1.1",
+      "full_version": "cc (GCC) 15.1.1 20250425",
       "linker_id": "ld.bfd"
     },
     "vala": {
@@ -48,8 +48,8 @@
         "c"
       ],
       "default_suffix": "c",
-      "version": "14.2.1",
-      "full_version": "cc (GCC) 14.2.1 20250207",
+      "version": "15.1.1",
+      "full_version": "cc (GCC) 15.1.1 20250425",
       "linker_id": "ld.bfd"
     },
     "vala": {

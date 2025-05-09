@@ -20,7 +20,10 @@
         ],
         "parameters": [],
         "sources": [
-          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/Bar.blp"
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/Bar.blp",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/Overview.blp",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/AppButton.blp",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/PowerMenu.blp"
         ],
         "generated_sources": []
       }
@@ -142,12 +145,12 @@
     "installed": false
   },
   {
-    "name": "simple-bar",
-    "id": "25a6634@@simple-bar@exe",
+    "name": "mui",
+    "id": "25a6634@@mui@exe",
     "type": "executable",
     "defined_in": "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/meson.build",
     "filename": [
-      "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/simple-bar"
+      "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui"
     ],
     "build_by_default": true,
     "target_sources": [
@@ -171,6 +174,8 @@
           "--pkg",
           "libnm",
           "--pkg",
+          "astal-apps-0.1",
+          "--pkg",
           "astal-network-0.1",
           "--pkg",
           "astal-wireplumber-0.1",
@@ -181,6 +186,8 @@
           "--pkg",
           "astal-4-4.0",
           "--pkg",
+          "gio-unix-2.0",
+          "--pkg",
           "gio-2.0",
           "--pkg",
           "glib-2.0",
@@ -190,7 +197,7 @@
           "gtk4-layer-shell-0",
           "--color=always",
           "--directory",
-          "src/simple-bar.p",
+          "src/mui.p",
           "--basedir",
           "../src",
           "--gresources=../src/gresource.xml",
@@ -201,6 +208,9 @@
         "sources": [
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/bar/Bar.vala",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/bar/items/Workspaces.vala",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/overview/Overview.vala",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/overview/AppButton.vala",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/powermenu/PowerMenu.vala",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/utils/Scss.vala",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/App.vala"
         ],
@@ -214,7 +224,7 @@
           "cc"
         ],
         "parameters": [
-          "-I/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/simple-bar.p",
+          "-I/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p",
           "-I/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src",
           "-I/home/pyro/dotfiles/hyprland/.config/ags_vala/src",
           "-I/usr/include/gtk4-layer-shell",
@@ -246,6 +256,7 @@
           "-I/usr/include/spa-0.2",
           "-I/usr/include/astal-network",
           "-I/usr/include/libnm",
+          "-I/usr/include/astal-apps",
           "-I/usr/include/astal-mpris",
           "-I/usr/include/astal-power-profiles",
           "-I/usr/include/astal-tray",
@@ -266,13 +277,21 @@
           "-msse",
           "-msse2"
         ],
-        "sources": [],
+        "sources": [
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/lib/Math/evaluator.c",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/lib/Math/lexer.c",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/lib/Math/mpars.c",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/lib/Math/parser.c"
+        ],
         "generated_sources": [
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/data.c",
-          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/simple-bar.p/vala/bar/Bar.c",
-          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/simple-bar.p/vala/bar/items/Workspaces.c",
-          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/simple-bar.p/vala/utils/Scss.c",
-          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/simple-bar.p/vala/App.c"
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/bar/Bar.c",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/bar/items/Workspaces.c",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/overview/Overview.c",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/overview/AppButton.c",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/powermenu/PowerMenu.c",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/utils/Scss.c",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/App.c"
         ],
         "unity_sources": []
       },
@@ -295,10 +314,10 @@
           "/usr/lib/libgtk-4.so",
           "/usr/lib/libpangocairo-1.0.so",
           "/usr/lib/libpango-1.0.so",
-          "/usr/lib/libharfbuzz.so",
           "/usr/lib/libgdk_pixbuf-2.0.so",
           "/usr/lib/libcairo-gobject.so",
           "/usr/lib/libcairo.so",
+          "/usr/lib/libharfbuzz.so",
           "/usr/lib/libvulkan.so",
           "/usr/lib/libgraphene-1.0.so",
           "/usr/lib/libastal-battery.so",
@@ -307,6 +326,7 @@
           "/usr/lib/libastal-wireplumber.so",
           "/usr/lib/libastal-network.so",
           "/usr/lib/libnm.so",
+          "/usr/lib/libastal-apps.so",
           "/usr/lib/libastal-mpris.so",
           "/usr/lib/libastal-power-profiles.so",
           "/usr/lib/libastal-tray.so",
@@ -324,11 +344,13 @@
       "astal-io-0.1",
       "glib-2.0",
       "gio-2.0",
+      "gio-unix-2.0",
       "astal-4-4.0",
       "astal-battery-0.1",
       "astal-hyprland-0.1",
       "astal-wireplumber-0.1",
       "astal-network-0.1",
+      "astal-apps-0.1",
       "libnm",
       "astal-mpris-0.1",
       "astal-power-profiles-0.1",
@@ -339,7 +361,102 @@
     "win_subsystem": "console",
     "installed": true,
     "install_filename": [
-      "/home/pyro/dotfiles/hyprland/.config/ags_vala/result/bin/simple-bar"
+      "/home/pyro/dotfiles/hyprland/.config/ags_vala/result/bin/mui"
+    ]
+  },
+  {
+    "name": "muictl",
+    "id": "d93e8d2@@muictl@exe",
+    "type": "executable",
+    "defined_in": "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/cli/meson.build",
+    "filename": [
+      "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/cli/muictl"
+    ],
+    "build_by_default": true,
+    "target_sources": [
+      {
+        "language": "vala",
+        "machine": "host",
+        "compiler": [
+          "valac"
+        ],
+        "parameters": [
+          "-C",
+          "--debug",
+          "--pkg",
+          "gio-2.0",
+          "--pkg",
+          "gio-unix-2.0",
+          "--color=always",
+          "--directory",
+          "src/cli/muictl.p",
+          "--basedir",
+          "../src/cli"
+        ],
+        "sources": [
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/cli/cli.vala"
+        ],
+        "generated_sources": [],
+        "unity_sources": []
+      },
+      {
+        "language": "c",
+        "machine": "host",
+        "compiler": [
+          "cc"
+        ],
+        "parameters": [
+          "-I/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/cli/muictl.p",
+          "-I/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/cli",
+          "-I/home/pyro/dotfiles/hyprland/.config/ags_vala/src/cli",
+          "-I/usr/include/gio-unix-2.0",
+          "-I/usr/include/glib-2.0",
+          "-I/usr/lib/glib-2.0/include",
+          "-I/usr/include/libmount",
+          "-I/usr/include/blkid",
+          "-I/usr/include/sysprof-6",
+          "-fdiagnostics-color=always",
+          "-D_FILE_OFFSET_BITS=64",
+          "-Wall",
+          "-Winvalid-pch",
+          "-O0",
+          "-g",
+          "-pthread"
+        ],
+        "sources": [],
+        "generated_sources": [
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/cli/muictl.p/cli.c"
+        ],
+        "unity_sources": []
+      },
+      {
+        "linker": [
+          "cc"
+        ],
+        "parameters": [
+          "-Wl,--as-needed",
+          "-Wl,--no-undefined",
+          "-Wl,--start-group",
+          "-Wl,--start-group",
+          "/usr/lib/libgio-2.0.so",
+          "/usr/lib/libgobject-2.0.so",
+          "/usr/lib/libglib-2.0.so",
+          "-Wl,--end-group",
+          "-Wl,--end-group"
+        ]
+      }
+    ],
+    "extra_files": [],
+    "subproject": null,
+    "dependencies": [
+      "gio-unix-2.0",
+      "gio-2.0"
+    ],
+    "depends": [],
+    "win_subsystem": "console",
+    "installed": true,
+    "install_filename": [
+      "/home/pyro/dotfiles/hyprland/.config/ags_vala/result/bin/muictl"
     ]
   }
 ]

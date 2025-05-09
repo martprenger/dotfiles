@@ -114,6 +114,7 @@ def get_file_list(folder_path):
 
 ready_templates = {
     "colors.css": "@define-color {name} {hex};\n",
+    "ags_colors.css": "--{name}: {hex};\n",
     "colors.scss": "${name}: {hex};\n"
 }
 additional = {
@@ -245,6 +246,8 @@ def generate_templates(folder: str, output_folder: str, scheme: DynamicScheme,
 
     for file in ready_templates:
         _template = ""
+        if (file == "ags_colors.css"):
+            _template += ":root {\n"
         for color in vars(MaterialDynamicColors).keys():
             color_name = getattr(MaterialDynamicColors, color)
             if hasattr(color_name, "get_hct"):
@@ -264,6 +267,9 @@ def generate_templates(folder: str, output_folder: str, scheme: DynamicScheme,
                         rgb=rgb_color
                     )
                     _template += new_line
+
+        if (file == "ags_colors.css"):
+            _template += "}\n"
 
         new_path = join(output_folder, os.path.basename(file))
         with open(new_path, 'w') as f:

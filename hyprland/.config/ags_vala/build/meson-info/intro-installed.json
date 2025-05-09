@@ -1,3 +1,4 @@
 {
-  "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/simple-bar": "/home/pyro/dotfiles/hyprland/.config/ags_vala/result/bin/simple-bar"
+  "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui": "/home/pyro/dotfiles/hyprland/.config/ags_vala/result/bin/mui",
+  "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/cli/muictl": "/home/pyro/dotfiles/hyprland/.config/ags_vala/result/bin/muictl"
 }

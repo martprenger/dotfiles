@@ -1,19 +1,30 @@
-Build started at 2025-04-04T22:21:43.366628
+Build started at 2025-05-06T22:52:45.219122
 Main binary: /usr/bin/python
-Build Options: -Dprefix=/home/pyro/dotfiles/hyprland/.config/ags_vala/result
+Build Options: -Dprefix=/home/pyro/dotfiles/hyprland/.config/ags_vala/result -Dprefix=/home/pyro/dotfiles/hyprland/.config/ags_vala/result
 Python system: Linux
 The Meson build system
-Version: 1.7.0
+Version: 1.8.0
 Source dir: /home/pyro/dotfiles/hyprland/.config/ags_vala
 Build dir: /home/pyro/dotfiles/hyprland/.config/ags_vala/build
 Build type: native build
-Project name: simple-bar
-Project version: undefined
+WARNING: You should add the boolean check kwarg to the run_command call.
+         It currently defaults to false,
+         but it will default to true in meson 2.0.
+         See also: https://github.com/mesonbuild/meson/issues/9300
+Running command: /usr/bin/cat version
+--- stdout ---
+
+--- stderr ---
+cat: version: No such file or directory
+
+
+Project name: mui
+Project version: 
 -----------
 Detecting compiler via: `cc --version` -> 0
 stdout:
-cc (GCC) 14.2.1 20250207
-Copyright (C) 2024 Free Software Foundation, Inc.
+cc (GCC) 15.1.1 20250425
+Copyright (C) 2025 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 -----------
@@ -22,15 +33,15 @@ Running command: -cpp -x c -E -dM -
 -----------
 Detecting linker via: `cc -Wl,--version` -> 0
 stdout:
-GNU ld (GNU Binutils) 2.44
+GNU ld (GNU Binutils) 2.44.0
 Copyright (C) 2025 Free Software Foundation, Inc.
 This program is free software; you may redistribute it under the terms of
 the GNU General Public License version 3 or (at your option) a later version.
 This program has absolutely no warranty.
 -----------
 stderr:
-collect2 version 14.2.1 20250207
-/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccOKi6Ko.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../.. --version -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/crtn.o
+collect2 version 15.1.1 20250425
+/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2uWXrn.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../.. -L/lib -L/usr/lib --version -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o
 -----------
 Sanity testing C compiler: cc
 Is cross compiler: False.
@@ -42,12 +53,12 @@ Sanity check compile stderr:
 
 -----
 Running test binary command:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/sanitycheckc.exe
-C compiler for the host machine: cc (gcc 14.2.1 "cc (GCC) 14.2.1 20250207")
-C linker for the host machine: cc ld.bfd 2.44
+C compiler for the host machine: cc (gcc 15.1.1 "cc (GCC) 15.1.1 20250425")
+C linker for the host machine: cc ld.bfd 2.44.0
 -----------
 Detecting archiver via: `gcc-ar --version` -> 0
 stdout:
-GNU ar (GNU Binutils) 2.44
+GNU ar (GNU Binutils) 2.44.0
 Copyright (C) 2025 Free Software Foundation, Inc.
 This program is free software; you may redistribute it under the terms of
 the GNU General Public License version 3 or (at your option) any later version.
@@ -59,17 +70,17 @@ stdout:
 Vala 0.56.18
 -----------
 Running compile:
-Working directory:  /tmp/tmpezqv3el3
+Working directory:  /tmp/tmpi1qp78oy
 Code:
 class MesonSanityCheck : Object { }
 -----------
-Command line: `valac /tmp/tmpezqv3el3/testfile.vala -C` -> 0
+Command line: `valac /tmp/tmpi1qp78oy/testfile.vala -C` -> 0
 Vala compiler for the host machine: valac (valac 0.56.18)
 -----------
 Detecting compiler via: `cc --version` -> 0
 stdout:
-cc (GCC) 14.2.1 20250207
-Copyright (C) 2024 Free Software Foundation, Inc.
+cc (GCC) 15.1.1 20250425
+Copyright (C) 2025 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 -----------
@@ -78,15 +89,15 @@ Running command: -cpp -x c -E -dM -
 -----------
 Detecting linker via: `cc -Wl,--version` -> 0
 stdout:
-GNU ld (GNU Binutils) 2.44
+GNU ld (GNU Binutils) 2.44.0
 Copyright (C) 2025 Free Software Foundation, Inc.
 This program is free software; you may redistribute it under the terms of
 the GNU General Public License version 3 or (at your option) a later version.
 This program has absolutely no warranty.
 -----------
 stderr:
-collect2 version 14.2.1 20250207
-/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccC1DJxZ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../.. --version -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/crtn.o
+collect2 version 15.1.1 20250425
+/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfrbnEK.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../.. -L/lib -L/usr/lib --version -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o
 -----------
 Sanity testing C compiler: cc
 Is cross compiler: False.
@@ -98,12 +109,12 @@ Sanity check compile stderr:
 
 -----
 Running test binary command:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/sanitycheckc.exe
-C compiler for the build machine: cc (gcc 14.2.1 "cc (GCC) 14.2.1 20250207")
-C linker for the build machine: cc ld.bfd 2.44
+C compiler for the build machine: cc (gcc 15.1.1 "cc (GCC) 15.1.1 20250425")
+C linker for the build machine: cc ld.bfd 2.44.0
 -----------
 Detecting archiver via: `gcc-ar --version` -> 0
 stdout:
-GNU ar (GNU Binutils) 2.44
+GNU ar (GNU Binutils) 2.44.0
 Copyright (C) 2025 Free Software Foundation, Inc.
 This program is free software; you may redistribute it under the terms of
 the GNU General Public License version 3 or (at your option) any later version.
@@ -115,7 +126,7 @@ stdout:
 Vala 0.56.18
 -----------
 Using cached compile:
-Cached command line:  valac /tmp/tmpezqv3el3/testfile.vala -C 
+Cached command line:  valac /tmp/tmpi1qp78oy/testfile.vala -C 
 
 Code:
  class MesonSanityCheck : Object { }
@@ -134,14 +145,14 @@ Program blueprint-compiler found: YES (/usr/bin/blueprint-compiler)
 Program sass found: YES (/usr/bin/sass)
 Pkg-config binary missing from cross or native file, or env var undefined.
 Trying a default Pkg-config fallback at pkg-config
-Found pkg-config: YES (/usr/bin/pkg-config) 2.3.0
+Found pkg-config: YES (/usr/bin/pkg-config) 2.4.3
 Determining dependency 'gtk4-layer-shell-0' with pkg-config executable '/usr/bin/pkg-config'
 env[PKG_CONFIG_PATH]: 
 env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
 Called: `/usr/bin/pkg-config --modversion gtk4-layer-shell-0` -> 0
 stdout:
-1.1.0
+1.1.1
 -----------
 env[PKG_CONFIG_PATH]: 
 env[PKG_CONFIG]: /usr/bin/pkg-config
@@ -166,7 +177,7 @@ stdout:
 -lgtk4-layer-shell
 -----------
 Running compile:
-Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpo6uxo_rc
+Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpj68o1ja3
 Code:
 
         #include<stddef.h>
@@ -176,7 +187,7 @@ Code:
             return 0;
         }
 -----------
-Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpo6uxo_rc/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpo6uxo_rc/output.exe -D_FILE_OFFSET_BITS=64 -O0` -> 0
+Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpj68o1ja3/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpj68o1ja3/output.exe -D_FILE_OFFSET_BITS=64 -O0` -> 0
 Program stdout:
 
 8
@@ -185,17 +196,17 @@ Program stderr:
 
 
 Running compile:
-Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpp8ruv6iu
+Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpoh3kfwp0
 Code:
 
 -----------
-Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpp8ruv6iu/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpp8ruv6iu/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
+Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpoh3kfwp0/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpoh3kfwp0/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
 stdout:
-install: /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/
-programs: =/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../x86_64-pc-linux-gnu/bin/x86_64-pc-linux-gnu/14.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../x86_64-pc-linux-gnu/bin/
-libraries: =/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../x86_64-pc-linux-gnu/lib/x86_64-pc-linux-gnu/14.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../x86_64-pc-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../x86_64-pc-linux-gnu/14.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/:/lib/x86_64-pc-linux-gnu/14.2.1/:/lib/../lib/:/usr/lib/x86_64-pc-linux-gnu/14.2.1/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../x86_64-pc-linux-gnu/lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../:/lib/:/usr/lib/
+install: /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/
+programs: =/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../x86_64-pc-linux-gnu/bin/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../x86_64-pc-linux-gnu/bin/
+libraries: =/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../x86_64-pc-linux-gnu/lib/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../x86_64-pc-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/:/lib/x86_64-pc-linux-gnu/15.1.1/:/lib/../lib/:/usr/lib/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../x86_64-pc-linux-gnu/lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../:/lib/:/usr/lib/
 -----------
-Run-time dependency gtk4-layer-shell-0 found: YES 1.1.0
+Run-time dependency gtk4-layer-shell-0 found: YES 1.1.1
 Determining dependency 'astal-io-0.1' with pkg-config executable '/usr/bin/pkg-config'
 env[PKG_CONFIG_PATH]: 
 env[PKG_CONFIG]: /usr/bin/pkg-config
@@ -233,7 +244,7 @@ env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
 Called: `/usr/bin/pkg-config --modversion glib-2.0` -> 0
 stdout:
-2.82.5
+2.84.1
 -----------
 env[PKG_CONFIG_PATH]: 
 env[PKG_CONFIG]: /usr/bin/pkg-config
@@ -257,14 +268,14 @@ Called: `/usr/bin/pkg-config --libs glib-2.0` -> 0
 stdout:
 -lglib-2.0
 -----------
-Run-time dependency glib-2.0 found: YES 2.82.5
+Run-time dependency glib-2.0 found: YES 2.84.1
 Determining dependency 'gio-2.0' with pkg-config executable '/usr/bin/pkg-config'
 env[PKG_CONFIG_PATH]: 
 env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
 Called: `/usr/bin/pkg-config --modversion gio-2.0` -> 0
 stdout:
-2.82.5
+2.84.1
 -----------
 env[PKG_CONFIG_PATH]: 
 env[PKG_CONFIG]: /usr/bin/pkg-config
@@ -288,7 +299,38 @@ Called: `/usr/bin/pkg-config --libs gio-2.0` -> 0
 stdout:
 -lgio-2.0 -lgobject-2.0 -lglib-2.0
 -----------
-Run-time dependency gio-2.0 found: YES 2.82.5
+Run-time dependency gio-2.0 found: YES 2.84.1
+Determining dependency 'gio-unix-2.0' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion gio-unix-2.0` -> 0
+stdout:
+2.84.1
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags gio-unix-2.0` -> 0
+stdout:
+-I/usr/include/gio-unix-2.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-6 -pthread
+-----------
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gio-unix-2.0` -> 0
+stdout:
+-L/usr/lib -lgio-2.0 -lgobject-2.0 -lglib-2.0
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs gio-unix-2.0` -> 0
+stdout:
+-lgio-2.0 -lgobject-2.0 -lglib-2.0
+-----------
+Run-time dependency gio-unix-2.0 found: YES 2.84.1
 Determining dependency 'astal-4-4.0' with pkg-config executable '/usr/bin/pkg-config'
 env[PKG_CONFIG_PATH]: 
 env[PKG_CONFIG]: /usr/bin/pkg-config
@@ -310,14 +352,14 @@ env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
 Called: `/usr/bin/pkg-config --libs astal-4-4.0` -> 0
 stdout:
--L/usr/lib -lastal-4 -lastal-io -lgtk-4 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdk_pixbuf-2.0 -lcairo-gobject -lcairo -lvulkan -lgraphene-1.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lgtk4-layer-shell
+-L/usr/lib -lastal-4 -lastal-io -lgtk4-layer-shell -lgtk-4 -lpangocairo-1.0 -lpango-1.0 -lgdk_pixbuf-2.0 -lcairo-gobject -lcairo -lharfbuzz -lvulkan -lgraphene-1.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0
 -----------
 env[PKG_CONFIG_PATH]: 
 env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
 Called: `/usr/bin/pkg-config --libs astal-4-4.0` -> 0
 stdout:
--lastal-4 -lastal-io -lgtk-4 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdk_pixbuf-2.0 -lcairo-gobject -lcairo -lvulkan -lgraphene-1.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lgtk4-layer-shell
+-lastal-4 -lastal-io -lgtk4-layer-shell -lgtk-4 -lpangocairo-1.0 -lpango-1.0 -lgdk_pixbuf-2.0 -lcairo-gobject -lcairo -lharfbuzz -lvulkan -lgraphene-1.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0
 -----------
 Run-time dependency astal-4-4.0 found: YES 4.0.0
 Determining dependency 'astal-battery-0.1' with pkg-config executable '/usr/bin/pkg-config'
@@ -444,6 +486,37 @@ stdout:
 -lastal-network -lnm -lgio-2.0 -lgobject-2.0 -lglib-2.0
 -----------
 Run-time dependency astal-network-0.1 found: YES 0.1.0
+Determining dependency 'astal-apps-0.1' with pkg-config executable '/usr/bin/pkg-config'
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --modversion astal-apps-0.1` -> 0
+stdout:
+0.1.0
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --cflags astal-apps-0.1` -> 0
+stdout:
+-I/usr/include/astal-apps -I/usr/include/gio-unix-2.0 -I/usr/include/json-glib-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-6 -pthread
+-----------
+env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs astal-apps-0.1` -> 0
+stdout:
+-L/usr/lib -lastal-apps -ljson-glib-1.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0
+-----------
+env[PKG_CONFIG_PATH]: 
+env[PKG_CONFIG]: /usr/bin/pkg-config
+-----------
+Called: `/usr/bin/pkg-config --libs astal-apps-0.1` -> 0
+stdout:
+-lastal-apps -ljson-glib-1.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0
+-----------
+Run-time dependency astal-apps-0.1 found: YES 0.1.0
 Determining dependency 'libnm' with pkg-config executable '/usr/bin/pkg-config'
 env[PKG_CONFIG_PATH]: 
 env[PKG_CONFIG]: /usr/bin/pkg-config
@@ -558,14 +631,14 @@ env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
 Called: `/usr/bin/pkg-config --libs astal-tray-0.1` -> 0
 stdout:
--L/usr/lib -lastal-tray -ljson-glib-1.0 -lappmenu-glib-translator -lgio-2.0 -lgdk_pixbuf-2.0 -lgobject-2.0 -lglib-2.0
+-L/usr/lib -lastal-tray -ljson-glib-1.0 -lappmenu-glib-translator -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0
 -----------
 env[PKG_CONFIG_PATH]: 
 env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
 Called: `/usr/bin/pkg-config --libs astal-tray-0.1` -> 0
 stdout:
--lastal-tray -ljson-glib-1.0 -lappmenu-glib-translator -lgio-2.0 -lgdk_pixbuf-2.0 -lgobject-2.0 -lglib-2.0
+-lastal-tray -ljson-glib-1.0 -lappmenu-glib-translator -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0
 -----------
 Run-time dependency astal-tray-0.1 found: YES 0.1.0
 Determining dependency 'astal-bluetooth-0.1' with pkg-config executable '/usr/bin/pkg-config'
@@ -600,7 +673,7 @@ stdout:
 -----------
 Run-time dependency astal-bluetooth-0.1 found: YES 0.1.0
 Dependency astal-io-0.1 found: YES 0.1.0 (cached)
-Dependency gio-2.0 found: YES 2.82.5 (cached)
+Dependency gio-2.0 found: YES 2.84.1 (cached)
 env[PKG_CONFIG_PATH]: 
 env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
@@ -610,9 +683,11 @@ stdout:
 -----------
 Got pkg-config variable glib_compile_resources : /usr/bin/glib-compile-resources
 Program /usr/bin/glib-compile-resources found: YES (/usr/bin/glib-compile-resources)
-Build targets in project: 5
+Dependency gio-unix-2.0 found: YES 2.84.1 (cached)
+Dependency gio-2.0 found: YES 2.84.1 (cached)
+Build targets in project: 6
 
-simple-bar undefined
+mui 
 
   User defined options
     prefix: /home/pyro/dotfiles/hyprland/.config/ags_vala/result

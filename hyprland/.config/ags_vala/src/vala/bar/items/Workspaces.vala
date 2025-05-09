@@ -18,7 +18,7 @@ public class Workspaces : Gtk.Box {
 			};
 			connect_button_to_workspace(workspace_button, i);
 			this.append(workspace_button);
-		}		
+		}
 
     update_workspaces();
 		setup_workspace_event_handlers();
@@ -36,7 +36,19 @@ public class Workspaces : Gtk.Box {
 		var scroll_controller = new Gtk.EventControllerScroll(Gtk.EventControllerScrollFlags.VERTICAL);
 
 		scroll_controller.scroll.connect((delta_x, delta_y) => {
-			string direction = delta_y > 0 ? "e-1" : "e+1";
+			string direction;
+
+		  AstalHyprland.Monitor monitor = _hyprland.get_monitor(this._monitor_id);
+	    int focused_workspace_id = monitor.active_workspace.id;
+
+			if (delta_y > 0 && focused_workspace_id > _starting_workspace) {
+				direction = "r-1";
+			} else if (delta_y <= 0 && focused_workspace_id < _starting_workspace + _workspaces_per_monitor - 1) {
+				direction = "r+1";
+			} else {
+				return false;
+			}
+
 			_hyprland.dispatch("workspace", direction);
 			return true;
 		});
@@ -46,7 +58,7 @@ public class Workspaces : Gtk.Box {
 	private void update_workspaces() {
 		int index = 0;
 		var current = (Gtk.Button)this.get_first_child();
-    
+
     var loop = new GLib.MainLoop (null, false);
     _hyprland.sync_monitors.begin((source_object, res) => {
       try {
@@ -72,7 +84,7 @@ public class Workspaces : Gtk.Box {
       }
     });
 	}
-	
+
   private void connect_button_to_workspace(Gtk.Button button, int workspace_number) {
 		var middle_click = new Gtk.GestureClick() {
 			button = Gdk.BUTTON_MIDDLE

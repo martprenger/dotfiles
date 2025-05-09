@@ -1,4 +1,7 @@
 [
   "/home/pyro/dotfiles/hyprland/.config/ags_vala/meson.build",
-  "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/meson.build"
+  "/usr/bin/cat",
+  "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/lib/Math/meson.build",
+  "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/meson.build",
+  "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/cli/meson.build"
 ]

@@ -3,5 +3,8 @@
     <gresource prefix="/">
         <file>main.css</file>
         <file>ui/Bar.ui</file>
+        <file>ui/Overview.ui</file>
+        <file>ui/AppButton.ui</file>
+        <file>ui/PowerMenu.ui</file>
     </gresource>
 </gresources>

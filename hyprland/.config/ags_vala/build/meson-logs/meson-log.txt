@@ -1,4 +1,4 @@
-Build started at 2025-05-06T22:52:45.219122
+Build started at 2025-05-11T14:02:06.028109
 Main binary: /usr/bin/python
 Build Options: -Dprefix=/home/pyro/dotfiles/hyprland/.config/ags_vala/result -Dprefix=/home/pyro/dotfiles/hyprland/.config/ags_vala/result
 Python system: Linux
@@ -41,7 +41,7 @@ This program has absolutely no warranty.
 -----------
 stderr:
 collect2 version 15.1.1 20250425
-/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2uWXrn.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../.. -L/lib -L/usr/lib --version -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o
+/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc3eUJ4O.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../.. -L/lib -L/usr/lib --version -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o
 -----------
 Sanity testing C compiler: cc
 Is cross compiler: False.
@@ -70,11 +70,11 @@ stdout:
 Vala 0.56.18
 -----------
 Running compile:
-Working directory:  /tmp/tmpi1qp78oy
+Working directory:  /tmp/tmp24go_nqs
 Code:
 class MesonSanityCheck : Object { }
 -----------
-Command line: `valac /tmp/tmpi1qp78oy/testfile.vala -C` -> 0
+Command line: `valac /tmp/tmp24go_nqs/testfile.vala -C` -> 0
 Vala compiler for the host machine: valac (valac 0.56.18)
 -----------
 Detecting compiler via: `cc --version` -> 0
@@ -97,7 +97,7 @@ This program has absolutely no warranty.
 -----------
 stderr:
 collect2 version 15.1.1 20250425
-/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfrbnEK.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../.. -L/lib -L/usr/lib --version -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o
+/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc74n1Jv.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../.. -L/lib -L/usr/lib --version -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o
 -----------
 Sanity testing C compiler: cc
 Is cross compiler: False.
@@ -126,7 +126,7 @@ stdout:
 Vala 0.56.18
 -----------
 Using cached compile:
-Cached command line:  valac /tmp/tmpi1qp78oy/testfile.vala -C 
+Cached command line:  valac /tmp/tmp24go_nqs/testfile.vala -C 
 
 Code:
  class MesonSanityCheck : Object { }
@@ -177,7 +177,7 @@ stdout:
 -lgtk4-layer-shell
 -----------
 Running compile:
-Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpj68o1ja3
+Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpr16dgrw9
 Code:
 
         #include<stddef.h>
@@ -187,7 +187,7 @@ Code:
             return 0;
         }
 -----------
-Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpj68o1ja3/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpj68o1ja3/output.exe -D_FILE_OFFSET_BITS=64 -O0` -> 0
+Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpr16dgrw9/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpr16dgrw9/output.exe -D_FILE_OFFSET_BITS=64 -O0` -> 0
 Program stdout:
 
 8
@@ -196,11 +196,11 @@ Program stderr:
 
 
 Running compile:
-Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpoh3kfwp0
+Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpunqvu8kg
 Code:
 
 -----------
-Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpoh3kfwp0/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpoh3kfwp0/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
+Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpunqvu8kg/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpunqvu8kg/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
 stdout:
 install: /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/
 programs: =/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../x86_64-pc-linux-gnu/bin/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../x86_64-pc-linux-gnu/bin/

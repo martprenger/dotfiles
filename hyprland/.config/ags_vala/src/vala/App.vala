@@ -22,20 +22,30 @@ public class App : Astal.Application {
     this.add_window(new Overview());
     this.add_window(new PowerMenu());
 
-    this.window_added.connect(on_app_window_added);
-    this.window_removed.connect(on_app_window_removed);
-  }
+    Gdk.Display? default_display = Gdk.Display.get_default();
+    if (default_display == null) {
+        print("Error: Could not get the default display.\n");
+        return;
+    }
 
-  // Handler for Gtk.Application::window-added
-  private void on_app_window_added(Gtk.Application app, Gtk.Window window) {
-      print(@"Window added to application: $(window.get_title() ?? window.get_name() ?? "Untitled")\n");
-  }
+    // default_display.monitor_added.connect((display, monitor) => {
+    //     print("Monitor added: %s (%d x %d at %d, %d)\n",
+    //           monitor.get_model(),
+    //           monitor.get_width(),
+    //           monitor.get_height(),
+    //           monitor.get_x(),
+    //           monitor.get_y());
+    // });
 
-  // Handler for Gtk.Application::window-removed
-  private void on_app_window_removed(Gtk.Application app, Gtk.Window window) {
-      print(@"Window removed from application: $(window.get_title() ?? window.get_name() ?? "Untitled")\n");
+    // default_display.monitor_removed.connect((display, monitor) => {
+    //     print("Monitor removed: %s (%d x %d at %d, %d)\n",
+    //           monitor.get_model(),
+    //           monitor.get_width(),
+    //           monitor.get_height(),
+    //           monitor.get_x(),
+    //           monitor.get_y());
+    // });
   }
-
 
   static int main(string[] argv) {
     App.instance = new App() { instance_name = "mui" };

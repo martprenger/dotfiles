@@ -39,8 +39,8 @@ window.Bar {
     transition: all 0s;
 
     &.focused {
-        background: $primaryContainer;
-        color: $onPrimaryContainer;
+        background: $secondaryContainer;
+        color: $onSecondaryContainer;
     }
 
     &.empty {

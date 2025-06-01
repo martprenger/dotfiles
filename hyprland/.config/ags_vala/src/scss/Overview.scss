@@ -2,16 +2,36 @@
 @use "Settings" as settings;
 @use "sass:color";
 
+entry {
+    margin: 0.4em;
+}
+
+entry:focus-within {
+    outline: $primary;
+    outline-width: 1px;
+    outline-style: solid;
+}
+
 .overview_list {
-  background: transparent;
+    background: transparent;
 }
 
 .overview_list_row {
-  padding: 0.4em;
-  margin: 0.1em;
-  border-radius: settings.$borderRadius;
-  &:hover,
-  &:focus  {
-    background: $surface
-  }
+    padding: 0.4em;
+    margin: 0.1em;
+    border-radius: settings.$borderRadius;
+
+    &:selected {
+        background: transparent;
+        outline-color: transparent;
+    }
+
+    &:focus-within {
+        background: $secondaryContainer;
+        outline-color: transparent;
+    }
+
+    &:hover {
+        background-color: color.adjust($primary, $alpha: -0.4);
+    }
 }

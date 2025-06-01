@@ -16,17 +16,17 @@
 }
 
 button {
-    background: $surface;
-    color: $onSurface;
+    background: transparent;
+    color: $foreground;
     border-radius: settings.$borderRadius;
 
     image {
-        color: $onSurface;
+        color: $foreground;
     }
 
     &:focus {
-        border-color: red;
-        border-width: 10px;
+        background: $secondaryContainer;
+        outline-color: transparent;
     }
 
     &:hover {

@@ -18,7 +18,7 @@ build:
     ninja -C {{BIN_DIR}}
 
 dist:
-    meson -C {{BIN_DIR}} --no-tests dist
+    meson dist -C {{BIN_DIR}} --no-tests
 
 install:
     meson install -C {{BIN_DIR}}

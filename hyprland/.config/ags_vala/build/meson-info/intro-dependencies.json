@@ -468,5 +468,27 @@
     "dependencies": [],
     "depends": [],
     "meson_variables": []
+  },
+  {
+    "name": "libgtop-2.0",
+    "type": "pkgconfig",
+    "version": "2.41.3",
+    "compile_args": [
+      "-I/usr/include/libgtop-2.0",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libgtop-2.0.so",
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
   }
 ]

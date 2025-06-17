@@ -1,4 +1,4 @@
 # List of files installed by Meson
 # Does not contain files installed by custom scripts.
-/home/pyro/dotfiles/hyprland/.config/ags_vala/result/bin/mui
-/home/pyro/dotfiles/hyprland/.config/ags_vala/result/bin/muictl
+/usr/local/bin/mui
+/usr/local/bin/muictl

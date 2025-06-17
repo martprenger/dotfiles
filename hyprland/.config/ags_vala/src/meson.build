@@ -3,7 +3,6 @@ bindir = get_option('prefix') / get_option('bindir')
 blp = find_program('blueprint-compiler', required: true)
 sass = find_program('sass', required: true)
 
-
 dependencies = [
   dependency('gtk4-layer-shell-0'),
   dependency('astal-io-0.1'),
@@ -25,20 +24,24 @@ dependencies = [
 ]
 
 blueprint_sources = files(
+  'ui/AppButton.blp',
   'ui/Bar.blp',
   'ui/Overview.blp',
-  'ui/AppButton.blp',
   'ui/PowerMenu.blp',
+  'ui/Qheader.blp',
+  'ui/QuickMenu.blp',
 )
 
 vala_sources = files(
+  'vala/App.vala',
   'vala/bar/Bar.vala',
   'vala/bar/items/Workspaces.vala',
-  'vala/overview/Overview.vala',
   'vala/overview/AppButton.vala',
+  'vala/overview/Overview.vala',
   'vala/powermenu/PowerMenu.vala',
+  'vala/quickmenu/Qheader.vala',
+  'vala/quickmenu/QuickMenu.vala',
   'vala/utils/Scss.vala',
-  'vala/App.vala',
 )
 
 # transplie blueprints
@@ -73,7 +76,7 @@ resource = import('gnome').compile_resources(
 
 executable(
   meson.project_name(),
-    project_resources,
+  project_resources,
   dependencies: dependencies,
   sources: [vala_sources, resource],
   link_args: ['-lm'], # Link math library

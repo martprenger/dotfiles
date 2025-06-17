@@ -6,5 +6,7 @@
         <file>ui/Overview.ui</file>
         <file>ui/AppButton.ui</file>
         <file>ui/PowerMenu.ui</file>
+        <file>ui/QuickMenu.ui</file>
+        <file>ui/Qheader.ui</file>
     </gresource>
 </gresources>

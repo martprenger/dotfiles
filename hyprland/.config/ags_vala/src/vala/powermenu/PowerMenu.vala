@@ -20,7 +20,7 @@ class PowerMenu : Astal.Window {
 	private unowned Gtk.Stack main_stack;
 
 	construct {
-    namespace = "bar";
+        namespace = "bar";
 		if (instance == null) {
 			instance = this;
 		} else {
@@ -147,5 +147,3 @@ class PowerMenu : Astal.Window {
 		}
 	}
 }
-
-

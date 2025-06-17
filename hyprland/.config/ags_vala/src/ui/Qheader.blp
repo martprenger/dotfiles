@@ -1,0 +1,26 @@
+using Gtk 4.0;
+
+template $Qheader: Box {
+  orientation: horizontal;
+  spacing: 10;
+  hexpand: true;
+
+  Image {
+    icon-name: "avatar-default-symbolic";
+  }
+
+  Label {
+    label: bind template.user_name;
+  }
+
+  Label {
+    label: bind template.battery_percentage;
+  }
+
+  Button {
+    icon-name: "system-shutdown-symbolic";
+    clicked => $toggle_power_menu();
+    halign: end;
+    hexpand: true;
+  }
+}

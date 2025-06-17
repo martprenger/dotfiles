@@ -64,7 +64,7 @@ entry {
 }
 
 entry:focus-within {
-  outline: #b7d085;
+  outline: #c2caaa;
   outline-width: 1px;
   outline-style: solid;
 }

@@ -1,0 +1,19 @@
+using Gtk 4.0;
+using Astal 4.0;
+
+template $QuickMenu: Astal.Window {
+  default-width: 400;
+  default-height: 1;
+  title: "QuickMenu";
+  namespace: "QuickMenu";
+  margin-right: 5;
+  margin-top: 5;
+
+  Box {
+    hexpand: true;
+
+    $Qheader {
+      hexpand: true;
+    }
+  }
+}

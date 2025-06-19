@@ -1,17 +1,24 @@
 [GtkTemplate(ui = "/ui/QuickMenu.ui")]
 public class QuickMenu : Astal.Window {
-	public static QuickMenu instance { get; private set; }
+    public static QuickMenu instance { get; private set; }
 
-	construct {
-		if (instance == null) {
-			instance = this;
-		} else {
-			this.destroy();
-		}
+    // [GtkChild]
+    // private unowned Qheader header;
 
-		this.anchor = TOP | RIGHT;
+    construct {
+        if (instance == null) {
+            instance = this;
+        } else {
+            this.destroy();
+        }
 
-		var header = new Qheader();
-		this.set_child(header);
-	}
+        this.anchor = TOP | RIGHT;
+    }
+
+    [GtkCallback]
+    public void key_released(uint keyval) {
+        if (keyval == Gdk.Key.Escape) {
+            this.visible = false;
+        }
+    }
 }

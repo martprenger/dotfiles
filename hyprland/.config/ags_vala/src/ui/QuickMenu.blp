@@ -8,11 +8,16 @@ template $QuickMenu: Astal.Window {
   namespace: "QuickMenu";
   margin-right: 5;
   margin-top: 5;
+  keymode: exclusive;
+
+  EventControllerKey {
+    key-released => $key_released();
+  }
 
   Box {
     hexpand: true;
 
-    $Qheader {
+    $Qheader header {
       hexpand: true;
     }
   }

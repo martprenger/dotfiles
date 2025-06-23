@@ -1,4 +1,5 @@
 using Gtk 4.0;
+using AstalBattery 0.1;
 
 template $Qheader: Box {
   orientation: horizontal;
@@ -13,8 +14,17 @@ template $Qheader: Box {
     label: bind template.user_name;
   }
 
-  Label {
-    label: bind template.battery_percentage;
+  Box {
+    visible: bind template.battery as <AstalBattery.Device>.is-present;
+    spacing: 5;
+
+    Label {
+      label: bind $current_battery(template.battery as <AstalBattery.Device>.percentage) as <string>;
+    }
+
+    Image {
+      icon-name: bind template.battery as <AstalBattery.Device>.icon-name;
+    }
   }
 
   Button {

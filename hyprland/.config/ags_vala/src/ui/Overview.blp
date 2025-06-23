@@ -4,13 +4,12 @@ using Astal 4.0;
 template $Overview: Astal.Window {
   styles [
     "window",
-    ]
+  ]
 
   title: "Overview";
   namespace: "Overview";
   anchor: top;
   keymode: exclusive;
-
 
   EventControllerKey {
     key-released => $key_released();
@@ -30,8 +29,6 @@ template $Overview: Astal.Window {
       placeholder-text: "Search...";
     }
 
-
-
     ScrolledWindow {
       focusable: false;
       max-content-height: 300;
@@ -47,7 +44,7 @@ template $Overview: Astal.Window {
           visible: false;
 
           styles [
-            "overview_list_row"
+            "overview_list_row",
           ]
 
           Label math_label {
@@ -64,7 +61,7 @@ template $Overview: Astal.Window {
           }
 
           styles [
-            "overview_list"
+            "overview_list",
           ]
         }
       }

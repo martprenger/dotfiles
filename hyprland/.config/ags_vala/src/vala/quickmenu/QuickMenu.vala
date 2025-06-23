@@ -2,8 +2,8 @@
 public class QuickMenu : Astal.Window {
     public static QuickMenu instance { get; private set; }
 
-    // [GtkChild]
-    // private unowned Qheader header;
+    [GtkChild]
+    private unowned Qheader header;
 
     construct {
         if (instance == null) {

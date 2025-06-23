@@ -5,7 +5,6 @@ private enum PowerOption {
 	LOGOUT
 }
 
-
 [GtkTemplate(ui="/ui/PowerMenu.ui")]
 class PowerMenu : Astal.Window {
 	public static PowerMenu instance { get; private set; }

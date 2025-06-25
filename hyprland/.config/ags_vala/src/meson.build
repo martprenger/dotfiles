@@ -21,6 +21,7 @@ dependencies = [
   dependency('astal-tray-0.1'),
   dependency('astal-bluetooth-0.1'),
   dependency('astal-io-0.1'),
+  dependency('libadwaita-1', version: '>= 1.6.0'),
 ]
 
 blueprint_sources = files(

@@ -1,13 +1,21 @@
 using Gtk 4.0;
 using AstalBattery 0.1;
+using Adw 1;
 
 template $Qheader: Box {
+  styles [
+    "panel",
+  ]
+
   orientation: horizontal;
-  spacing: 10;
   hexpand: true;
 
-  Image {
-    icon-name: "avatar-default-symbolic";
+  Adw.Avatar {
+    tooltip-text: bind template.user_name;
+    text: bind template.user_name;
+    custom-image: bind template.user_image_paintable;
+    show-initials: true;
+    size: 30;
   }
 
   Label {
@@ -16,7 +24,6 @@ template $Qheader: Box {
 
   Box {
     visible: bind template.battery as <AstalBattery.Device>.is-present;
-    spacing: 5;
 
     Label {
       label: bind $current_battery(template.battery as <AstalBattery.Device>.percentage) as <string>;

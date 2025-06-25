@@ -10,6 +10,10 @@ template $QuickMenu: Astal.Window {
   margin-top: 5;
   keymode: exclusive;
 
+  styles [
+    "QuickMenuWindow",
+  ]
+
   EventControllerKey {
     key-released => $key_released();
   }

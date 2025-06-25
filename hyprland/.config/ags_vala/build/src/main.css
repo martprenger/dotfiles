@@ -98,12 +98,37 @@ button.powerbutton image {
   font-size: 2em;
 }
 
+.QuickMenuWindow {
+  background: transparent;
+}
+
+.QMenuProfileImage {
+  min-height: 2.5em;
+  min-width: 2.5em;
+  border-radius: 50%;
+}
+
 .window {
   background: rgba(18, 20, 13, 0.71);
   border-radius: 1em;
   padding: 0.5em;
   font-size: 14px;
   font-family: "JetBrainsMono NF";
+}
+
+.panel {
+  background: rgba(18, 20, 13, 0.71);
+  border-radius: 1em;
+}
+
+.panel > * {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  margin-left: 0.4em;
+}
+
+.panel > *:last-child {
+  margin-right: 0.4em;
 }
 
 button {

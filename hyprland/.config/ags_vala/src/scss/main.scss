@@ -2,35 +2,51 @@
 @use "Bar.scss";
 @use "Overview.scss";
 @use "PowerMenu.scss";
+@use "QuickMenu.scss";
 
 @use "../../../../../../.cache/material/colors.scss" as *;
 @use "sass:color";
 @use "Settings.scss" as settings;
 
 .window {
-    background: $background;
-    border-radius: settings.$borderRadius;
-    padding: 0.5em;
-    font-size: 14px;
-    font-family: "JetBrainsMono NF";
+  background: $background;
+  border-radius: settings.$borderRadius;
+  padding: 0.5em;
+  font-size: 14px;
+  font-family: "JetBrainsMono NF";
+}
+
+.panel {
+  background: $background;
+  border-radius: settings.$borderRadius;
+}
+
+.panel > * {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  margin-left: 0.4em;
+}
+
+.panel > *:last-child {
+  margin-right: 0.4em;
 }
 
 button {
-    background: transparent;
+  background: transparent;
+  color: $foreground;
+  border-radius: settings.$borderRadius;
+
+  image {
     color: $foreground;
-    border-radius: settings.$borderRadius;
+  }
 
-    image {
-        color: $foreground;
-    }
+  &:focus {
+    background: $secondaryContainer;
+    outline-color: transparent;
+  }
 
-    &:focus {
-        background: $secondaryContainer;
-        outline-color: transparent;
-    }
-
-    &:hover {
-        background-color: color.adjust($primary, $alpha: -0.4);
-        color: $onPrimary;
-    }
+  &:hover {
+    background-color: color.adjust($primary, $alpha: -0.4);
+    color: $onPrimary;
+  }
 }

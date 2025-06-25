@@ -12,6 +12,7 @@ public class App : Astal.Application {
   }
 
   public override void activate() {
+    Adw.init();
     scss = new Scss(this);
 
     foreach (Gdk.Monitor monitor in this.monitors) {

@@ -1,0 +1,13 @@
+@use "../../../../../../.cache/material/colors.scss" as *;
+@use "Settings" as settings;
+@use "sass:color";
+
+.QuickMenuWindow {
+  background: transparent;
+}
+
+.QMenuProfileImage {
+  min-height: 2.5em;
+  min-width: 2.5em;
+  border-radius: 50%;
+}

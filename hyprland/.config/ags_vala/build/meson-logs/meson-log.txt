@@ -1,4 +1,4 @@
-Build started at 2025-06-16T22:58:52.448397
+Build started at 2025-06-24T21:46:10.634902
 Main binary: /usr/bin/python
 Build Options: 
 Python system: Linux
@@ -69,6 +69,7 @@ Dependency astal-power-profiles-0.1 found: YES 0.1.0 (cached)
 Dependency astal-tray-0.1 found: YES 0.1.0 (cached)
 Dependency astal-bluetooth-0.1 found: YES 0.1.0 (cached)
 Dependency astal-io-0.1 found: YES 0.1.0 (cached)
+Dependency libadwaita-1 found: YES 1.7.4 (cached)
 Pkg-config binary missing from cross or native file, or env var undefined.
 Trying a default Pkg-config fallback at pkg-config
 Found pkg-config: YES (/usr/bin/pkg-config) 2.4.3
@@ -121,11 +122,11 @@ Cached run stdout:
 Cached run stderr:
  
 Running compile:
-Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmptr7whpp9
+Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpwbd66d07
 Code:
 
 -----------
-Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmptr7whpp9/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmptr7whpp9/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
+Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpwbd66d07/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpwbd66d07/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
 stdout:
 install: /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/
 programs: =/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../x86_64-pc-linux-gnu/bin/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../x86_64-pc-linux-gnu/bin/
@@ -147,11 +148,11 @@ Build targets in project: 6
 
 Found ninja-1.12.1 at /usr/bin/ninja
 Running compile:
-Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmprwaqvz6a
+Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpbdbl8paa
 Code:
 
 -----------
-Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmprwaqvz6a/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmprwaqvz6a/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
+Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpbdbl8paa/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpbdbl8paa/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
 stdout:
 install: /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/
 programs: =/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../x86_64-pc-linux-gnu/bin/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../x86_64-pc-linux-gnu/bin/

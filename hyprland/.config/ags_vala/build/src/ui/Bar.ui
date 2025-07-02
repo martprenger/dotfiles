@@ -57,6 +57,76 @@ corresponding .blp file and regenerate this file with blueprint-compiler.
                 </style>
               </object>
             </child>
+            <child>
+              <object class="AstalBin" id="quickMenu">
+                <style>
+                  <class name="bar_item"/>
+                </style>
+                <child>
+                  <object class="GtkButton" id="quickMenuButton">
+                    <property name="name">power_button</property>
+                    <signal name="clicked" handler="toggleQuickMenu"/>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="spacing">10</property>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="spacing">5</property>
+                            <binding name="visible">
+                              <lookup name="is-present" type="AstalBatteryDevice">
+                                <lookup name="battery" type="Bar">
+                                  <constant>Bar</constant>
+                                </lookup>
+                              </lookup>
+                            </binding>
+                            <child>
+                              <object class="GtkLabel">
+                                <binding name="label">
+                                  <closure function="current_battery" type="gchararray">
+                                    <lookup name="percentage" type="AstalBatteryDevice">
+                                      <lookup name="battery" type="Bar">
+                                        <constant>Bar</constant>
+                                      </lookup>
+                                    </lookup>
+                                  </closure>
+                                </binding>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkImage">
+                                <binding name="icon-name">
+                                  <lookup name="icon-name" type="AstalBatteryDevice">
+                                    <lookup name="battery" type="Bar">
+                                      <constant>Bar</constant>
+                                    </lookup>
+                                  </lookup>
+                                </binding>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImage">
+                            <binding name="icon-name">
+                              <lookup name="volume-icon" type="AstalWpEndpoint">
+                                <lookup name="speaker" type="Bar">
+                                  <constant>Bar</constant>
+                                </lookup>
+                              </lookup>
+                            </binding>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon-name" bind-source="Bar" bind-property="network_icon" bind-flags="sync-create"/>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
           </object>
         </property>
       </object>

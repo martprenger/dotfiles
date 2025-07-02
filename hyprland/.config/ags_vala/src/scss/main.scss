@@ -19,6 +19,7 @@
 .panel {
   background: $background;
   border-radius: settings.$borderRadius;
+  margin-bottom: 0.4em;
 }
 
 .panel > * {

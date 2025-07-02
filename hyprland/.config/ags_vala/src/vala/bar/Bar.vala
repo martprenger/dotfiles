@@ -4,12 +4,10 @@ class Bar : Astal.Window {
   private AstalHyprland.Monitor _monitor;
 
   public string clock { get; set; }
-  public string volume_icon { get; set; }
-  public string battery_visible { get; set; }
-  public string battery_label { get; set; }
-  public string battery_icon { get; set; }
-  public double volume { get; set; }
-  public string network_icon { get; set; }
+  public AstalBattery.Device battery { get; private set; }
+  public AstalWp.Endpoint speaker { get; private set; }
+  public AstalNetwork.Network network { get; private set; }
+
   public bool mpris_visible { get; set; }
   public string mpris_label { get; set; }
   public string mpris_art { get; set; }
@@ -27,7 +25,7 @@ class Bar : Astal.Window {
   [GtkChild] unowned Gtk.Box traybox;
 
   public Bar(Gdk.Monitor monitor) {
-    gdkmonitor = monitor; 
+    gdkmonitor = monitor;
     anchor = TOP | LEFT | RIGHT;
     exclusivity = EXCLUSIVE;
     namespace = "bar";
@@ -43,6 +41,10 @@ class Bar : Astal.Window {
       }
     }
 		workspaces.child = new Workspaces(_hyprland, _monitor);
+
+		battery = AstalBattery.Device.get_default();
+		speaker = AstalWp.get_default().audio.default_speaker;
+		network = AstalNetwork.get_default();
 
     // clock
     timer = AstalIO.Time.interval(1000, null);
@@ -89,6 +91,29 @@ class Bar : Astal.Window {
     timer.dispose();
     player.dispose();
     base.dispose();
+  }
+
+ 	[GtkCallback]
+	public string current_battery(double percentage) {
+		return @"$(Math.round(percentage * 100))%";
+	}
+
+ 	[GtkCallback]
+	public void toggleQuickMenu() {
+		QuickMenu.instance.visible = !QuickMenu.instance.visible;
+	}
+
+	public string network_icon {
+    get {
+      network = AstalNetwork.get_default();
+      if (network.wired != null && network.wired.icon_name != null) {
+        return network.wired.icon_name;
+      } else if (network.wifi != null && network.wifi.icon_name != null) {
+        return network.wifi.icon_name;
+      } else {
+        return "network-offline-symbolic";
+      }
+    }
   }
 
   class TrayButton : Astal.Bin {

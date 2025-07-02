@@ -24,6 +24,8 @@
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/Bar.blp",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/Overview.blp",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/PowerMenu.blp",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/QAudioItem.blp",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/QMultimedia.blp",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/Qheader.blp",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/QuickMenu.blp"
         ],
@@ -216,6 +218,8 @@
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/overview/AppButton.vala",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/overview/Overview.vala",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/powermenu/PowerMenu.vala",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/quickmenu/QAudioItem.vala",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/quickmenu/QMultimedia.vala",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/quickmenu/Qheader.vala",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/quickmenu/QuickMenu.vala",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/utils/Scss.vala"
@@ -302,6 +306,8 @@
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/overview/AppButton.c",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/overview/Overview.c",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/powermenu/PowerMenu.c",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/quickmenu/QAudioItem.c",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/quickmenu/QMultimedia.c",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/quickmenu/Qheader.c",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/quickmenu/QuickMenu.c",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/utils/Scss.c"

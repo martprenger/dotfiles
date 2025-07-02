@@ -1,0 +1,107 @@
+using Gtk 4.0;
+using AstalWp 0.1;
+
+template $QMultimedia: Box {
+  styles [
+    "panel",
+  ]
+
+  orientation: vertical;
+  hexpand: true;
+
+  Box {
+    Box {
+      vexpand: true;
+      orientation: vertical;
+      // Main volume row with toggles and revealers for sinks and mixers
+      Box {
+        Button {
+          icon-name: bind template.speaker as <AstalWp.Endpoint>.volume-icon;
+          clicked => $toggle_speaker();
+        }
+
+        Scale {
+          hexpand: true;
+          adjustment: bind template.speaker_adj;
+        }
+
+        ToggleButton sinks_toggle {
+          icon-name: "pan-down-symbolic";
+          active: bind template.sinks_visible;
+          toggled => $toggle_sinks();
+        }
+
+        ToggleButton mixers_toggle {
+          icon-name: "pan-down-symbolic";
+          active: bind template.mixers_visible;
+          toggled => $toggle_mixers();
+        }
+      }
+
+      Revealer sinks_revealer {
+        reveal-child: bind template.sinks_visible;
+
+        Box {
+          orientation: vertical;
+
+          ListBox sinks {
+            show-separators: false;
+            selection-mode: none;
+            overflow: hidden;
+          }
+        }
+      }
+
+      Revealer mixers_revealer {
+        reveal-child: bind template.mixers_visible;
+
+        Box {
+          orientation: vertical;
+
+          ListBox mixers {
+            show-separators: false;
+            selection-mode: none;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+
+  Box {
+    vexpand: true;
+    orientation: vertical;
+
+    Box {
+      Button {
+        icon-name: bind template.microphone as <AstalWp.Endpoint>.volume-icon;
+        clicked => $toggle_microphone();
+      }
+
+      Scale {
+        hexpand: true;
+        adjustment: bind template.microphone_adj;
+      }
+
+      ToggleButton sources_toggle {
+        icon-name: "pan-down-symbolic";
+        active: bind template.sources_visible;
+        toggled => $toggle_sources();
+      }
+    }
+
+    Revealer sources_revealer {
+      reveal-child: bind template.sources_visible;
+      // transition-type: slide-down;
+      Box {
+        orientation: vertical;
+
+        ListBox sources {
+          show-separators: false;
+          selection-mode: none;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}

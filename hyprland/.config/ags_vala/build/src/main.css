@@ -119,6 +119,7 @@ button.powerbutton image {
 .panel {
   background: rgba(18, 20, 13, 0.71);
   border-radius: 1em;
+  margin-bottom: 0.4em;
 }
 
 .panel > * {

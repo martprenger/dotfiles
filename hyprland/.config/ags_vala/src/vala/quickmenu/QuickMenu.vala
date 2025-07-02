@@ -5,6 +5,9 @@ public class QuickMenu : Astal.Window {
     [GtkChild]
     private unowned Qheader header;
 
+    [GtkChild]
+    private unowned QMultimedia multimedia;
+
     construct {
         if (instance == null) {
             instance = this;

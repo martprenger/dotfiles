@@ -1,5 +1,7 @@
 using Gtk 4.0;
 using Astal 4.0;
+using AstalBattery 0.1;
+using AstalWp 0.1;
 
 template $Bar: Astal.Window {
   CenterBox centerbox {
@@ -17,6 +19,7 @@ template $Bar: Astal.Window {
         styles [
           "bar_item",
         ]
+
         Label {
           label: bind template.clock;
         }
@@ -36,6 +39,42 @@ template $Bar: Astal.Window {
         styles [
           "bar_item",
         ]
+      }
+
+      Astal.Bin quickMenu {
+        styles [
+          "bar_item",
+        ]
+
+        Button quickMenuButton {
+          name: "power_button";
+          clicked => $toggleQuickMenu();
+
+          Box {
+            spacing: 10;
+
+            Box {
+              spacing: 5;
+              visible: bind template.battery as <AstalBattery.Device>.is-present;
+
+              Label {
+                label: bind $current_battery(template.battery as <AstalBattery.Device>.percentage) as <string>;
+              }
+
+              Image {
+                icon-name: bind template.battery as <AstalBattery.Device>.icon-name;
+              }
+            }
+
+            Image {
+              icon-name: bind template.speaker as <AstalWp.Endpoint>.volume-icon;
+            }
+
+            Image {
+              icon-name: bind template.network_icon;
+            }
+          }
+        }
       }
     };
   }

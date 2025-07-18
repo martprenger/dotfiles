@@ -7,6 +7,7 @@
         <file>ui/AppButton.ui</file>
         <file>ui/PowerMenu.ui</file>
         <file>ui/QMultimedia.ui</file>
+        <file>ui/QMediaPlayer.ui</file>
         <file>ui/Qheader.ui</file>
         <file>ui/QAudioItem.ui</file>
         <file>ui/QuickMenu.ui</file>

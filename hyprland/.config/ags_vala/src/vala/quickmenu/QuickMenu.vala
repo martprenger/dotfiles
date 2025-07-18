@@ -8,6 +8,9 @@ public class QuickMenu : Astal.Window {
     [GtkChild]
     private unowned QMultimedia multimedia;
 
+    [GtkChild]
+    private unowned QMediaPlayer mediaPlayer;
+
     construct {
         if (instance == null) {
             instance = this;
@@ -24,4 +27,22 @@ public class QuickMenu : Astal.Window {
             this.visible = false;
         }
     }
+
+   	private void on_player_added(AstalMpris.Player player) {
+		var mpris_widget = new MprisPlayer(player);
+
+		this.players.append(mpris_widget);
+	}
+
+	private void on_player_removed(AstalMpris.Player player) {
+		MprisPlayer current = (MprisPlayer)this.players.get_first_child();
+
+		while (current != null) {
+			if (current.player == player) {
+				this.players.remove(current);
+				break;
+			}
+			current = (MprisPlayer)current.get_next_sibling();
+		}
+	}
 }

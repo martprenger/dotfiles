@@ -18,6 +18,7 @@ public class QAudioItem : Gtk.ListBoxRow {
 
 	[GtkCallback]
 	public string fallback_icon(string? icon_name) {
+		print(endpoint.name);
 		switch (icon_name) {
 			case "audio-card-analog-pci":
 				return "audio-card-symbolic";

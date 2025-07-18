@@ -108,6 +108,10 @@ button.powerbutton image {
   border-radius: 50%;
 }
 
+.QAudioItem {
+  background: transparent;
+}
+
 .window {
   background: rgba(18, 20, 13, 0.71);
   border-radius: 1em;

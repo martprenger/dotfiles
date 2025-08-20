@@ -26,14 +26,12 @@ template $QMultimedia: Box {
         }
 
         ToggleButton sinks_toggle {
-          icon-name: "pan-down-symbolic";
-          active: bind template.sinks_visible;
+          icon-name: bind $toggle_icon(template.sinks_visible) as <string>;
           toggled => $toggle_sinks();
         }
 
         ToggleButton mixers_toggle {
-          icon-name: "pan-down-symbolic";
-          active: bind template.mixers_visible;
+          icon-name: bind $toggle_icon(template.mixers_visible) as <string>;
           toggled => $toggle_mixers();
         }
       }
@@ -92,7 +90,7 @@ template $QMultimedia: Box {
       }
 
       ToggleButton sources_toggle {
-        icon-name: "pan-down-symbolic";
+        icon-name: bind $toggle_icon(template.sources_visible) as <string>;
         active: bind template.sources_visible;
         toggled => $toggle_sources();
       }

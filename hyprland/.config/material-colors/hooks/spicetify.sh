@@ -6,4 +6,5 @@ cp $material_cache/spicetify-color.ini "$HOME"/.config/spicetify/Themes/text/col
 spicetify config current_theme text
 spicetify config color_scheme Material
 
+spicetify backup apply
 spicetify apply

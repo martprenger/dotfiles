@@ -1,48 +1,54 @@
 [GtkTemplate(ui = "/ui/QuickMenu.ui")]
 public class QuickMenu : Astal.Window {
-    public static QuickMenu instance { get; private set; }
+  public static QuickMenu instance { get; private set; }
 
-    [GtkChild]
-    private unowned Qheader header;
+  [GtkChild]
+  private unowned Qheader header;
 
-    [GtkChild]
-    private unowned QMultimedia multimedia;
+  [GtkChild]
+  private unowned QMultimedia multimedia;
 
-    [GtkChild]
-    private unowned QMediaPlayer mediaPlayer;
+  private AstalMpris.Mpris _mpris;
 
-    construct {
-        if (instance == null) {
-            instance = this;
-        } else {
-            this.destroy();
-        }
+ 	[GtkChild]
+	private unowned Adw.Carousel players;
 
-        this.anchor = TOP | RIGHT;
+  construct {
+    if (instance == null) {
+      instance = this;
+    } else {
+      this.destroy();
     }
 
-    [GtkCallback]
-    public void key_released(uint keyval) {
-        if (keyval == Gdk.Key.Escape) {
-            this.visible = false;
-        }
-    }
+    _mpris = AstalMpris.get_default();
+  	_mpris.players.@foreach((p) => on_player_added(p));
+  	_mpris.player_added.connect((p) => on_player_added(p));
+  	_mpris.player_closed.connect((p) => on_player_removed(p));
 
-   	private void on_player_added(AstalMpris.Player player) {
-		var mpris_widget = new MprisPlayer(player);
+    this.anchor = TOP | RIGHT;
+  }
 
+ 	private void on_player_added(AstalMpris.Player player) {
+		var mpris_widget = new QMediaPlayer(player);
 		this.players.append(mpris_widget);
 	}
 
 	private void on_player_removed(AstalMpris.Player player) {
-		MprisPlayer current = (MprisPlayer)this.players.get_first_child();
+		QMediaPlayer current = (QMediaPlayer)this.players.get_first_child();
 
 		while (current != null) {
 			if (current.player == player) {
 				this.players.remove(current);
 				break;
 			}
-			current = (MprisPlayer)current.get_next_sibling();
+			current = (QMediaPlayer)current.get_next_sibling();
 		}
 	}
+
+  [GtkCallback]
+  public void key_released(uint keyval) {
+    if (keyval == Gdk.Key.Escape) {
+      this.visible = false;
+    }
+  }
 }

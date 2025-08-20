@@ -1,0 +1,100 @@
+using Gtk 4.0;
+using AstalMpris 0.1;
+
+template $QMediaPlayer: Box {
+  orientation: vertical;
+  hexpand: true;
+  spacing: 5;
+  width-request: 270;
+  height-request: 150;
+
+  Box {
+    spacing: 10;
+    hexpand: true;
+
+    Image {
+      overflow: hidden;
+      halign: start;
+      file: bind $art_url(template.player as <AstalMpris.Player>.art-url) as <string>;
+      pixel-size: 100;
+    }
+
+    Box {
+      orientation: vertical;
+      hexpand: true;
+      valign: center;
+      spacing: 10;
+
+      Label {
+        label: bind template.player as <AstalMpris.Player>.identity;
+        halign: start;
+        ellipsize: end;
+        max-width-chars: 25;
+        tooltip-text: "Player Name";
+      }
+
+      Label {
+        label: bind template.player as <AstalMpris.Player>.title;
+        halign: start;
+        ellipsize: end;
+        max-width-chars: 18;
+        tooltip-text: "Title";
+      }
+
+      Label {
+        label: bind template.player as <AstalMpris.Player>.artist;
+        halign: start;
+        ellipsize: end;
+        max-width-chars: 20;
+        tooltip-text: "Artist";
+      }
+    }
+  }
+
+  CenterBox {
+    vexpand: true;
+
+    [start]
+    Label {
+      label: bind $current_pos(template.player as <AstalMpris.Player>.position) as <string>;
+      valign: center;
+    }
+
+    [center]
+    Scale {
+      hexpand: true;
+
+      adjustment: Adjustment media_len_adjust {
+        lower: 0;
+        upper: bind template.player as <AstalMpris.Player>.length;
+      };
+    }
+
+    [end]
+    Label {
+      label: bind $total_pos(template.player as <AstalMpris.Player>.length) as <string>;
+      valign: center;
+    }
+  }
+
+  Box {
+    spacing: 10;
+    hexpand: true;
+    halign: center;
+
+    Button {
+      icon-name: "media-skip-backward-symbolic";
+      clicked => $prev();
+    }
+
+    Button {
+      icon-name: bind $pause_icon(template.player as <AstalMpris.Player>.playback-status) as <string>;
+      clicked => $play_pause();
+    }
+
+    Button {
+      icon-name: "media-skip-forward-symbolic";
+      clicked => $next();
+    }
+  }
+}

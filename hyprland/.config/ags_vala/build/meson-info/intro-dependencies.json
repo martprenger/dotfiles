@@ -2,7 +2,7 @@
   {
     "name": "gtk4-layer-shell-0",
     "type": "pkgconfig",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "compile_args": [
       "-I/usr/include/gtk4-layer-shell",
       "-I/usr/include/gtk-4.0",
@@ -66,7 +66,7 @@
   {
     "name": "glib-2.0",
     "type": "pkgconfig",
-    "version": "2.84.2",
+    "version": "2.84.4",
     "compile_args": [
       "-I/usr/include/glib-2.0",
       "-I/usr/lib/glib-2.0/include",
@@ -86,7 +86,7 @@
   {
     "name": "gio-2.0",
     "type": "pkgconfig",
-    "version": "2.84.2",
+    "version": "2.84.4",
     "compile_args": [
       "-I/usr/include/glib-2.0",
       "-I/usr/lib/glib-2.0/include",
@@ -110,7 +110,7 @@
   {
     "name": "gio-unix-2.0",
     "type": "pkgconfig",
-    "version": "2.84.2",
+    "version": "2.84.4",
     "compile_args": [
       "-I/usr/include/gio-unix-2.0",
       "-I/usr/include/glib-2.0",
@@ -123,6 +123,34 @@
     "link_args": [
       "/usr/lib/libgio-2.0.so",
       "/usr/lib/libgobject-2.0.so",
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "libsoup-3.0",
+    "type": "pkgconfig",
+    "version": "3.6.5",
+    "compile_args": [
+      "-I/usr/include/libsoup-3.0",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libsoup-3.0.so",
+      "/usr/lib/libgio-2.0.so",
+      "/usr/lib/libgobject-2.0.so",
+      "/usr/lib/libgmodule-2.0.so",
+      "-pthread",
       "/usr/lib/libglib-2.0.so"
     ],
     "include_directories": [],
@@ -271,6 +299,34 @@
     "meson_variables": []
   },
   {
+    "name": "astal-mpris-0.1",
+    "type": "pkgconfig",
+    "version": "0.1.0",
+    "compile_args": [
+      "-I/usr/include/astal-mpris",
+      "-I/usr/include/json-glib-1.0",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread"
+    ],
+    "link_args": [
+      "/usr/lib/libastal-mpris.so",
+      "/usr/lib/libjson-glib-1.0.so",
+      "/usr/lib/libgio-2.0.so",
+      "/usr/lib/libgobject-2.0.so",
+      "/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
     "name": "astal-network-0.1",
     "type": "pkgconfig",
     "version": "0.1.0",
@@ -330,7 +386,7 @@
   {
     "name": "libnm",
     "type": "pkgconfig",
-    "version": "1.52.0",
+    "version": "1.54.0",
     "compile_args": [
       "-I/usr/include/libnm",
       "-I/usr/include/glib-2.0",
@@ -342,34 +398,6 @@
     ],
     "link_args": [
       "/usr/lib/libnm.so",
-      "/usr/lib/libgio-2.0.so",
-      "/usr/lib/libgobject-2.0.so",
-      "/usr/lib/libglib-2.0.so"
-    ],
-    "include_directories": [],
-    "sources": [],
-    "extra_files": [],
-    "dependencies": [],
-    "depends": [],
-    "meson_variables": []
-  },
-  {
-    "name": "astal-mpris-0.1",
-    "type": "pkgconfig",
-    "version": "0.1.0",
-    "compile_args": [
-      "-I/usr/include/astal-mpris",
-      "-I/usr/include/json-glib-1.0",
-      "-I/usr/include/glib-2.0",
-      "-I/usr/lib/glib-2.0/include",
-      "-I/usr/include/libmount",
-      "-I/usr/include/blkid",
-      "-I/usr/include/sysprof-6",
-      "-pthread"
-    ],
-    "link_args": [
-      "/usr/lib/libastal-mpris.so",
-      "/usr/lib/libjson-glib-1.0.so",
       "/usr/lib/libgio-2.0.so",
       "/usr/lib/libgobject-2.0.so",
       "/usr/lib/libglib-2.0.so"
@@ -470,31 +498,9 @@
     "meson_variables": []
   },
   {
-    "name": "libgtop-2.0",
-    "type": "pkgconfig",
-    "version": "2.41.3",
-    "compile_args": [
-      "-I/usr/include/libgtop-2.0",
-      "-I/usr/include/glib-2.0",
-      "-I/usr/lib/glib-2.0/include",
-      "-I/usr/include/sysprof-6",
-      "-pthread"
-    ],
-    "link_args": [
-      "/usr/lib/libgtop-2.0.so",
-      "/usr/lib/libglib-2.0.so"
-    ],
-    "include_directories": [],
-    "sources": [],
-    "extra_files": [],
-    "dependencies": [],
-    "depends": [],
-    "meson_variables": []
-  },
-  {
     "name": "libadwaita-1",
     "type": "pkgconfig",
-    "version": "1.7.4",
+    "version": "1.7.6",
     "compile_args": [
       "-I/usr/include/libadwaita-1",
       "-I/usr/include/gtk-4.0",

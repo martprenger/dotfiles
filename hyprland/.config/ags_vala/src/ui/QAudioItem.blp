@@ -6,17 +6,32 @@ template $QAudioItem: Gtk.ListBoxRow {
   activatable: false;
 
   Box {
+    orientation: horizontal;
+
     Image {
       icon-name: bind $fallback_icon(template.endpoint as <AstalWp.Endpoint>.icon) as <string>;
     }
 
-    Scale {
-      hexpand: true;
+    Box {
+      orientation: vertical;
 
-      adjustment: Adjustment volume_adjust {
-        lower: 0;
-        upper: 1;
-      };
+      Label {
+        styles [
+          "x_padding_10",
+        ]
+
+        label: bind template.endpoint as <AstalWp.Endpoint>.description;
+        halign: start;
+      }
+
+      Scale {
+        hexpand: true;
+
+        adjustment: Adjustment volume_adjust {
+          lower: 0;
+          upper: 1;
+        };
+      }
     }
   }
 }

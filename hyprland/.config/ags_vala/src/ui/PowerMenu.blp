@@ -9,7 +9,7 @@ template $PowerMenu: Astal.Window {
   title: "PowerMenu";
   namespace: "PowerMenu";
   anchor: top;
-  keymode: exclusive;
+  keymode: on_demand;
 
   EventControllerKey {
     key-released => $key_released();
@@ -28,9 +28,11 @@ template $PowerMenu: Astal.Window {
 
         Button {
           name: "Shutdown";
+
           styles [
             "powerbutton",
           ]
+
           icon-name: "system-shutdown-symbolic";
           tooltip-text: "Shutdown";
           clicked => $show_shutdown_confirm();
@@ -38,9 +40,11 @@ template $PowerMenu: Astal.Window {
 
         Button {
           name: "Reboot";
+
           styles [
             "powerbutton",
           ]
+
           icon-name: "system-reboot-symbolic";
           tooltip-text: "Reboot";
           clicked => $show_reboot_confirm();
@@ -48,9 +52,11 @@ template $PowerMenu: Astal.Window {
 
         Button {
           name: "Lock";
+
           styles [
             "powerbutton",
           ]
+
           icon-name: "system-lock-screen-symbolic";
           tooltip-text: "Lock";
           clicked => $lock();
@@ -58,9 +64,11 @@ template $PowerMenu: Astal.Window {
 
         Button {
           name: "Logout";
+
           styles [
             "powerbutton",
           ]
+
           icon-name: "system-log-out-symbolic";
           tooltip-text: "Logout";
           clicked => $show_logout_confirm();
@@ -68,9 +76,11 @@ template $PowerMenu: Astal.Window {
 
         Button {
           name: "Suspend";
+
           styles [
             "powerbutton",
           ]
+
           visible: false;
           icon-name: "radio-symbolic";
           tooltip-text: "Suspend";
@@ -79,9 +89,11 @@ template $PowerMenu: Astal.Window {
 
         Button {
           name: "Hibernate";
+
           styles [
             "powerbutton",
           ]
+
           visible: false;
           icon-name: "weather-clear-night-symbolic";
           tooltip-text: "Hibernate";
@@ -95,8 +107,8 @@ template $PowerMenu: Astal.Window {
 
       child: CenterBox {
         hexpand: true; // Make the CenterBox fill the horizontal space
-
         // Widget for the start (left)
+
         [start]
         Label {
           label: bind template.confirm_option;
@@ -109,10 +121,10 @@ template $PowerMenu: Astal.Window {
         [end]
         Box {
           halign: end; // Align the button group to the end
-
           Button {
             icon-name: "window-close-symbolic";
             clicked => $cancel_action();
+
             styles [
               "powerbutton",
             ]
@@ -121,6 +133,7 @@ template $PowerMenu: Astal.Window {
           Button confirm_button {
             icon-name: "object-select-symbolic";
             clicked => $confirm_action();
+
             styles [
               "powerbutton",
             ]

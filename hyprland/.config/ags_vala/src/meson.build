@@ -9,6 +9,7 @@ dependencies = [
   dependency('glib-2.0'),
   dependency('gio-2.0'),
   dependency('gio-unix-2.0'),
+  dependency('libsoup-3.0'),
   dependency('astal-4-4.0'),
   dependency('astal-battery-0.1'),
   dependency('astal-hyprland-0.1'),
@@ -50,7 +51,9 @@ vala_sources = files(
   'vala/quickmenu/QMultimedia.vala',
   'vala/quickmenu/Qheader.vala',
   'vala/quickmenu/QuickMenu.vala',
+  'vala/utils/PopupWindow.vala',
   'vala/utils/Scss.vala',
+  'vala/utils/Underlay.vala',
 )
 
 # transplie blueprints

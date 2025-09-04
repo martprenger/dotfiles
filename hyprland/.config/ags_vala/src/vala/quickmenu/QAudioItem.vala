@@ -10,10 +10,10 @@ public class QAudioItem : Gtk.ListBoxRow {
     Object(endpoint: endpoint, app_icon_name: app_icon_name);
 
     this.endpoint.bind_property(
-      "volume",
-      volume_adjust,
-      "value",
-      BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL
+                                "volume",
+                                volume_adjust,
+                                "value",
+                                BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL
     );
   }
 
@@ -23,12 +23,12 @@ public class QAudioItem : Gtk.ListBoxRow {
       return app_icon_name; // Use app icon if available
     }
     switch (icon_name) {
-      case "audio-card-analog-pci":
-        return "audio-card-symbolic";
-      case "audio-headset-bluetooth":
-        return "audio-headset-symbolic";
-      default:
-        return icon_name;
+    case "audio-card-analog-pci":
+      return "audio-card-symbolic";
+    case "audio-headset-bluetooth":
+      return "audio-headset-symbolic";
+    default:
+      return icon_name;
     }
   }
 }

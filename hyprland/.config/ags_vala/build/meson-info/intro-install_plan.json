@@ -4,13 +4,15 @@
       "destination": "{prefix}/bin/mui",
       "tag": "runtime",
       "subproject": null,
-      "install_rpath": null
+      "install_rpath": null,
+      "build_rpaths": []
     },
     "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/cli/muictl": {
       "destination": "{bindir}/muictl",
       "tag": "runtime",
       "subproject": null,
-      "install_rpath": null
+      "install_rpath": null,
+      "build_rpaths": []
     }
   }
 }

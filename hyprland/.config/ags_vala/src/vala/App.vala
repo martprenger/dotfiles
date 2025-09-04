@@ -3,7 +3,7 @@ using GLib;
 public class App : Astal.Application {
   static App instance;
 
-  private HashTable<Gdk.Monitor, Bar> bars = new HashTable<Gdk.Monitor, Bar>(GLib.direct_hash, GLib.direct_equal);
+  private HashTable<Gdk.Monitor, Bar> bars = new HashTable<Gdk.Monitor, Bar> (GLib.direct_hash, GLib.direct_equal);
   private Scss scss;
 
   public override void request(string request, SocketConnection conn) {
@@ -15,37 +15,40 @@ public class App : Astal.Application {
     Adw.init();
     scss = new Scss(this);
 
+
     foreach (Gdk.Monitor monitor in this.monitors) {
-        var bar = new Bar(monitor);
-        this.add_window(bar); // Add the window
-        bars.insert(monitor, bar); // Store in the dictionary
+      var bar = new Bar(monitor);
+      this.add_window(bar); // Add the window
+      bars.insert(monitor, bar); // Store in the dictionary
+      PopupWindow.underlays.append(new Underlay(monitor));
     }
+
     this.add_window(new Overview());
     this.add_window(new PowerMenu());
     this.add_window(new QuickMenu());
 
     Gdk.Display? default_display = Gdk.Display.get_default();
     if (default_display == null) {
-        print("Error: Could not get the default display.\n");
-        return;
+      print("Error: Could not get the default display.\n");
+      return;
     }
 
     // default_display.monitor_added.connect((display, monitor) => {
-    //     print("Monitor added: %s (%d x %d at %d, %d)\n",
-    //           monitor.get_model(),
-    //           monitor.get_width(),
-    //           monitor.get_height(),
-    //           monitor.get_x(),
-    //           monitor.get_y());
+    // print("Monitor added: %s (%d x %d at %d, %d)\n",
+    // monitor.get_model(),
+    // monitor.get_width(),
+    // monitor.get_height(),
+    // monitor.get_x(),
+    // monitor.get_y());
     // });
 
     // default_display.monitor_removed.connect((display, monitor) => {
-    //     print("Monitor removed: %s (%d x %d at %d, %d)\n",
-    //           monitor.get_model(),
-    //           monitor.get_width(),
-    //           monitor.get_height(),
-    //           monitor.get_x(),
-    //           monitor.get_y());
+    // print("Monitor removed: %s (%d x %d at %d, %d)\n",
+    // monitor.get_model(),
+    // monitor.get_width(),
+    // monitor.get_height(),
+    // monitor.get_x(),
+    // monitor.get_y());
     // });
   }
 
@@ -56,7 +59,7 @@ public class App : Astal.Application {
       return App.instance.run(null);
     } catch (Error _) {
       try {
-        var response = AstalIO.send_request("mui", string.joinv(" ", argv[1:]));
+        var response = AstalIO.send_request("mui", string.joinv(" ", argv[1 :]));
         print(@"$response\n");
         return 0;
       } catch (Error err) {

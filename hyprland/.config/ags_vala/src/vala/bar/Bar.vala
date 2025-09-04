@@ -1,4 +1,4 @@
-[GtkTemplate(ui="/ui/Bar.ui")]
+[GtkTemplate(ui = "/ui/Bar.ui")]
 class Bar : Astal.Window {
   private AstalHyprland.Hyprland _hyprland;
   private AstalHyprland.Monitor _monitor;
@@ -40,11 +40,11 @@ class Bar : Astal.Window {
         _monitor = hyprMonitor;
       }
     }
-		workspaces.child = new Workspaces(_hyprland, _monitor);
+    workspaces.child = new Workspaces(_hyprland, _monitor);
 
-		battery = AstalBattery.Device.get_default();
-		speaker = AstalWp.get_default().audio.default_speaker;
-		network = AstalNetwork.get_default();
+    battery = AstalBattery.Device.get_default();
+    speaker = AstalWp.get_default().audio.default_speaker;
+    network = AstalNetwork.get_default();
 
     // clock
     timer = AstalIO.Time.interval(1000, null);
@@ -61,7 +61,7 @@ class Bar : Astal.Window {
 
     // tray
     var tray = AstalTray.get_default();
-    tray_items = new HashTable<string, TrayButton>(str_hash, str_equal);
+    tray_items = new HashTable<string, TrayButton> (str_hash, str_equal);
     tray.item_added.connect(on_tray_item_added);
     tray.item_removed.connect(on_tray_item_removed);
   }
@@ -84,7 +84,7 @@ class Bar : Astal.Window {
     tray.item_removed.disconnect(on_tray_item_removed);
 
     foreach (var button in tray_items.get_values()) {
-        button.dispose();
+      button.dispose();
     }
 
     timer.cancel();
@@ -93,17 +93,17 @@ class Bar : Astal.Window {
     base.dispose();
   }
 
- 	[GtkCallback]
-	public string current_battery(double percentage) {
-		return @"$(Math.round(percentage * 100))%";
-	}
+  [GtkCallback]
+  public string current_battery(double percentage) {
+    return @"$(Math.round(percentage * 100))%";
+  }
 
- 	[GtkCallback]
-	public void toggleQuickMenu() {
-		QuickMenu.instance.visible = !QuickMenu.instance.visible;
-	}
+  [GtkCallback]
+  public void toggleQuickMenu() {
+    QuickMenu.instance.visible = !QuickMenu.instance.visible;
+  }
 
-	public string network_icon {
+  public string network_icon {
     get {
       network = AstalNetwork.get_default();
       if (network.wired != null && network.wired.icon_name != null) {
@@ -117,9 +117,9 @@ class Bar : Astal.Window {
   }
 
   class TrayButton : Astal.Bin {
-      AstalTray.TrayItem item;
-      Gtk.Popover popover;
-      Gtk.Image image;
+    AstalTray.TrayItem item;
+    Gtk.Popover popover;
+    Gtk.Image image;
 
     public TrayButton(string id) {
       var tray = AstalTray.get_default();

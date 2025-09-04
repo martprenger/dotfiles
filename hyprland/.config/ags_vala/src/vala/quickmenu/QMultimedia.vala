@@ -76,63 +76,63 @@ public class QMultimedia : Gtk.Box {
   private bool _mixers_visible = false;
 
   construct {
-      this.wp = AstalWp.get_default();
-      if (wp == null) {
-          critical("Failed to initialize wp");
-      } else {
-          this.speaker = wp.audio.default_speaker;
-          this.microphone = wp.audio.default_microphone;
-      }
+    this.wp = AstalWp.get_default();
+    if (wp == null) {
+      critical("Failed to initialize wp");
+    } else {
+      this.speaker = wp.audio.default_speaker;
+      this.microphone = wp.audio.default_microphone;
+    }
 
-      this.speaker_adj = new Gtk.Adjustment(speaker.volume, 0, 1, 0, 0, 0);
-      this.microphone_adj = new Gtk.Adjustment(microphone.volume, 0, 1, 0, 0, 0);
+    this.speaker_adj = new Gtk.Adjustment(speaker.volume, 0, 1, 0, 0, 0);
+    this.microphone_adj = new Gtk.Adjustment(microphone.volume, 0, 1, 0, 0, 0);
 
-      speaker.bind_property(
-          "volume",
-          speaker_adj,
-          "value",
-          BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL
-      );
+    speaker.bind_property(
+                          "volume",
+                          speaker_adj,
+                          "value",
+                          BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL
+    );
 
-      microphone.bind_property(
-          "volume",
-          microphone_adj,
-          "value",
-          BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL
-      );
+    microphone.bind_property(
+                             "volume",
+                             microphone_adj,
+                             "value",
+                             BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL
+    );
 
-      wp.audio.speakers.@foreach((e) => on_added(e, sinks));
-      wp.audio.microphones.@foreach((e) => on_added(e, sources));
-      wp.audio.streams.@foreach((e) => on_added(e, mixers));
+    wp.audio.speakers.@foreach((e) => on_added(e, sinks));
+    wp.audio.microphones.@foreach((e) => on_added(e, sources));
+    wp.audio.streams.@foreach((e) => on_added(e, mixers));
 
-      wp.audio.speaker_added.connect((e) => on_added(e, sinks));
-      wp.audio.speaker_removed.connect((e) => on_removed(e, sinks));
+    wp.audio.speaker_added.connect((e) => on_added(e, sinks));
+    wp.audio.speaker_removed.connect((e) => on_removed(e, sinks));
 
-      wp.audio.microphone_added.connect((e) => on_added(e, sources));
-      wp.audio.microphone_removed.connect((e) => on_removed(e, sources));
+    wp.audio.microphone_added.connect((e) => on_added(e, sources));
+    wp.audio.microphone_removed.connect((e) => on_removed(e, sources));
 
-      wp.audio.stream_added.connect((e) => on_added(e, mixers));
-      wp.audio.stream_removed.connect((e) => on_removed(e, mixers));
+    wp.audio.stream_added.connect((e) => on_added(e, mixers));
+    wp.audio.stream_removed.connect((e) => on_removed(e, mixers));
 
-      // Optional: Ensure UI is in sync at startup
+    // Optional: Ensure UI is in sync at startup
+    sources_revealer.reveal_child = sources_visible;
+    sources_toggle.active = sources_visible;
+    sinks_revealer.reveal_child = sinks_visible;
+    sinks_toggle.active = sinks_visible;
+    mixers_revealer.reveal_child = mixers_visible;
+    mixers_toggle.active = mixers_visible;
+
+    // Keep revealer and toggle in sync with property
+    this.notify["sources-visible"].connect(() => {
       sources_revealer.reveal_child = sources_visible;
       sources_toggle.active = sources_visible;
+    });
+    this.notify["sinks-visible"].connect(() => {
       sinks_revealer.reveal_child = sinks_visible;
-      sinks_toggle.active = sinks_visible;
+    });
+    this.notify["mixers-visible"].connect(() => {
       mixers_revealer.reveal_child = mixers_visible;
-      mixers_toggle.active = mixers_visible;
-
-      // Keep revealer and toggle in sync with property
-      this.notify["sources-visible"].connect(() => {
-          sources_revealer.reveal_child = sources_visible;
-          sources_toggle.active = sources_visible;
-      });
-      this.notify["sinks-visible"].connect(() => {
-          sinks_revealer.reveal_child = sinks_visible;
-      });
-      this.notify["mixers-visible"].connect(() => {
-          mixers_revealer.reveal_child = mixers_visible;
-      });
+    });
   }
 
   [GtkCallback]
@@ -164,7 +164,7 @@ public class QMultimedia : Gtk.Box {
     l.append(new QAudioItem(e, app_icon));
   }
 
-  private string? get_app_icon_for_stream(AstalWp.Node stream) {
+  private string ? get_app_icon_for_stream(AstalWp.Node stream) {
     string? icon_name = null;
 
     // Try to get the icon from PipeWire properties
@@ -189,26 +189,25 @@ public class QMultimedia : Gtk.Box {
     return "audio-card-symbolic";
   }
 
-
   private void on_removed(AstalWp.Node e, Gtk.ListBox l) {
-      var current = (QAudioItem)l.get_first_child();
+    var current = (QAudioItem) l.get_first_child();
 
-      while (current != null) {
-          if (current.endpoint == e) {
-              l.remove(current);
-              break;
-          }
-          current = (QAudioItem)current.get_next_sibling();
+    while (current != null) {
+      if (current.endpoint == e) {
+        l.remove(current);
+        break;
       }
+      current = (QAudioItem) current.get_next_sibling();
+    }
   }
 
   [GtkCallback]
   public void toggle_sources() {
-      sources_visible = !sources_visible;
+    sources_visible = !sources_visible;
   }
 
   [GtkCallback]
   public string toggle_icon(bool visible) {
-      return visible ? "pan-up-symbolic" : "pan-down-symbolic";
+    return visible ? "pan-up-symbolic" : "pan-down-symbolic";
   }
 }

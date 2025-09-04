@@ -32,12 +32,43 @@ public class QMediaPlayer : Gtk.Box {
 
 	[GtkCallback]
 	public string art_url(string? url) {
-		if (url != null && url != "") {
-			return url.substring(7);
-		} else {
-			return "";
-		}
-	}
+    if (url == null || url == "") {
+        return "";
+    }
+
+    // Handle local file:// paths
+    if (url.has_prefix("file://")) {
+      return url.substring(7); // strip file://
+    }
+
+    // Handle http/https URLs
+    if (url.has_prefix("http://") || url.has_prefix("https://")) {
+      try {
+        var file = File.new_for_uri(url);
+        var input_stream = file.read(null);
+
+        // Create a temp file
+        string tmp_dir = Environment.get_tmp_dir();
+        string tmp_path = Path.build_filename(tmp_dir, "downloaded_art.png");
+        var tmp_file = File.new_for_path(tmp_path);
+
+        var output_stream = tmp_file.replace(null, false, FileCreateFlags.NONE, null);
+
+        // Copy from input to output
+        output_stream.splice(input_stream,
+            OutputStreamSpliceFlags.CLOSE_SOURCE | OutputStreamSpliceFlags.CLOSE_TARGET,
+            null);
+
+        return tmp_path;
+      } catch (Error e) {
+        warning("Failed to download image: %s", e.message);
+        return "";
+      }
+    }
+
+    // If nothing matches, just return as-is
+    return url;
+}
 
 	[GtkCallback]
 	public string current_pos(double pos) {

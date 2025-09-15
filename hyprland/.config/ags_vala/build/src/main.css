@@ -70,10 +70,12 @@ entry:focus-within {
 }
 
 .overview_list {
+  color: #e3e3d7;
   background: transparent;
 }
 
 .overview_list_row {
+  color: #e3e3d7;
   padding: 0.4em;
   margin: 0.1em;
   border-radius: 1em;
@@ -99,7 +101,11 @@ button.powerbutton image {
 }
 
 .QuickMenuWindow {
+  foreground: #e3e3d7;
+  color: #e3e3d7;
   background: transparent;
+  font-size: 14px;
+  font-family: "JetBrainsMono NF";
 }
 
 .QMenuProfileImage {
@@ -112,7 +118,13 @@ button.powerbutton image {
   background: transparent;
 }
 
+.notification-center {
+  background: #b71c1c;
+  color: #fff;
+}
+
 .window {
+  color: #e3e3d7;
   background: rgba(18, 20, 13, 0.71);
   border-radius: 1em;
   padding: 0.5em;

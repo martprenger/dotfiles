@@ -15,22 +15,16 @@ template $Bar: Astal.Window {
     };
 
     center-widget: Box {
-      MenuButton {
-        styles [
-          "bar_item",
-        ]
+      styles [
+        "bar_item",
+      ]
+
+      Button {
+        clicked => $toggleNotificationCenter();
 
         Label {
           label: bind template.clock;
         }
-
-        popover: Popover popover {
-          Calendar calendar {
-            show-day-names: true;
-            show-heading: true;
-            show-week-numbers: true;
-          }
-        };
       }
     };
 

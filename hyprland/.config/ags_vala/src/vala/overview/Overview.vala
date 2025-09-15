@@ -143,6 +143,20 @@ class Overview : Astal.Window {
       } else {
         this.margin_top = this.get_current_monitor().get_geometry().height / 8;
         this.entry.grab_focus();
+
+        // Clear the app_list
+        var child = this.app_list.get_first_child();
+        while (child != null) {
+          var next = child.get_next_sibling();
+          this.app_list.remove(child);
+          child = next;
+        }
+
+        // Fetch new apps and add to app_list
+        this.apps = new AstalApps.Apps();
+        this.apps.list.@foreach(app => {
+          this.app_list.append(new AppButton(app));
+        });
       }
     });
   }

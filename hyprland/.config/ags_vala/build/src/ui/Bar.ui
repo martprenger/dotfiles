@@ -23,27 +23,17 @@ corresponding .blp file and regenerate this file with blueprint-compiler.
         </property>
         <property name="center-widget">
           <object class="GtkBox">
+            <style>
+              <class name="bar_item"/>
+            </style>
             <child>
-              <object class="GtkMenuButton">
-                <style>
-                  <class name="bar_item"/>
-                </style>
+              <object class="GtkButton">
+                <signal name="clicked" handler="toggleNotificationCenter"/>
                 <child>
                   <object class="GtkLabel">
                     <property name="label" bind-source="Bar" bind-property="clock" bind-flags="sync-create"/>
                   </object>
                 </child>
-                <property name="popover">
-                  <object class="GtkPopover" id="popover">
-                    <child>
-                      <object class="GtkCalendar" id="calendar">
-                        <property name="show-day-names">true</property>
-                        <property name="show-heading">true</property>
-                        <property name="show-week-numbers">true</property>
-                      </object>
-                    </child>
-                  </object>
-                </property>
               </object>
             </child>
           </object>

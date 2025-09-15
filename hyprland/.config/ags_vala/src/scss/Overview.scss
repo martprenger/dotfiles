@@ -3,35 +3,37 @@
 @use "sass:color";
 
 entry {
-    margin: 0.4em;
+  margin: 0.4em;
 }
 
 entry:focus-within {
-    outline: $secondary;
-    outline-width: 1px;
-    outline-style: solid;
+  outline: $secondary;
+  outline-width: 1px;
+  outline-style: solid;
 }
 
 .overview_list {
-    background: transparent;
+  color: $foreground;
+  background: transparent;
 }
 
 .overview_list_row {
-    padding: 0.4em;
-    margin: 0.1em;
-    border-radius: settings.$borderRadius;
+  color: $foreground;
+  padding: 0.4em;
+  margin: 0.1em;
+  border-radius: settings.$borderRadius;
 
-    &:selected {
-        background: transparent;
-        outline-color: transparent;
-    }
+  &:selected {
+    background: transparent;
+    outline-color: transparent;
+  }
 
-    &:focus-within {
-        background: $secondaryContainer;
-        outline-color: transparent;
-    }
+  &:focus-within {
+    background: $secondaryContainer;
+    outline-color: transparent;
+  }
 
-    &:hover {
-        background-color: color.adjust($primary, $alpha: -0.4);
-    }
+  &:hover {
+    background-color: color.adjust($primary, $alpha: -0.4);
+  }
 }

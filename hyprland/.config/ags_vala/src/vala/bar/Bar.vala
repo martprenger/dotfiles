@@ -20,8 +20,6 @@ class Bar : Astal.Window {
 
   [GtkChild] private unowned Astal.Bin workspaces;
 
-  [GtkChild] unowned Gtk.Popover popover;
-  [GtkChild] unowned Gtk.Calendar calendar;
   [GtkChild] unowned Gtk.Box traybox;
 
   public Bar(Gdk.Monitor monitor) {
@@ -50,13 +48,6 @@ class Bar : Astal.Window {
     timer = AstalIO.Time.interval(1000, null);
     timer.now.connect(() => {
       clock = new DateTime.now_local().format("%a %d %b, %H:%M");
-    });
-
-    // everytime popover is opened, select current day
-    popover.notify["visible"].connect(() => {
-      if (popover.visible) {
-        calendar.select_day(new DateTime.now_local());
-      }
     });
 
     // tray
@@ -146,4 +137,12 @@ class Bar : Astal.Window {
       item.notify.disconnect(on_action_group);
     }
   }
+
+  [GtkCallback]
+  public void toggleNotificationCenter() {
+    if (NotificationCenter.instance != null) {
+      NotificationCenter.instance.visible = !NotificationCenter.instance.visible;
+    }
+  }
+
 }

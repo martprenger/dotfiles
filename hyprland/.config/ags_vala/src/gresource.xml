@@ -4,6 +4,8 @@
         <file>main.css</file>
         <file>ui/Bar.ui</file>
         <file>ui/Overview.ui</file>
+        <file>ui/NotificationCenter.ui</file>
+        <file>ui/NotificationContent.ui</file>
         <file>ui/AppButton.ui</file>
         <file>ui/PowerMenu.ui</file>
         <file>ui/QMultimedia.ui</file>

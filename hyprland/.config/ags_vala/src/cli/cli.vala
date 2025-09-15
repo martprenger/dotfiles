@@ -3,6 +3,7 @@ using GLib;
 public class MuiCtl {
 	private static string request = "";
 	private static bool start = false;
+	private static bool reload = false;
 	private static string? toggle_window = null;
 	private static bool show_inspector = false;
 	private static bool quit = false;
@@ -14,6 +15,7 @@ public class MuiCtl {
 		var options = new OptionEntry[] {
 			{ "request", 'r', OptionFlags.NONE, OptionArg.STRING, out request, "Send request to the application", "REQUEST" },
 			{ "start", 0, OptionFlags.NONE, OptionArg.NONE, out start, "Start the application", null },
+			{ "reload", 's', OptionFlags.NONE, OptionArg.NONE, out reload, "Start the application", null },
 			{ "toggle-window", 't', OptionFlags.NONE, OptionArg.STRING, out toggle_window, "Toggle window(s)", "WINDOW" },
 			{ "show-inspector", 'i', OptionFlags.NONE, OptionArg.NONE, out show_inspector, "Show inspector", null },
 			{ "autostart", 'a', OptionFlags.NONE, OptionArg.STRING, out autostart, "Control autostart (on/off/status)", "STATE" },
@@ -45,6 +47,8 @@ public class MuiCtl {
 			return manage_autostart(autostart);
 		} else if (quit) {
 			return exit_mui();
+		} else if (reload) {
+			return reload_mui();
 		} else {
 			return send_request(request);
 		}
@@ -66,6 +70,16 @@ public class MuiCtl {
 		} catch (SpawnError e) {
 			stderr.printf("Failed to quit the application: %s\n", e.message);
 			return 1;
+		}
+		return 0;
+	}
+
+	private static int reload_mui() {
+	  if (exit_mui() == 1) {
+			return 1;
+		}
+		if (start_mui() == 1) {
+		  return 1;
 		}
 		return 0;
 	}

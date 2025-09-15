@@ -24,6 +24,7 @@ public class App : Astal.Application {
     }
 
     this.add_window(new Overview());
+    this.add_window(new NotificationCenter());
     this.add_window(new PowerMenu());
     this.add_window(new QuickMenu());
 

@@ -20,6 +20,7 @@ public class Scss {
     string cache_dir = Environment.get_user_cache_dir();
     scss_color_file = File.new_for_path(cache_dir + "/material/colors.scss");
 
+    compile_scss();
     monitor_scss_file();
   }
 

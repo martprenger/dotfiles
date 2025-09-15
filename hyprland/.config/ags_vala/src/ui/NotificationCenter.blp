@@ -1,0 +1,22 @@
+using Gtk 4.0;
+using Astal 4.0;
+
+template $NotificationCenter: Astal.Window {
+  styles [
+    "window",
+    "notification-center",
+  ]
+
+  default-width: 400;
+  default-height: 10;
+  title: "NotificationCenter";
+  namespace: "NotificationCenter";
+  anchor: top;
+  keymode: on_demand;
+
+  Box {
+    Label {
+      label: "hello world";
+    }
+  }
+}

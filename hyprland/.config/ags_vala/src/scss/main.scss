@@ -3,12 +3,14 @@
 @use "Overview.scss";
 @use "PowerMenu.scss";
 @use "QuickMenu.scss";
+@use "Notification.scss";
 
 @use "../../../../../../.cache/material/colors.scss" as *;
 @use "sass:color";
 @use "Settings.scss" as settings;
 
 .window {
+  color: $foreground;
   background: $background;
   border-radius: settings.$borderRadius;
   padding: 0.5em;

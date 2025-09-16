@@ -27,6 +27,7 @@ public class App : Astal.Application {
     this.add_window(new NotificationCenter());
     this.add_window(new PowerMenu());
     this.add_window(new QuickMenu());
+    this.add_window(new Dashboard());
 
     Gdk.Display? default_display = Gdk.Display.get_default();
     if (default_display == null) {

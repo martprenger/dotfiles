@@ -139,10 +139,9 @@ class Bar : Astal.Window {
   }
 
   [GtkCallback]
-  public void toggleNotificationCenter() {
-    if (NotificationCenter.instance != null) {
-      NotificationCenter.instance.visible = !NotificationCenter.instance.visible;
+  public void toggleDashboard() {
+    if (Dashboard.instance != null) {
+      Dashboard.instance.visible = !Dashboard.instance.visible;
     }
   }
-
 }

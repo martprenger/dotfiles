@@ -12,5 +12,6 @@
         <file>ui/Qheader.ui</file>
         <file>ui/QAudioItem.ui</file>
         <file>ui/QuickMenu.ui</file>
+        <file>ui/Dashboard.ui</file>
     </gresource>
 </gresources>

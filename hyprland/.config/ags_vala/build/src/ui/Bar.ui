@@ -28,7 +28,7 @@ corresponding .blp file and regenerate this file with blueprint-compiler.
             </style>
             <child>
               <object class="GtkButton">
-                <signal name="clicked" handler="toggleNotificationCenter"/>
+                <signal name="clicked" handler="toggleDashboard"/>
                 <child>
                   <object class="GtkLabel">
                     <property name="label" bind-source="Bar" bind-property="clock" bind-flags="sync-create"/>

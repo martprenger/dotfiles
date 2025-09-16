@@ -32,6 +32,7 @@ dependencies = [
 blueprint_sources = files(
   'ui/AppButton.blp',
   'ui/Bar.blp',
+  'ui/Dashboard.blp',
   'ui/NotificationContent.blp',
   'ui/Overview.blp',
   'ui/PowerMenu.blp',
@@ -46,6 +47,7 @@ vala_sources = files(
   'vala/App.vala',
   'vala/bar/Bar.vala',
   'vala/bar/items/Workspaces.vala',
+  'vala/dashboard/Dashboard.vala',
   'vala/notification/NotificationCenter.vala',
   'vala/notification/NotificationContent.vala',
   'vala/notification/NotificationItem.vala',

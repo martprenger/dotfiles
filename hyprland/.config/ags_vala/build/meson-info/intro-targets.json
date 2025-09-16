@@ -12,7 +12,7 @@
       {
         "language": "unknown",
         "compiler": [
-          "/usr/bin/blueprint-compiler",
+          "/usr/sbin/blueprint-compiler",
           "batch-compile",
           "@OUTPUT@",
           "@CURRENT_SOURCE_DIR@",
@@ -22,6 +22,7 @@
         "sources": [
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/AppButton.blp",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/Bar.blp",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/Dashboard.blp",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/NotificationContent.blp",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/Overview.blp",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/PowerMenu.blp",
@@ -53,7 +54,7 @@
       {
         "language": "unknown",
         "compiler": [
-          "/usr/bin/sass",
+          "/usr/sbin/sass",
           "@INPUT@",
           "@OUTPUT@"
         ],
@@ -223,6 +224,7 @@
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/App.vala",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/bar/Bar.vala",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/bar/items/Workspaces.vala",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/dashboard/Dashboard.vala",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/notification/NotificationCenter.vala",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/notification/NotificationContent.vala",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/vala/notification/NotificationItem.vala",
@@ -319,6 +321,7 @@
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/App.c",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/bar/Bar.c",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/bar/items/Workspaces.c",
+          "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/dashboard/Dashboard.c",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/notification/NotificationCenter.c",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/notification/NotificationContent.c",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/build/src/mui.p/vala/notification/NotificationItem.c",

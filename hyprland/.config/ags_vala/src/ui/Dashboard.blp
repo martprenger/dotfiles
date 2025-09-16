@@ -1,0 +1,95 @@
+using Gtk 4.0;
+using Adw 1;
+using Astal 4.0;
+
+template $Dashboard: Astal.Window {
+  styles [
+    "window",
+  ]
+
+  title: "Dashboard";
+  namespace: "Dashboard";
+  anchor: top;
+  keymode: on_demand;
+  default-width: 600;
+  default-height: 350;
+  // Center the window horizontally at the top
+  halign: center;
+  margin-top: 30;
+
+  EventControllerKey {
+    key-released => $key_released();
+  }
+
+  Box {
+    orientation: horizontal;
+    spacing: 24;
+    hexpand: true;
+    vexpand: true;
+    halign: center;
+    valign: start;
+    // Left: Calendar
+    Frame {
+      label: "Calendar";
+
+      child: Calendar {
+        // Placeholder for calendar widget
+        vexpand: true;
+        hexpand: false;
+        margin-top: 12;
+        margin-bottom: 12;
+      };
+    }
+
+    // Right: Events and Weather
+    Box {
+      orientation: vertical;
+      spacing: 16;
+      width-request: 280;
+      vexpand: true;
+
+      Frame {
+        label: "Events";
+
+        child: Box {
+          orientation: vertical;
+          spacing: 6;
+          margin-top: 8;
+          margin-bottom: 8;
+          // Placeholder event items
+          Label {
+            label: "No events for this day.";
+            wrap: true;
+            ellipsize: end;
+            justify: center;
+          }
+        };
+      }
+
+      Frame {
+        label: "Weather";
+
+        child: Box {
+          orientation: vertical;
+          spacing: 6;
+          margin-top: 8;
+          margin-bottom: 8;
+          // Placeholder weather info
+          Label {
+            label: "Weather: 22°C, Partly Cloudy";
+            wrap: true;
+            ellipsize: end;
+            justify: center;
+          }
+
+          Label {
+            label: "Humidity: 60%";
+            wrap: true;
+            ellipsize: end;
+            justify: center;
+          }
+        };
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-Build started at 2025-09-15T14:28:16.241019
+Build started at 2025-09-15T21:57:35.828492
 Main binary: /usr/bin/python
 Build Options: 
 Python system: Linux
@@ -11,7 +11,7 @@ WARNING: You should add the boolean check kwarg to the run_command call.
          It currently defaults to false,
          but it will default to true in meson 2.0.
          See also: https://github.com/mesonbuild/meson/issues/9300
-Running command: /usr/sbin/cat version
+Running command: /usr/bin/cat version
 --- stdout ---
 
 --- stderr ---
@@ -50,74 +50,12 @@ Host machine cpu family: x86_64
 Host machine cpu: x86_64
 Target machine cpu family: x86_64
 Target machine cpu: x86_64
-Program blueprint-compiler found: YES (/usr/sbin/blueprint-compiler)
-Program sass found: YES (/usr/sbin/sass)
+Program blueprint-compiler found: YES (/usr/bin/blueprint-compiler)
+Program sass found: YES (/usr/bin/sass)
 Dependency gtk4-layer-shell-0 found: YES 1.2.0 (cached)
 Dependency astal-io-0.1 found: YES 0.1.0 (cached)
 Dependency glib-2.0 found: YES 2.84.4 (cached)
-Pkg-config binary missing from cross or native file, or env var undefined.
-Trying a default Pkg-config fallback at pkg-config
-Found pkg-config: YES (/usr/sbin/pkg-config) 2.5.1
-Determining dependency 'gsound' with pkg-config executable '/usr/sbin/pkg-config'
-env[PKG_CONFIG_PATH]: 
-env[PKG_CONFIG]: /usr/sbin/pkg-config
------------
-Called: `/usr/sbin/pkg-config --modversion gsound` -> 0
-stdout:
-1.0.3
------------
-env[PKG_CONFIG_PATH]: 
-env[PKG_CONFIG]: /usr/sbin/pkg-config
------------
-Called: `/usr/sbin/pkg-config --cflags gsound` -> 0
-stdout:
--I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-6 -pthread -D_REENTRANT
------------
-env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
-env[PKG_CONFIG_PATH]: 
-env[PKG_CONFIG]: /usr/sbin/pkg-config
------------
-Called: `/usr/sbin/pkg-config --libs gsound` -> 0
-stdout:
--L/usr/lib -lgsound
------------
-env[PKG_CONFIG_PATH]: 
-env[PKG_CONFIG]: /usr/sbin/pkg-config
------------
-Called: `/usr/sbin/pkg-config --libs gsound` -> 0
-stdout:
--lgsound
------------
-Using cached run result:
-Code:
- 
-        #include<stddef.h>
-        #include<stdio.h>
-        int main(void) {
-            printf("%ld\n", (long)(sizeof(void *)));
-            return 0;
-        }
-Args:
- []
-Cached run returncode:
- 0
-Cached run stdout:
- 8
-
-Cached run stderr:
- 
-Running compile:
-Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpyg71zh3k
-Code:
-
------------
-Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpyg71zh3k/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpyg71zh3k/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
-stdout:
-install: /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/
-programs: =/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/bin/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/bin/
-libraries: =/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/lib/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/x86_64-pc-linux-gnu/15.2.1/:/lib/../lib/:/usr/lib/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
------------
-Run-time dependency gsound found: YES 1.0.3
+Dependency gsound found: YES 1.0.3 (cached)
 Dependency gio-2.0 found: YES 2.84.4 (cached)
 Dependency gio-unix-2.0 found: YES 2.84.4 (cached)
 Dependency libsoup-3.0 found: YES 3.6.5 (cached)
@@ -137,33 +75,36 @@ Dependency astal-tray-0.1 found: YES 0.1.0 (cached)
 Dependency astal-bluetooth-0.1 found: YES 0.1.0 (cached)
 Dependency astal-io-0.1 found: YES 0.1.0 (cached)
 Dependency libadwaita-1 found: YES 1.7.6 (cached)
-Determining dependency 'glib-2.0' with pkg-config executable '/usr/sbin/pkg-config'
+Pkg-config binary missing from cross or native file, or env var undefined.
+Trying a default Pkg-config fallback at pkg-config
+Found pkg-config: YES (/usr/bin/pkg-config) 2.5.1
+Determining dependency 'glib-2.0' with pkg-config executable '/usr/bin/pkg-config'
 env[PKG_CONFIG_PATH]: 
-env[PKG_CONFIG]: /usr/sbin/pkg-config
+env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
-Called: `/usr/sbin/pkg-config --modversion glib-2.0` -> 0
+Called: `/usr/bin/pkg-config --modversion glib-2.0` -> 0
 stdout:
 2.84.4
 -----------
 env[PKG_CONFIG_PATH]: 
-env[PKG_CONFIG]: /usr/sbin/pkg-config
+env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
-Called: `/usr/sbin/pkg-config --cflags glib-2.0` -> 0
+Called: `/usr/bin/pkg-config --cflags glib-2.0` -> 0
 stdout:
 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread
 -----------
 env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
 env[PKG_CONFIG_PATH]: 
-env[PKG_CONFIG]: /usr/sbin/pkg-config
+env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
-Called: `/usr/sbin/pkg-config --libs glib-2.0` -> 0
+Called: `/usr/bin/pkg-config --libs glib-2.0` -> 0
 stdout:
 -L/usr/lib -lglib-2.0
 -----------
 env[PKG_CONFIG_PATH]: 
-env[PKG_CONFIG]: /usr/sbin/pkg-config
+env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
-Called: `/usr/sbin/pkg-config --libs glib-2.0` -> 0
+Called: `/usr/bin/pkg-config --libs glib-2.0` -> 0
 stdout:
 -lglib-2.0
 -----------
@@ -186,11 +127,11 @@ Cached run stdout:
 Cached run stderr:
  
 Running compile:
-Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmp62b51qok
+Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpgwrmd9o6
 Code:
 
 -----------
-Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmp62b51qok/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmp62b51qok/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
+Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpgwrmd9o6/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpgwrmd9o6/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
 stdout:
 install: /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/
 programs: =/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/bin/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/bin/
@@ -210,4 +151,15 @@ Dependency gio-unix-2.0 found: YES 2.84.4 (cached)
 Dependency gio-2.0 found: YES 2.84.4 (cached)
 Build targets in project: 6
 
-Found ninja-1.12.1 at /usr/sbin/ninja
+Found ninja-1.12.1 at /usr/bin/ninja
+Running compile:
+Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmphz5v_h1u
+Code:
+
+-----------
+Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmphz5v_h1u/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmphz5v_h1u/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
+stdout:
+install: /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/
+programs: =/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/bin/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/bin/
+libraries: =/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/lib/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/x86_64-pc-linux-gnu/15.2.1/:/lib/../lib/:/usr/lib/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
+-----------

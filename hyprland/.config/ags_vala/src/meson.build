@@ -32,7 +32,6 @@ dependencies = [
 blueprint_sources = files(
   'ui/AppButton.blp',
   'ui/Bar.blp',
-  'ui/NotificationCenter.blp',
   'ui/NotificationContent.blp',
   'ui/Overview.blp',
   'ui/PowerMenu.blp',

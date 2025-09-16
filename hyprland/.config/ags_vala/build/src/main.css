@@ -101,7 +101,6 @@ button.powerbutton image {
 }
 
 .QuickMenuWindow {
-  foreground: #e3e3d7;
   color: #e3e3d7;
   background: transparent;
   font-size: 14px;
@@ -118,9 +117,36 @@ button.powerbutton image {
   background: transparent;
 }
 
-.notification-center {
-  background: #b71c1c;
-  color: #fff;
+.notification {
+  color: #e3e3d7;
+  background: rgba(18, 20, 13, 0.71);
+  border-radius: 1em;
+  padding: 0.5em;
+  font-size: 14px;
+  font-family: "JetBrainsMono NF";
+}
+
+.notification_badge.critical label.app_name {
+  color: #ffb4ab;
+}
+.notification_badge.critical separator {
+  color: #ffb4ab;
+}
+.notification_badge.normal label.app_name {
+  color: #b7d085;
+}
+.notification_badge.normal separator {
+  color: #b7d085;
+}
+.notification_badge.low label.app_name {
+  color: #c2caaa;
+}
+.notification_badge.low separator {
+  color: #c2caaa;
+}
+
+.NotificationItem {
+  background: transparent;
 }
 
 .window {

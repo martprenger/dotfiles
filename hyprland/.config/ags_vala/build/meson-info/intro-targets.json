@@ -12,7 +12,7 @@
       {
         "language": "unknown",
         "compiler": [
-          "/usr/sbin/blueprint-compiler",
+          "/usr/bin/blueprint-compiler",
           "batch-compile",
           "@OUTPUT@",
           "@CURRENT_SOURCE_DIR@",
@@ -22,7 +22,6 @@
         "sources": [
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/AppButton.blp",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/Bar.blp",
-          "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/NotificationCenter.blp",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/NotificationContent.blp",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/Overview.blp",
           "/home/pyro/dotfiles/hyprland/.config/ags_vala/src/ui/PowerMenu.blp",
@@ -54,7 +53,7 @@
       {
         "language": "unknown",
         "compiler": [
-          "/usr/sbin/sass",
+          "/usr/bin/sass",
           "@INPUT@",
           "@OUTPUT@"
         ],

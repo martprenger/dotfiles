@@ -1,4 +1,49 @@
-.notification-center {
-  background: #b71c1c; // Material Red 900
-  color: #fff;
+@use "../../../../../../.cache/material/colors.scss" as *;
+@use "Settings" as settings;
+@use "sass:color";
+
+.notification {
+  color: $foreground;
+  background: $background;
+  border-radius: settings.$borderRadius;
+  padding: 0.5em;
+  font-size: 14px;
+  font-family: "JetBrainsMono NF";
+}
+
+.notification_badge {
+  &.critical {
+    label.app_name {
+      color: $error;
+    }
+
+    separator {
+      color: $error;
+    }
+  }
+
+  &.normal {
+    label.app_name {
+      color: $primary;
+    }
+
+    separator {
+      color: $primary;
+    }
+  }
+  &.low {
+    label.app_name {
+      color: $secondary;
+    }
+
+    separator {
+      color: $secondary;
+    }
+  }
+}
+
+.NotificationCenterWindow {
+}
+.NotificationItem {
+  background: transparent;
 }

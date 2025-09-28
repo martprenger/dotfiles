@@ -1,33 +1,39 @@
+* {
+  all: unset;
+  box-sizing: border-box;
+}
+
 window.Bar {
   font-size: 14px;
-  font-family: "JetBrainsMono NF";
+  font-family: "JetBrainsMono NF", "Fira Mono", "monospace";
   background: transparent;
-}
-window.Bar > box {
-  color: #e3e3d7;
-  background: transparent;
-  font-weight: bold;
-}
-window.Bar button {
-  background: transparent;
-  min-height: 0;
-  min-width: 0;
 }
 
 .bar_item {
-  background: rgba(18, 20, 13, 0.71);
+  background: #1e2019;
   color: #e3e3d7;
-  margin: 0.5em 0em 0em 0.5em;
-  border-radius: 100em;
+  padding: 0.2em;
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  margin: 0.4em;
+  margin-right: 0;
+  margin-bottom: 0;
+  border-radius: 0.8em;
 }
 
 .bar_item:last-child {
-  margin-right: 0.5em;
+  margin-right: 0.4em;
+}
+
+.workspaces {
+  padding-right: 0.2em;
+  padding-left: 0.2em;
 }
 
 .workspaces button {
   border-radius: 100em;
-  margin: 0.3em 0em 0.3em 0.3em;
+  margin: 0.2em;
+  margin-right: 0em;
   padding: 0em;
   background: transparent;
   transition: all 0s;
@@ -37,7 +43,7 @@ window.Bar button {
   color: #dee6c5;
 }
 .workspaces button.empty {
-  color: rgba(152.805, 153.515, 143.29, 0.855);
+  color: rgb(122.5, 123.5, 114);
 }
 .workspaces button.occupied {
   color: #e3e3d7;
@@ -48,19 +54,21 @@ window.Bar button {
 }
 
 .workspaces button:last-child {
-  margin-right: 0.3em;
+  margin-right: 0.2em;
 }
 
 .workspaces label {
   border-radius: 100em;
   margin: 0em;
   padding: 0em;
-  min-height: 1.7em;
-  min-width: 1.7em;
+  min-height: 1.6em;
+  min-width: 1.6em;
 }
 
 entry {
   margin: 0.4em;
+  padding: 0.2em;
+  border-radius: 0.8em;
 }
 
 entry:focus-within {
@@ -74,11 +82,23 @@ entry:focus-within {
   background: transparent;
 }
 
+.app-icon {
+  margin-right: 0.4em;
+}
+
+.app-name {
+  font-weight: bold;
+}
+
+.app-application {
+  font-weight: normal;
+}
+
 .overview_list_row {
   color: #e3e3d7;
   padding: 0.4em;
-  margin: 0.1em;
-  border-radius: 1em;
+  margin: 0.4em;
+  border-radius: 0.8em;
 }
 .overview_list_row:selected {
   background: transparent;
@@ -100,30 +120,134 @@ button.powerbutton image {
   font-size: 2em;
 }
 
+.powerbutton {
+  background: transparent;
+  color: #e3e3d7;
+  border-radius: 0.8em;
+  margin: 0.4em;
+  padding: 0.2em;
+}
+.powerbutton image {
+  color: #e3e3d7;
+}
+.powerbutton:focus {
+  background: #424a31;
+  outline-color: transparent;
+}
+.powerbutton:hover {
+  background-color: rgba(183, 208, 133, 0.6);
+  color: #253600;
+}
+
 .QuickMenuWindow {
   color: #e3e3d7;
-  background: transparent;
+  background: #12140d;
+  border-radius: 0.8em;
   font-size: 14px;
-  font-family: "JetBrainsMono NF";
+  font-family: "JetBrainsMono NF", "Fira Mono", "monospace";
+  padding: 0.2em;
 }
 
-.QMenuProfileImage {
-  min-height: 2.5em;
-  min-width: 2.5em;
-  border-radius: 50%;
+.Qpanel {
+  background: #1e2019;
+  color: #e3e3d7;
+  padding: 0.2em;
+  margin: 0.4em;
+  border-radius: 0.8em;
 }
 
-.QAudioItem {
+.Qheader {
+  padding: 0.2em;
+  font-size: 14px;
+  font-family: "JetBrainsMono NF", "Fira Mono", "monospace";
+  border-radius: 0.8em;
   background: transparent;
+}
+.Qheader label {
+  font-weight: bold;
+  margin-right: 0.4em;
+  padding: 0em;
+}
+
+.Qbutton {
+  color: #e3e3d7;
+  border-radius: 0.8em;
+  margin: 0.4em;
+  padding: 0.2em;
+  background: #1e2019;
+  min-height: 1.6em;
+  min-width: 1.6em;
+}
+.Qbutton:selected {
+  background: transparent;
+  outline-color: transparent;
+}
+.Qbutton:focus-within {
+  background: #424a31;
+  outline-color: transparent;
+}
+.Qbutton:hover {
+  background-color: rgba(183, 208, 133, 0.6);
+}
+
+.QMultimedia {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+.QMultimedia .Qpanel {
+  margin-bottom: 0.4em;
+}
+.QMultimedia button,
+.QMultimedia .togglebutton {
+  border-radius: 0.8em;
+  background: transparent;
+  color: #e3e3d7;
+}
+.QMultimedia button:hover,
+.QMultimedia .togglebutton:hover {
+  background: rgba(183, 208, 133, 0.6);
+  color: #253600;
+}
+.QMultimedia scale {
+  margin: 0 0.4em;
+}
+
+.QmediaRow {
+  padding: 0.2em;
+  margin: 0.4em;
+}
+
+.QmultimediaScale {
+  background: #292b23;
+  border-radius: 0.8em;
+}
+.QmultimediaScale trough {
+  background: #292b23;
+  border-radius: 0.8em;
+  min-height: 1em;
+}
+.QmultimediaScale {
+  /* Try these alternative selectors */
+}
+.QmultimediaScale trough highlight,
+.QmultimediaScale trough progress,
+.QmultimediaScale trough fill {
+  border-radius: 0.8em;
+  background-color: #b7d085;
+}
+.QmultimediaScale slider {
+  background-color: #b7d085;
 }
 
 .notification {
   color: #e3e3d7;
-  background: rgba(18, 20, 13, 0.71);
-  border-radius: 1em;
-  padding: 0.5em;
+  background: #12140d;
+  border-radius: 0.8em;
+  padding: 0.2em;
+  margin: 0.4em;
   font-size: 14px;
-  font-family: "JetBrainsMono NF";
+  font-family: "JetBrainsMono NF", "Fira Mono", "monospace";
 }
 
 .notification_badge.critical label.app_name {
@@ -151,16 +275,17 @@ button.powerbutton image {
 
 .window {
   color: #e3e3d7;
-  background: rgba(18, 20, 13, 0.71);
-  border-radius: 1em;
+  background: #12140d;
+  border-radius: 0.8em;
   padding: 0.5em;
   font-size: 14px;
   font-family: "JetBrainsMono NF";
 }
 
+/*
 .panel {
-  background: rgba(18, 20, 13, 0.71);
-  border-radius: 1em;
+  background: $background;
+  border-radius: settings.$borderRadius;
   margin-bottom: 0.4em;
 }
 
@@ -173,26 +298,6 @@ button.powerbutton image {
 .panel > *:last-child {
   margin-right: 0.4em;
 }
-
-button {
-  background: transparent;
-  color: #e3e3d7;
-  border-radius: 1em;
-}
-button image {
-  color: #e3e3d7;
-}
-button:focus {
-  background: #424a31;
-  outline-color: transparent;
-}
-button:hover {
-  background-color: rgba(183, 208, 133, 0.6);
-  color: #253600;
-}
-
-.x_padding_10 {
-  padding: 0 1em;
-}
+*/
 
 /*# sourceMappingURL=main.css.map */

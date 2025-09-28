@@ -1,23 +1,24 @@
-@use "Color.scss";
+@use "Unset.scss";
 @use "Bar.scss";
 @use "Overview.scss";
 @use "PowerMenu.scss";
 @use "QuickMenu.scss";
 @use "Notification.scss";
 
+@use "_tokens.scss" as *;
 @use "../../../../../../.cache/material/colors.scss" as *;
 @use "sass:color";
-@use "Settings.scss" as settings;
 
 .window {
   color: $foreground;
   background: $background;
-  border-radius: settings.$borderRadius;
+  border-radius: $border-radius;
   padding: 0.5em;
   font-size: 14px;
   font-family: "JetBrainsMono NF";
 }
 
+/*
 .panel {
   background: $background;
   border-radius: settings.$borderRadius;
@@ -33,27 +34,4 @@
 .panel > *:last-child {
   margin-right: 0.4em;
 }
-
-button {
-  background: transparent;
-  color: $foreground;
-  border-radius: settings.$borderRadius;
-
-  image {
-    color: $foreground;
-  }
-
-  &:focus {
-    background: $secondaryContainer;
-    outline-color: transparent;
-  }
-
-  &:hover {
-    background-color: color.adjust($primary, $alpha: -0.4);
-    color: $onPrimary;
-  }
-}
-
-.x_padding_10 {
-  padding: 0 1em;
-}
+*/

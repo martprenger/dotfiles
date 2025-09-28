@@ -7,12 +7,16 @@ template $AppButton: ListBoxRow {
   activate => $activated();
 
   styles [
-    "overview_list_row"
+    "overview_list_row",
   ]
 
   child: Box {
     Image {
-      icon-size: large;
+      styles [
+        "app-icon",
+      ]
+
+      pixel-size: 32;
       icon-name: bind template.app as <AstalApps.Application>.icon-name;
     }
 
@@ -20,8 +24,22 @@ template $AppButton: ListBoxRow {
       orientation: vertical;
 
       Label {
+        styles [
+          "app-name",
+        ]
+
         halign: start;
         label: bind template.app as <AstalApps.Application>.name;
+        ellipsize: end;
+      }
+
+      Label {
+        styles [
+          "app-application",
+        ]
+
+        halign: start;
+        label: bind template.app as <AstalApps.Application>.description;
         ellipsize: end;
       }
     }

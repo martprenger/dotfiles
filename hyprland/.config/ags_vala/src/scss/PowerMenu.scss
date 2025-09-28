@@ -1,7 +1,33 @@
+@use "../../../../../../.cache/material/colors.scss" as *;
+@use "_tokens.scss" as *;
+@use "sass:color";
+
 button.powerbutton image {
   -gtk-icon-size: 5em;
 }
 
 .powerConfirmLabel {
   font-size: 2em;
+}
+
+.powerbutton {
+  background: transparent;
+  color: $foreground;
+  border-radius: $border-radius;
+  margin: $margin;
+  padding: $padding;
+
+  image {
+    color: $foreground;
+  }
+
+  &:focus {
+    background: $secondaryContainer;
+    outline-color: transparent;
+  }
+
+  &:hover {
+    background-color: color.adjust($primary, $alpha: -0.4);
+    color: $onPrimary;
+  }
 }

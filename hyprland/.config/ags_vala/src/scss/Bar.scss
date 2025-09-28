@@ -1,38 +1,38 @@
 @use "../../../../../../.cache/material/colors.scss" as *;
+@use "_tokens.scss" as *;
 @use "sass:color";
 
 window.Bar {
-  font-size: 14px;
-  font-family: "JetBrainsMono NF";
+  font-size: $font-size-base;
+  font-family: $font-family;
   background: transparent;
-
-  > box {
-    color: $foreground;
-    background: transparent;
-    font-weight: bold;
-  }
-
-  button {
-    background: transparent;
-    min-height: 0;
-    min-width: 0;
-  }
 }
 
 .bar_item {
-  background: $background;
+  background: $surfaceContainer;
   color: $foreground;
-  margin: 0.5em 0em 0em 0.5em;
-  border-radius: 100em;
+  padding: $padding;
+  padding-right: $padding * 3;
+  padding-left: $padding * 3;
+  margin: $margin;
+  margin-right: 0;
+  margin-bottom: 0;
+  border-radius: $border-radius;
 }
 
 .bar_item:last-child {
-  margin-right: 0.5em;
+  margin-right: $margin;
+}
+
+.workspaces {
+  padding-right: $padding;
+  padding-left: $padding;
 }
 
 .workspaces button {
   border-radius: 100em;
-  margin: 0.3em 0em 0.3em 0.3em;
+  margin: $margin * 0.5;
+  margin-right: 0em;
   padding: 0em;
   background: transparent;
 
@@ -58,13 +58,13 @@ window.Bar {
 }
 
 .workspaces button:last-child {
-  margin-right: 0.3em;
+  margin-right: $margin * 0.5;
 }
 
 .workspaces label {
   border-radius: 100em;
   margin: 0em;
   padding: 0em;
-  min-height: 1.7em;
-  min-width: 1.7em;
+  min-height: 1.6em;
+  min-width: 1.6em;
 }

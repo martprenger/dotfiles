@@ -1,20 +1,113 @@
 @use "../../../../../../.cache/material/colors.scss" as *;
-@use "Settings" as settings;
+@use "_tokens.scss" as *;
 @use "sass:color";
 
+// QuickMenu window
 .QuickMenuWindow {
   color: $foreground;
-  background: transparent;
-  font-size: 14px;
-  font-family: "JetBrainsMono NF";
+  background: $background;
+  border-radius: $border-radius;
+  font-size: $font-size-base;
+  font-family: $font-family;
+  padding: $padding;
 }
 
-.QMenuProfileImage {
-  min-height: 2.5em;
-  min-width: 2.5em;
-  border-radius: 50%;
+// Qpanel (used by Qheader, QMultimedia, etc.)
+.Qpanel {
+  background: $surfaceContainer;
+  color: $foreground;
+  padding: $padding;
+  margin: $margin;
+  border-radius: $border-radius;
 }
 
-.QAudioItem {
+// Qheader styles
+.Qheader {
+  padding: $padding;
+  font-size: $font-size-base;
+  font-family: $font-family;
+  border-radius: $border-radius;
   background: transparent;
+
+  label {
+    font-weight: bold;
+    margin-right: $margin;
+    padding: 0em;
+  }
+}
+
+.Qbutton {
+  color: $foreground;
+  border-radius: $border-radius;
+  margin: $margin;
+  padding: $padding;
+  background: $surfaceContainer;
+
+  min-height: 1.6em;
+  min-width: 1.6em;
+
+  &:selected {
+    background: transparent;
+    outline-color: transparent;
+  }
+
+  &:focus-within {
+    background: $secondaryContainer;
+    outline-color: transparent;
+  }
+
+  &:hover {
+    background-color: color.adjust($primary, $alpha: -0.4);
+  }
+}
+
+// QMultimedia
+.QMultimedia {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+  .Qpanel {
+    margin-bottom: $margin;
+  }
+  button,
+  .togglebutton {
+    border-radius: $border-radius;
+    background: transparent;
+    color: $foreground;
+    &:hover {
+      background: color.adjust($primary, $alpha: -0.4);
+      color: $onPrimary;
+    }
+  }
+  scale {
+    margin: 0 $margin;
+  }
+}
+
+.QmediaRow {
+  padding: $padding;
+  margin: $margin;
+}
+
+.QmultimediaScale {
+  background: $surfaceContainerHigh;
+  border-radius: $border-radius;
+
+  trough {
+    background: $surfaceContainerHigh;
+    border-radius: $border-radius;
+    min-height: 1em;
+  }
+
+  /* Try these alternative selectors */
+  trough highlight,
+  trough progress,
+  trough fill {
+    border-radius: $border-radius;
+    background-color: $primary;
+  }
+
+  slider {
+    background-color: $primary;
+  }
 }

@@ -1,5 +1,4 @@
 using Gtk 4.0;
-using Adw 1;
 using Astal 4.0;
 
 template $Dashboard: Astal.Window {
@@ -15,7 +14,6 @@ template $Dashboard: Astal.Window {
   default-height: 350;
   // Center the window horizontally at the top
   halign: center;
-  margin-top: 30;
 
   EventControllerKey {
     key-released => $key_released();
@@ -23,7 +21,6 @@ template $Dashboard: Astal.Window {
 
   Box {
     orientation: horizontal;
-    spacing: 24;
     hexpand: true;
     vexpand: true;
     halign: center;

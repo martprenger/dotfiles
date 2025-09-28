@@ -4,13 +4,18 @@ using Adw 1;
 
 template $Qheader: Box {
   styles [
-    "panel",
+    "Qpanel",
+    "Qheader",
   ]
 
   orientation: horizontal;
   hexpand: true;
 
   Adw.Avatar {
+    styles [
+      "adw-avatar",
+    ]
+
     tooltip-text: bind template.user_name;
     text: bind template.user_name;
     custom-image: bind template.user_image_paintable;
@@ -18,23 +23,31 @@ template $Qheader: Box {
     size: 30;
   }
 
-  Label {
-    label: bind template.user_name;
-  }
-
   Box {
-    visible: bind template.battery as <AstalBattery.Device>.is-present;
+    orientation: vertical;
 
     Label {
-      label: bind $current_battery(template.battery as <AstalBattery.Device>.percentage) as <string>;
+      label: bind template.user_name;
     }
 
-    Image {
-      icon-name: bind template.battery as <AstalBattery.Device>.icon-name;
+    Box {
+      visible: bind template.battery as <AstalBattery.Device>.is-present;
+
+      Label {
+        label: bind $current_battery(template.battery as <AstalBattery.Device>.percentage) as <string>;
+      }
+
+      Image {
+        icon-name: bind template.battery as <AstalBattery.Device>.icon-name;
+      }
     }
   }
 
   Button {
+    styles [
+      "Qbutton",
+    ]
+
     icon-name: "system-shutdown-symbolic";
     clicked => $toggle_power_menu();
     halign: end;

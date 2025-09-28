@@ -1,14 +1,15 @@
 @use "../../../../../../.cache/material/colors.scss" as *;
-@use "Settings" as settings;
+@use "_tokens.scss" as *;
 @use "sass:color";
 
 .notification {
   color: $foreground;
   background: $background;
-  border-radius: settings.$borderRadius;
-  padding: 0.5em;
-  font-size: 14px;
-  font-family: "JetBrainsMono NF";
+  border-radius: $border-radius;
+  padding: $padding;
+  margin: $margin;
+  font-size: $font-size-base;
+  font-family: $font-family;
 }
 
 .notification_badge {

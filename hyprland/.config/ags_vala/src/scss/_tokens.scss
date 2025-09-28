@@ -1,0 +1,25 @@
+@use "../../../../../../.cache/material/colors.scss" as *;
+@use "sass:color";
+
+// === Transparency ===
+$root-transparency: 0.1; // 1 - opacity
+$transparency: 0.8;
+
+// === Color Palette ===
+$glass-background: color.adjust($background, $alpha: -$root-transparency);
+
+// === Spacing & Sizing ===
+$border-radius: 0.8em;
+$padding: 0.2em;
+$margin: 0.4em;
+$gap: 0.4em;
+
+// === Typography ===
+$font-family: "JetBrainsMono NF", "Fira Mono", "monospace";
+$font-size-base: 14px;
+$font-size-lg: 1.25em;
+$font-size-sm: 0.9em;
+
+// === Z-Index Layers ===
+$z-index-overlay: 1000;
+$z-index-popup: 1100;

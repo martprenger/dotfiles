@@ -5,33 +5,49 @@ template $QAudioItem: Gtk.ListBoxRow {
   selectable: false;
   activatable: false;
 
+  styles [
+    "QAudioItem",
+  ]
+
   Box {
+    styles [
+      "audio-item-container",
+    ]
+
     orientation: horizontal;
+    spacing: 12;
 
     Image {
+      styles [
+        "audio-item-icon",
+      ]
+
       icon-name: bind $fallback_icon(template.endpoint as <AstalWp.Endpoint>.icon) as <string>;
+      pixel-size: 24;
     }
 
-    Box {
-      orientation: vertical;
+    Label {
+      styles [
+        "audio-item-label",
+      ]
 
-      Label {
-        styles [
-          "x_padding_10",
-        ]
+      label: bind template.endpoint as <AstalWp.Endpoint>.description;
+      halign: start;
+      ellipsize: end;
+      max-width-chars: 20;
+    }
 
-        label: bind template.endpoint as <AstalWp.Endpoint>.description;
-        halign: start;
-      }
+    Scale {
+      styles [
+        "QmultimediaScale",
+      ]
 
-      Scale {
-        hexpand: true;
+      hexpand: true;
 
-        adjustment: Adjustment volume_adjust {
-          lower: 0;
-          upper: 1;
-        };
-      }
+      adjustment: Adjustment volume_adjust {
+        lower: 0;
+        upper: 1;
+      };
     }
   }
 }

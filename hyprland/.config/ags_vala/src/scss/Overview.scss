@@ -1,9 +1,11 @@
 @use "../../../../../../.cache/material/colors.scss" as *;
-@use "Settings" as settings;
+@use "_tokens.scss" as *;
 @use "sass:color";
 
 entry {
-  margin: 0.4em;
+  margin: $margin;
+  padding: $padding;
+  border-radius: $border-radius;
 }
 
 entry:focus-within {
@@ -17,11 +19,23 @@ entry:focus-within {
   background: transparent;
 }
 
+.app-icon {
+  margin-right: $margin;
+}
+
+.app-name {
+  font-weight: bold;
+}
+
+.app-application {
+  font-weight: normal;
+}
+
 .overview_list_row {
   color: $foreground;
-  padding: 0.4em;
-  margin: 0.1em;
-  border-radius: settings.$borderRadius;
+  padding: $padding * 2;
+  margin: $margin;
+  border-radius: $border-radius;
 
   &:selected {
     background: transparent;

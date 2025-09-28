@@ -11,21 +11,22 @@ template $NotificationContent: Gtk.Box {
 
   CenterBox {
     [start]
-    Image app_image {
-      overflow: hidden;
-      icon-name: bind template.notification as <AstalNotifd.Notification>.app-icon;
-      tooltip-text: "App Icon";
-    }
+    Box {
+      Image app_image {
+        overflow: hidden;
+        icon-name: bind template.notification as <AstalNotifd.Notification>.app-icon;
+        tooltip-text: "App Icon";
+      }
 
-    [center]
-    Label app_name {
-      label: bind template.notification as <AstalNotifd.Notification>.app-name;
-      tooltip-text: "App Name";
-      hexpand: true;
+      Label app_name {
+        label: bind template.notification as <AstalNotifd.Notification>.app-name;
+        tooltip-text: "App Name";
+        hexpand: true;
 
-      styles [
-        "app_name",
-      ]
+        styles [
+          "app_name",
+        ]
+      }
     }
 
     [end]
@@ -52,7 +53,6 @@ template $NotificationContent: Gtk.Box {
 
     Label {
       label: bind template.notification as <AstalNotifd.Notification>.summary;
-      justify: center;
       ellipsize: end;
       max-width-chars: 15;
     }
@@ -61,7 +61,6 @@ template $NotificationContent: Gtk.Box {
       label: bind template.notification as <AstalNotifd.Notification>.body;
       wrap: true;
       wrap-mode: word_char;
-      justify: left;
       lines: 3;
       ellipsize: end;
       use-markup: true;
@@ -69,7 +68,6 @@ template $NotificationContent: Gtk.Box {
 
     Box actions_box {
       homogeneous: true;
-      halign: center;
       hexpand: true;
     }
   }

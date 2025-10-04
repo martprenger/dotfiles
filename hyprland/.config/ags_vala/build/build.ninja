@@ -50,12 +50,12 @@ build PHONY: phony
 
 # Build rules for targets
 
-build src/.: CUSTOM_COMMAND ../src/ui/AppButton.blp ../src/ui/Bar.blp ../src/ui/Dashboard.blp ../src/ui/NotificationContent.blp ../src/ui/Overview.blp ../src/ui/PowerMenu.blp ../src/ui/QAudioItem.blp ../src/ui/QMediaPlayer.blp ../src/ui/QMultimedia.blp ../src/ui/Qheader.blp ../src/ui/QuickMenu.blp | /usr/sbin/blueprint-compiler
- COMMAND = /usr/sbin/blueprint-compiler batch-compile src/. ../src ../src/ui/AppButton.blp ../src/ui/Bar.blp ../src/ui/Dashboard.blp ../src/ui/NotificationContent.blp ../src/ui/Overview.blp ../src/ui/PowerMenu.blp ../src/ui/QAudioItem.blp ../src/ui/QMediaPlayer.blp ../src/ui/QMultimedia.blp ../src/ui/Qheader.blp ../src/ui/QuickMenu.blp
+build src/.: CUSTOM_COMMAND ../src/ui/AppButton.blp ../src/ui/Bar.blp ../src/ui/Dashboard.blp ../src/ui/NotificationContent.blp ../src/ui/Overview.blp ../src/ui/PowerMenu.blp ../src/ui/QAudioItem.blp ../src/ui/QMediaPlayer.blp ../src/ui/QMultimedia.blp ../src/ui/Qheader.blp ../src/ui/QuickMenu.blp | /usr/bin/blueprint-compiler
+ COMMAND = /usr/bin/blueprint-compiler batch-compile src/. ../src ../src/ui/AppButton.blp ../src/ui/Bar.blp ../src/ui/Dashboard.blp ../src/ui/NotificationContent.blp ../src/ui/Overview.blp ../src/ui/PowerMenu.blp ../src/ui/QAudioItem.blp ../src/ui/QMediaPlayer.blp ../src/ui/QMultimedia.blp ../src/ui/Qheader.blp ../src/ui/QuickMenu.blp
  description = Generating$ src/blueprint$ with$ a$ custom$ command
 
-build src/main.css: CUSTOM_COMMAND ../src/scss/main.scss | /usr/sbin/sass
- COMMAND = /usr/sbin/sass ../src/scss/main.scss src/main.css
+build src/main.css: CUSTOM_COMMAND ../src/scss/main.scss | /usr/bin/sass
+ COMMAND = /usr/bin/sass ../src/scss/main.scss src/main.css
  description = Generating$ src/scss$ with$ a$ custom$ command
 
 build src/data.c: CUSTOM_COMMAND_DEP ../src/gresource.xml | /usr/bin/glib-compile-resources src/. src/main.css
@@ -234,6 +234,18 @@ build meson-internal__dist: CUSTOM_COMMAND PHONY
 
 # Suffix
 
+build scan-build: phony meson-internal__scan-build
+
+build meson-internal__scan-build: CUSTOM_COMMAND PHONY
+ COMMAND = /usr/sbin/meson --internal scanbuild /home/pyro/dotfiles/hyprland/.config/ags_vala /home/pyro/dotfiles/hyprland/.config/ags_vala/build subprojects /usr/sbin/meson setup
+ pool = console
+
+build ctags: phony meson-internal__ctags
+
+build meson-internal__ctags: CUSTOM_COMMAND PHONY
+ COMMAND = /usr/sbin/meson --internal tags ctags /home/pyro/dotfiles/hyprland/.config/ags_vala
+ pool = console
+
 build uninstall: phony meson-internal__uninstall
 
 build meson-internal__uninstall: CUSTOM_COMMAND PHONY
@@ -255,7 +267,7 @@ build meson-internal__clean-ctlist: CUSTOM_COMMAND PHONY
  description = Cleaning$ custom$ target$ directories
 
 build meson-internal__clean: CUSTOM_COMMAND PHONY | clean-ctlist
- COMMAND = /usr/sbin/ninja -t clean
+ COMMAND = /usr/bin/ninja -t clean
  description = Cleaning
 
 build build.ninja: REGENERATE_BUILD ../meson.build /usr/bin/cat ../src/lib/Math/meson.build ../src/meson.build ../src/cli/meson.build meson-private/coredata.dat

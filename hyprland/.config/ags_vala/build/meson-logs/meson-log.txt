@@ -1,9 +1,9 @@
-Build started at 2025-09-16T12:54:23.584842
+Build started at 2025-10-04T11:46:44.438013
 Main binary: /usr/bin/python
 Build Options: 
 Python system: Linux
 The Meson build system
-Version: 1.9.0
+Version: 1.9.1
 Source dir: /home/pyro/dotfiles/hyprland/.config/ags_vala
 Build dir: /home/pyro/dotfiles/hyprland/.config/ags_vala/build
 Build type: native build
@@ -11,7 +11,7 @@ WARNING: You should add the boolean check kwarg to the run_command call.
          It currently defaults to false,
          but it will default to true in meson 2.0.
          See also: https://github.com/mesonbuild/meson/issues/9300
-Running command: /usr/sbin/cat version
+Running command: /usr/bin/cat version
 --- stdout ---
 
 --- stderr ---
@@ -50,8 +50,8 @@ Host machine cpu family: x86_64
 Host machine cpu: x86_64
 Target machine cpu family: x86_64
 Target machine cpu: x86_64
-Program blueprint-compiler found: YES (/usr/sbin/blueprint-compiler)
-Program sass found: YES (/usr/sbin/sass)
+Program blueprint-compiler found: YES (/usr/bin/blueprint-compiler)
+Program sass found: YES (/usr/bin/sass)
 Dependency gtk4-layer-shell-0 found: YES 1.2.0 (cached)
 Dependency astal-io-0.1 found: YES 0.1.0 (cached)
 Dependency glib-2.0 found: YES 2.84.4 (cached)
@@ -77,34 +77,34 @@ Dependency astal-io-0.1 found: YES 0.1.0 (cached)
 Dependency libadwaita-1 found: YES 1.7.6 (cached)
 Pkg-config binary missing from cross or native file, or env var undefined.
 Trying a default Pkg-config fallback at pkg-config
-Found pkg-config: YES (/usr/sbin/pkg-config) 2.5.1
-Determining dependency 'glib-2.0' with pkg-config executable '/usr/sbin/pkg-config'
+Found pkg-config: YES (/usr/bin/pkg-config) 2.5.1
+Determining dependency 'glib-2.0' with pkg-config executable '/usr/bin/pkg-config'
 env[PKG_CONFIG_PATH]: 
-env[PKG_CONFIG]: /usr/sbin/pkg-config
+env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
-Called: `/usr/sbin/pkg-config --modversion glib-2.0` -> 0
+Called: `/usr/bin/pkg-config --modversion glib-2.0` -> 0
 stdout:
-2.84.4
+2.86.0
 -----------
 env[PKG_CONFIG_PATH]: 
-env[PKG_CONFIG]: /usr/sbin/pkg-config
+env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
-Called: `/usr/sbin/pkg-config --cflags glib-2.0` -> 0
+Called: `/usr/bin/pkg-config --cflags glib-2.0` -> 0
 stdout:
 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread
 -----------
 env[PKG_CONFIG_ALLOW_SYSTEM_LIBS]: 1
 env[PKG_CONFIG_PATH]: 
-env[PKG_CONFIG]: /usr/sbin/pkg-config
+env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
-Called: `/usr/sbin/pkg-config --libs glib-2.0` -> 0
+Called: `/usr/bin/pkg-config --libs glib-2.0` -> 0
 stdout:
 -L/usr/lib -lglib-2.0
 -----------
 env[PKG_CONFIG_PATH]: 
-env[PKG_CONFIG]: /usr/sbin/pkg-config
+env[PKG_CONFIG]: /usr/bin/pkg-config
 -----------
-Called: `/usr/sbin/pkg-config --libs glib-2.0` -> 0
+Called: `/usr/bin/pkg-config --libs glib-2.0` -> 0
 stdout:
 -lglib-2.0
 -----------
@@ -127,11 +127,11 @@ Cached run stdout:
 Cached run stderr:
  
 Running compile:
-Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmp8ln5af8m
+Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpkey3l72e
 Code:
 
 -----------
-Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmp8ln5af8m/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmp8ln5af8m/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
+Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpkey3l72e/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpkey3l72e/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
 stdout:
 install: /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/
 programs: =/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/bin/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/bin/
@@ -151,13 +151,13 @@ Dependency gio-unix-2.0 found: YES 2.84.4 (cached)
 Dependency gio-2.0 found: YES 2.84.4 (cached)
 Build targets in project: 6
 
-Found ninja-1.12.1 at /usr/sbin/ninja
+Found ninja-1.12.1 at /usr/bin/ninja
 Running compile:
-Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpxk6vip14
+Working directory:  /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmprwapdxlg
 Code:
 
 -----------
-Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpxk6vip14/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmpxk6vip14/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
+Command line: `cc /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmprwapdxlg/testfile.c -o /home/pyro/dotfiles/hyprland/.config/ags_vala/build/meson-private/tmprwapdxlg/output.obj -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs` -> 0
 stdout:
 install: /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/
 programs: =/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/bin/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/bin/

@@ -391,5 +391,9 @@ button.powerbutton image {
   margin-right: 0.4em;
 }
 */
+.underlay {
+  pointer-events: auto;
+  background-color: rgba(0, 0, 0, 0.01);
+}
 
 /*# sourceMappingURL=main.css.map */

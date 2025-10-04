@@ -35,3 +35,7 @@
   margin-right: 0.4em;
 }
 */
+.underlay {
+  pointer-events: auto;
+  background-color: rgba(0, 0, 0, 0.01);
+}

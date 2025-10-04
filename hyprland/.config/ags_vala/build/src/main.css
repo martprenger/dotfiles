@@ -240,33 +240,125 @@ button.powerbutton image {
   background-color: #b7d085;
 }
 
+.Qmedia-image {
+  min-width: 6em;
+  min-height: 6em;
+  margin: 0.4em;
+  border-radius: 0.8em;
+}
+
+.Qmedia-identity {
+  margin: 0.4em;
+  margin-bottom: 0em;
+}
+
+.Qmedia-title {
+  margin: 0.4em;
+  margin-bottom: 0em;
+  margin-top: 0em;
+}
+
+.Qmedia-artist {
+  margin: 0.4em;
+  margin-top: 0em;
+}
+
+.Qmedia-music-time {
+  margin: 0.4em;
+}
+
+.Qmedia-music-controll-button {
+  margin: 0.4em;
+}
+
+.Qmedia-music-scale {
+  margin: 0.4em;
+  background: #292b23;
+  border-radius: 0.8em;
+}
+.Qmedia-music-scale trough {
+  background: #292b23;
+  border-radius: 0.8em;
+  min-height: 1em;
+}
+.Qmedia-music-scale {
+  /* Try these alternative selectors */
+}
+.Qmedia-music-scale trough highlight,
+.Qmedia-music-scale trough progress,
+.Qmedia-music-scale trough fill {
+  border-radius: 0.8em;
+  background-color: #b7d085;
+}
+.Qmedia-music-scale slider {
+  background-color: #b7d085;
+}
+
 .notification {
   color: #e3e3d7;
   background: #12140d;
   border-radius: 0.8em;
   padding: 0.2em;
-  margin: 0.4em;
+  margin: 0em;
+  margin-bottom: 0.4em;
   font-size: 14px;
   font-family: "JetBrainsMono NF", "Fira Mono", "monospace";
+}
+
+.app_icon {
+  padding: 0.2em;
+  padding-right: 0em;
+  margin: 0.4em;
+  margin-right: 0em;
+}
+
+.app_name {
+  padding: 0.2em;
+  margin: 0.4em;
+}
+
+.app_image {
+  min-height: 6em;
+  min-width: 6em;
+  border-radius: 0.8em;
+  margin: 0.4em;
+}
+.app_image:empty {
+  min-height: 0;
+  min-width: 0;
+}
+
+.notification-title {
+  font-weight: bold;
+  margin: 0.4em;
+  text-align: left;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.notification-body {
+  margin: 0.4em;
+  text-align: left;
+  margin-top: 0em;
 }
 
 .notification_badge.critical label.app_name {
   color: #ffb4ab;
 }
-.notification_badge.critical separator {
-  color: #ffb4ab;
-}
 .notification_badge.normal label.app_name {
   color: #b7d085;
 }
-.notification_badge.normal separator {
-  color: #b7d085;
-}
 .notification_badge.low label.app_name {
-  color: #c2caaa;
+  color: #e3e3d7;
 }
-.notification_badge.low separator {
-  color: #c2caaa;
+
+.notification-seperator {
+  background-color: #383a32;
+  height: 1px;
+  min-height: 1px;
+  margin: 0.4em;
+  margin-top: 0em;
+  margin-bottom: 0em;
 }
 
 .NotificationItem {

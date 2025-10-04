@@ -1,5 +1,7 @@
 [GtkTemplate(ui = "/ui/NotificationContent.ui")]
 public class NotificationContent : Gtk.Box {
+  public bool has_image { get; private set; }
+
 	public AstalNotifd.Notification notification { get; set; }
 
 	[GtkChild]
@@ -9,6 +11,7 @@ public class NotificationContent : Gtk.Box {
 		Object(
 			notification: notification
 		);
+		this.has_image = notification.image != null && notification.image.length > 0;
 		setup_actions();
 		setup_urgency();
 	}

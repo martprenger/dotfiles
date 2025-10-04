@@ -111,3 +111,58 @@
     background-color: $primary;
   }
 }
+
+.Qmedia-image {
+  min-width: 6em;
+  min-height: 6em;
+  margin: $margin;
+  border-radius: $border-radius;
+}
+
+.Qmedia-identity {
+  margin: $margin;
+  margin-bottom: 0em;
+}
+
+.Qmedia-title {
+  margin: $margin;
+  margin-bottom: 0em;
+  margin-top: 0em;
+}
+
+.Qmedia-artist {
+  margin: $margin;
+  margin-top: 0em;
+}
+
+.Qmedia-music-time {
+  margin: $margin;
+}
+
+.Qmedia-music-controll-button {
+  margin: $margin;
+}
+
+.Qmedia-music-scale {
+  margin: $margin;
+  background: $surfaceContainerHigh;
+  border-radius: $border-radius;
+
+  trough {
+    background: $surfaceContainerHigh;
+    border-radius: $border-radius;
+    min-height: 1em;
+  }
+
+  /* Try these alternative selectors */
+  trough highlight,
+  trough progress,
+  trough fill {
+    border-radius: $border-radius;
+    background-color: $primary;
+  }
+
+  slider {
+    background-color: $primary;
+  }
+}

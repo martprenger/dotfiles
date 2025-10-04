@@ -17,10 +17,13 @@ template $QMediaPlayer: Box {
     hexpand: true;
 
     Image {
+      styles [
+        "Qmedia-image",
+      ]
+
       overflow: hidden;
       halign: start;
       file: bind $art_url(template.player as <AstalMpris.Player>.art-url) as <string>;
-      pixel-size: 100;
     }
 
     Box {
@@ -30,6 +33,10 @@ template $QMediaPlayer: Box {
       spacing: 10;
 
       Label {
+        styles [
+          "Qmedia-identity",
+        ]
+
         label: bind template.player as <AstalMpris.Player>.identity;
         halign: start;
         ellipsize: end;
@@ -38,6 +45,10 @@ template $QMediaPlayer: Box {
       }
 
       Label {
+        styles [
+          "Qmedia-title",
+        ]
+
         label: bind template.player as <AstalMpris.Player>.title;
         halign: start;
         ellipsize: end;
@@ -46,6 +57,10 @@ template $QMediaPlayer: Box {
       }
 
       Label {
+        styles [
+          "Qmedia-artist",
+        ]
+
         label: bind template.player as <AstalMpris.Player>.artist;
         halign: start;
         ellipsize: end;
@@ -60,12 +75,20 @@ template $QMediaPlayer: Box {
 
     [start]
     Label {
+      styles [
+        "Qmedia-music-time",
+      ]
+
       label: bind $current_pos(template.player as <AstalMpris.Player>.position) as <string>;
       valign: center;
     }
 
     [center]
     Scale {
+      styles [
+        "Qmedia-music-scale",
+      ]
+
       hexpand: true;
 
       adjustment: Adjustment media_len_adjust {
@@ -76,6 +99,10 @@ template $QMediaPlayer: Box {
 
     [end]
     Label {
+      styles [
+        "Qmedia-music-time",
+      ]
+
       label: bind $total_pos(template.player as <AstalMpris.Player>.length) as <string>;
       valign: center;
     }
@@ -87,16 +114,28 @@ template $QMediaPlayer: Box {
     halign: center;
 
     Button {
+      styles [
+        "Qmedia-music-controll-button",
+      ]
+
       icon-name: "media-skip-backward-symbolic";
       clicked => $prev();
     }
 
     Button {
+      styles [
+        "Qmedia-music-controll-button",
+      ]
+
       icon-name: bind $pause_icon(template.player as <AstalMpris.Player>.playback-status) as <string>;
       clicked => $play_pause();
     }
 
     Button {
+      styles [
+        "Qmedia-music-controll-button",
+      ]
+
       icon-name: "media-skip-forward-symbolic";
       clicked => $next();
     }

@@ -7,18 +7,53 @@
   background: $background;
   border-radius: $border-radius;
   padding: $padding;
-  margin: $margin;
+  margin: 0em;
+  margin-bottom: $margin;
   font-size: $font-size-base;
   font-family: $font-family;
+}
+
+.app_icon {
+  padding: $padding;
+  padding-right: 0em;
+  margin: $margin;
+  margin-right: 0em;
+}
+
+.app_name {
+  padding: $padding;
+  margin: $margin;
+}
+
+.app_image {
+  min-height: 6em;
+  min-width: 6em;
+  border-radius: $border-radius;
+  margin: $margin;
+
+  &:empty {
+    min-height: 0;
+    min-width: 0;
+  }
+}
+
+.notification-title {
+  font-weight: bold;
+  margin: $margin;
+  text-align: left;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.notification-body {
+  margin: $margin;
+  text-align: left;
+  margin-top: 0em;
 }
 
 .notification_badge {
   &.critical {
     label.app_name {
-      color: $error;
-    }
-
-    separator {
       color: $error;
     }
   }
@@ -27,20 +62,21 @@
     label.app_name {
       color: $primary;
     }
-
-    separator {
-      color: $primary;
-    }
   }
   &.low {
     label.app_name {
-      color: $secondary;
-    }
-
-    separator {
-      color: $secondary;
+      color: $foreground;
     }
   }
+}
+
+.notification-seperator {
+  background-color: $surfaceBright;
+  height: 1px;
+  min-height: 1px;
+  margin: $margin;
+  margin-top: 0em;
+  margin-bottom: 0em;
 }
 
 .NotificationCenterWindow {

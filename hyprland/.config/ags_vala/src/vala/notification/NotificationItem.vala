@@ -9,5 +9,6 @@ public class NotificationItem : Gtk.ListBoxRow {
 
     _content = new NotificationContent (notification);
     this.child = _content;
+
   }
 }
